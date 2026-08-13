@@ -1,0 +1,15 @@
+node_modules
+.next
+out
+.DS_Store
+*.tsbuildinfo
+next-env.d.ts
+.env*.local
+.vercel
+
+# Raw client photo drops (originals from Trae live outside git)
+/client-photos/
+*.HEIC
+*.heic
+*.MOV
+*.mov
