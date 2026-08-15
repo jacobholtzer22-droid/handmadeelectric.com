@@ -13,3 +13,6 @@ next-env.d.ts
 *.heic
 *.MOV
 *.mov
+
+# Raw client photo drop, originals stay out of git
+/Trae Website Photos/
