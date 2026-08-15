@@ -99,6 +99,28 @@ worth a future phase. **Do not invent a city list from "Metro Detroit."**
 | Generator repair | CONFIRMED | growth push |
 | Generator maintenance and service | CONFIRMED | growth push |
 | Generator brands serviced (all brands vs Generac only) | TODO | changes who the repair page targets |
+| Industrial electrical, still wanted? | **DECISION PENDING** | see below |
+| EV charger installation | **TODO, HIGH PRIORITY** | see below |
+
+**INDUSTRIAL IS NOW A PENDING DECISION, not a settled fact.** It was confirmed from the build
+brief and the old Squarespace blurb, but Trae's own current branding (the logo lockup, section
+11) names only "RESIDENTIAL & COMMERCIAL ELECTRICAL SERVICES". The industrial page is built and
+shipping, but it is contingent on Trae confirming he still wants industrial work.
+
+- If he confirms: nothing changes, and the row above becomes CONFIRMED.
+- If he says residential and commercial only: **the industrial page comes out** and the
+  industrial photos move to `/work`.
+
+Because it may be removed, **the industrial page must not become load-bearing.** It is not in
+the header nav, and nothing else on the site depends on it existing. Removing it must be a
+clean deletion, never a cascade of broken internal links.
+
+**EV CHARGER INSTALLATION, ask Trae, high priority.** Competitors in this market have review
+flow dominated by EV charger installs, and the work pairs directly with the panel and service
+upgrades this business already does, so it may be a stronger page than either of the service
+sub-pages. **Nothing is built for it and nothing references it anywhere on the site until it is
+confirmed.** Do not add it to a service list, a form dropdown, an FAQ, or a meta description on
+the assumption that the answer will be yes.
 
 **Consequence of the brands TODO:** the generator repair page is written to be true either way.
 It says the company repairs and services home standby generators, and names Generac as a brand
@@ -140,6 +162,7 @@ without a row in this file.
 |---|---|---|
 | Michigan electrical contractor license # | - | **TODO - highest-value missing fact** |
 | Licensed (as a rendered claim) | - | **TODO, blocked on the row above. Same edit unblocks both.** |
+| EV charger installation | - | **TODO - HIGH PRIORITY, ask Trae. See section 4.** |
 | Insured | - | TODO |
 | Bonded | - | TODO |
 | Years in business | old site claimed "more than a decade" | **UNVERIFIED - do not reuse until confirmed** |
@@ -262,7 +285,33 @@ untouched in `public/images/source/`.
 acceptable." They are not stock. They are genuine job photos from this business, which is
 better for both trust and search. The brief's assumption is superseded by inspection.
 
-**Logo problems, all three need a decision (Gate 1):**
+### Logo assets from Trae's photo drop (supersede the Squarespace file)
+
+| File | What it is | Status |
+|---|---|---|
+| `logo-emblem-dark.webp` | The emblem on a dark ground. No claim text, no AI watermark, sharper than the hand-keyed version | **IN USE.** This is the site logo |
+| `logo-lockup.webp` | Full branded lockup: emblem, wordmark, "LICENSED ELECTRICAL CONTRACTOR", "RESIDENTIAL & COMMERCIAL ELECTRICAL SERVICES", "SERVING THE METRO DETROIT AREA", and the phone number | **HELD, UNUSED.** See below |
+| `logo-emblem.png` | The version keyed by hand off the light Squarespace file | **RETIRED.** Superseded |
+
+**The lockup is held intact and unused, deliberately.** It has "LICENSED ELECTRICAL CONTRACTOR"
+baked into the artwork. Shipping it would render the exact claim that `verify:copy` blocks in
+text, which is enforcement theater: a gate on words is worthless if the same claim ships as
+pixels. **Do not crop the credential line off it, and do not delete the file.** It ships intact
+the moment the license number lands, in the same edit that unblocks the word.
+
+**The lockup is also evidence, in two directions:**
+
+1. **It is independent evidence the credential exists.** Trae's own branding calls him a
+   licensed electrical contractor, which is a strong reason to ask him for the number rather
+   than treat section 6 as a long shot.
+2. **It is a second, independent source confirming the service area.** "SERVING THE METRO
+   DETROIT AREA" in his own artwork corroborates section 3, which until now rested only on the
+   build brief.
+
+It is also the reason industrial is now a pending decision (section 4): the lockup names
+residential and commercial only.
+
+**Problems with the ORIGINAL Squarespace logo file, kept for the record:**
 
 1. **It carries a visible AI-generation watermark.** A four-point sparkle sits in the
    bottom-right margin, the standard Google Gemini image watermark. It is subtle at small sizes
@@ -346,6 +395,8 @@ Conditionally banned, until the matching fact lands (see sections 5 and 6):
 |---|---|---|
 | 1 | Michigan electrical contractor license # | Footer trust line on every page, About trust paragraph, homepage trust row, **and the word "licensed" anywhere in the copy** |
 | 2 | Google Business Profile (none found) | Local pack visibility, the single highest-impact off-site move available |
+| 2b | **Does he install EV chargers?** | Possibly a stronger page than either service sub-page. Competitors' review flow is dominated by EV installs and it pairs with panel upgrades. Nothing is built or referenced until confirmed |
+| 2c | **Does he still want industrial work?** | Keeps or removes the industrial page. His own branding says residential and commercial only |
 | 3 | Real reviews | Whole reviews system is built and gated off, one config flag turns it on |
 | 4 | GENERAC STATUS | Stronger generator page copy, brand assets, dealer language |
 | 5 | Home base city and city list | City-specific titles, service-area section, future city landing pages |

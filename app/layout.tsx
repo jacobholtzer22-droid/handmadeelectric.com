@@ -59,6 +59,15 @@ export default function RootLayout({
       className={`${display.variable} ${body.variable} ${panel.variable}`}
     >
       <body>
+        {/* Runs synchronously before paint. Scroll reveals hide themselves ONLY
+            under `.js`, so with JavaScript off nothing is ever hidden and the
+            static HTML a crawler reads is fully visible. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "document.documentElement.classList.add('js')",
+          }}
+        />
+
         {/* Sitewide business identity. Present in the initial HTML, no JS. */}
         <JsonLd nodes={[electricianNode(), organizationNode(), webSiteNode()]} />
 

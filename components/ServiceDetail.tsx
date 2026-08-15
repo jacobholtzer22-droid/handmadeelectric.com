@@ -3,7 +3,9 @@ import Link from "next/link";
 import { Check, ArrowRight } from "lucide-react";
 import { site } from "@/site.config";
 import type { ServiceContent } from "@/lib/content/services";
+import { subServicesFor } from "@/lib/content/subservices";
 import PanelTag from "./PanelTag";
+import Reveal from "./motion/Reveal";
 import ClosingCta from "./ClosingCta";
 
 /**
@@ -16,6 +18,7 @@ import ClosingCta from "./ClosingCta";
  * FAQPage schema on the page. Schema must describe what is on the page.
  */
 export default function ServiceDetail({ service }: { service: ServiceContent }) {
+  const subs = subServicesFor(service.slug);
   return (
     <>
       {/* --- Intro --- */}
@@ -80,8 +83,8 @@ export default function ServiceDetail({ service }: { service: ServiceContent }) 
               </h2>
             </div>
             <ul className="mt-8 space-y-4 lg:col-span-7 lg:mt-0">
-              {service.included.items.map((item) => (
-                <li key={item} className="flex gap-3.5">
+              {service.included.items.map((item, i) => (
+                <Reveal as="li" key={item} index={i} className="flex gap-3.5">
                   <Check
                     className="mt-1 h-4 w-4 shrink-0 text-copper-deep"
                     aria-hidden="true"
@@ -89,7 +92,7 @@ export default function ServiceDetail({ service }: { service: ServiceContent }) 
                   <span className="text-[0.9375rem] leading-relaxed text-ink-dim sm:text-base">
                     {item}
                   </span>
-                </li>
+                </Reveal>
               ))}
             </ul>
           </div>
@@ -104,13 +107,15 @@ export default function ServiceDetail({ service }: { service: ServiceContent }) 
             {service.signs.heading}
           </h2>
           <ul className="mt-8 grid gap-4 sm:grid-cols-2">
-            {service.signs.items.map((item) => (
-              <li
+            {service.signs.items.map((item, i) => (
+              <Reveal
+                as="li"
                 key={item}
+                index={i}
                 className="rounded-panel border border-steel p-5 text-[0.9375rem] leading-relaxed text-ash"
               >
                 {item}
-              </li>
+              </Reveal>
             ))}
           </ul>
         </div>
@@ -141,6 +146,41 @@ export default function ServiceDetail({ service }: { service: ServiceContent }) 
           </ol>
         </div>
       </section>
+
+      {/* --- Sub-pages, where this service has deeper ones --- */}
+      {subs.length > 0 && (
+        <section className="bg-bone pb-16 lg:pb-20">
+          <div className="container-page">
+            <div className="conduit-rule conduit-rule-light" aria-hidden="true" />
+            <h2 className="h-display mt-4 text-[1.5rem] text-ink sm:text-2xl">
+              Go deeper
+            </h2>
+            <div className="mt-5 grid gap-4 sm:grid-cols-2">
+              {subs.map((sub, i) => (
+                <Reveal key={sub.slug} index={i}>
+                  <Link
+                    href={`/services/${sub.parentSlug}/${sub.slug}`}
+                    className="group flex h-full items-start gap-4 rounded-panel border border-bone-dim bg-white/40 p-5 transition-colors hover:border-copper"
+                  >
+                    <span className="flex-1">
+                      <span className="h-display block text-lg text-ink">
+                        {sub.navTitle}
+                      </span>
+                      <span className="mt-2 block text-[0.9375rem] leading-relaxed text-ink-dim">
+                        {sub.determines.lead}
+                      </span>
+                    </span>
+                    <ArrowRight
+                      className="mt-1 h-4 w-4 shrink-0 text-copper-deep transition-transform group-hover:translate-x-0.5"
+                      aria-hidden="true"
+                    />
+                  </Link>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* --- FAQ. Rendered visibly, which is what licenses the FAQPage schema. --- */}
       <section className="bg-iron py-16 lg:py-20">

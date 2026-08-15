@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { site } from "@/site.config";
 import { tradeServices, standbyServices, type ServiceContent } from "@/lib/content/services";
 import PanelTag from "./PanelTag";
+import Reveal from "./motion/Reveal";
 
 /**
  * TYPOGRAPHIC ON PURPOSE, see the photo budget rule in seo/FACTS.md section 11.
@@ -60,7 +61,9 @@ export default function ServicesOverview() {
           </p>
           <div className="mt-5 grid gap-4 lg:grid-cols-3">
             {tradeServices.map((s, i) => (
-              <ServiceRow key={s.slug} service={s} index={i} />
+              <Reveal key={s.slug} index={i}>
+                <ServiceRow service={s} index={i} />
+              </Reveal>
             ))}
           </div>
         </div>
@@ -72,7 +75,9 @@ export default function ServicesOverview() {
           </p>
           <div className="mt-5 grid gap-4 sm:grid-cols-2">
             {standbyServices.map((s, i) => (
-              <ServiceRow key={s.slug} service={s} index={tradeServices.length + i} />
+              <Reveal key={s.slug} index={i}>
+                <ServiceRow service={s} index={tradeServices.length + i} />
+              </Reveal>
             ))}
           </div>
         </div>

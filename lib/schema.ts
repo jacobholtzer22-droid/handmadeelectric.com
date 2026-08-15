@@ -32,8 +32,11 @@ export function electricianNode(): JsonLdNode {
     url: ORIGIN,
     telephone: site.business.phoneDisplay,
     email: site.business.email,
-    image: `${ORIGIN}/images/logo.webp`,
-    logo: `${ORIGIN}/images/logo.webp`,
+    // Trae's clean emblem, not the full lockup. The lockup has "LICENSED
+    // ELECTRICAL CONTRACTOR" baked in and must not ship until the license
+    // number lands. See seo/FACTS.md section 11.
+    image: `${ORIGIN}/images/logo-emblem-dark.webp`,
+    logo: `${ORIGIN}/images/logo-emblem-dark.webp`,
     description: `${site.business.legalName} is an electrical contractor serving ${site.business.areaServed}, covering residential, commercial, and industrial work, and installing, servicing, and repairing Generac home standby generators.`,
     areaServed: { "@type": "AdministrativeArea", name: site.business.areaServed },
     // NO address, geo, openingHoursSpecification, sameAs, aggregateRating.

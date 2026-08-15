@@ -72,6 +72,7 @@ export const site = {
   nav: [
     { label: "Services", href: "/services" },
     { label: "Generators", href: "/services/generac-generator-installation" },
+    { label: "Work", href: "/work" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
   ] as NavItem[],

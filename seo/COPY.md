@@ -18,7 +18,7 @@ Rules every string here obeys, from `seo/FACTS.md`:
   blocked while their backing facts are TODO.
 - No em dashes or en dashes.
 
-Pages: 11
+Pages: 14
 
 ---
 
@@ -265,6 +265,8 @@ Handmade Electric does residential electrical work across Metro Detroit, from tr
 - Step 02Diagnose or quoteFor a fault, the work starts with finding the actual cause instead of replacing parts and hoping. For planned work, you get a quote on the scope before anything begins.
 - Step 03The workDone to code, tested before we leave, and the area is cleaned up.
 - Step 04Permit and inspection where requiredPanel and service work is permitted work in most municipalities, and the finished job is inspected.
+#### H2: Go deeper
+
 #### H2: Common questions
 
 **Q: How do I know if my electrical panel needs to be replaced?**
@@ -328,6 +330,8 @@ Handmade Electric does commercial electrical work across Metro Detroit for retai
 - Step 02QuoteYou get the scope and the cost before the work starts, so it can be planned against your schedule.
 - Step 03Scheduling around operationsWork that would interrupt the business gets scheduled around the business wherever the job allows it.
 - Step 04Permit, inspection, and closeoutPermitted work is inspected, and you are left with a space that passes rather than a list of items to chase.
+#### H2: Go deeper
+
 #### H2: Common questions
 
 **Q: Can you work outside of our business hours?**
@@ -541,5 +545,193 @@ The link may be out of date. Handmade Electric LLC is an electrical contractor s
 - Services
 - Generators
 - Contact
+
+---
+
+## `/services/commercial/lighting-retrofits`
+
+- **Title** (59 chars): LED Lighting Retrofits in Metro Detroit | Handmade Electric
+- **Meta description** (149 chars): Commercial LED lighting retrofits across Metro Detroit for warehouses, retail, and offices. What drives the scope and what to expect during the work.
+- **Canonical**: https://www.handmadeelectric.com/services/commercial/lighting-retrofits
+
+- Home
+- Services
+- Commercial
+### H1: Commercial LED lighting retrofits in Metro Detroit
+
+Handmade Electric retrofits commercial lighting across Metro Detroit in warehouses, retail space, offices, and shops. A retrofit changes what is in the ceiling, and it changes three things at once: what the lighting costs to run, how often someone has to get up there to fix it, and whether people can actually see what they are doing.
+
+#### H2: What determines the scope
+
+The fixture count is the number everyone asks about first. It is rarely the thing that decides the job.
+
+- Ceiling height and accessA twelve foot office ceiling and a thirty foot warehouse ceiling are different jobs at the same fixture count, because the second one needs a lift, more time per fixture, and a plan for working over racking and inventory.
+- Retrofit kit or full fixture replacementSometimes the existing housing stays and the internals are replaced. Sometimes the whole fixture comes out. Condition, age, and what you are trying to achieve on light levels decide which, and they cost differently.
+- What is behind the fixturesExisting wiring, ballasts, and switching are frequently the actual work. A space that has been reconfigured several times often has circuits and controls that no longer match how the space is used.
+- ControlsOccupancy sensors, daylight sensors, and zoning change both the install and how much the lighting actually saves once it is running. A warehouse aisle that is empty most of the day is the clearest case for them.
+- Light levels for the work being doneA parts counter, a packing bench, a retail display, and a storage aisle do not want the same amount of light. Matching the space to the work is the difference between a retrofit that people are glad about and one they complain about.
+- When it can happenWork that has to happen outside operating hours costs differently from work that can happen during the day.
+#### H2: What to expect during the work
+
+For a facility manager, the disruption question matters as much as the quote.
+
+- Work is normally staged by area so the whole building is not down at once, and you keep operating.
+- Areas being worked on need to be clear underneath, particularly where a lift has to get in.
+- Circuits are off in the section being worked on, which sometimes affects more than the lighting depending on how the space is wired.
+- Old lamps and ballasts have to be handled and removed properly rather than left in a dumpster out back.
+- Light levels change noticeably. That is the point, and it is worth walking a finished area before the rest of the building is committed.
+- Any utility rebate programs that apply have their own paperwork and their own requirements, and those requirements can affect which product goes in. Worth raising before the order rather than after.
+#### H2: How the work goes
+
+- Step 01Walk the spaceFixture count and type, ceiling height, access, existing circuits and controls, and what work is actually happening under each area.
+- Step 02Scope and quoteYou get the approach, the product, and the cost, including anything in the existing wiring or controls that the retrofit would expose.
+- Step 03Schedule around operationsAreas, sequence, and hours are planned with you, so the work lands where it costs your business the least.
+- Step 04Install by areaSection by section, with the old material removed as it goes rather than stacked in a corner.
+- Step 05Walk it before signing offLook at the finished areas with the lights on during the hours the space is actually used.
+#### H2: Common questions
+
+**Q: Is an LED retrofit actually worth it?**
+
+A: It comes down to three things. What you currently spend running the lighting, how often someone is on a ladder or a lift replacing lamps and ballasts, and whether the light levels are right for the work. A space running old fixtures long hours, especially with a high ceiling where every lamp change is a production, is where the case is strongest. A small space with a few fixtures on a few hours a day is a much weaker case, and you should hear that.
+
+**Q: Can you do the work without shutting down the business?**
+
+A: Usually. Retrofits are normally staged by area so you keep operating while a section is done. Some work needs the circuit off and some areas need to be clear underneath, so the sequence gets planned with you. If a piece genuinely cannot be done during business hours, you will hear that when it is quoted rather than on the day.
+
+**Q: What does a lighting retrofit cost?**
+
+A: The fixture count matters less than people expect. Ceiling height and access, whether it is a retrofit kit or a full fixture replacement, the state of the existing wiring and controls, and whether the work has to happen after hours are what actually drive it. It needs someone to walk the space.
+
+**Q: Should we add occupancy sensors?**
+
+A: In spaces that are genuinely empty a lot of the time, warehouse aisles, storage rooms, and back of house areas, sensors are usually where the real savings are, because the cheapest light is the one that is off. In a space that is occupied continuously they add cost without much return. It depends on the area, and different areas in one building can go different ways.
+
+**Q: What happens to the old fixtures and lamps?**
+
+A: They come out and are handled properly. Older lamps and ballasts have disposal requirements, and that is part of the job rather than something left for you to deal with.
+
+**Q: Are there rebates for commercial lighting upgrades?**
+
+A: Utility rebate programs for commercial lighting do exist, and the details, eligibility, and paperwork change over time and vary by utility and by program. It is worth checking what is available before the product is ordered, because program requirements can affect which fixtures qualify. Confirm the current terms with the utility rather than relying on what was true last year.
+
+#### H2: Tell us what is going on
+
+Call or send a text and describe the problem or the project. Handmade Electric works across Metro Detroit on residential, commercial, and industrial electrical, and on Generac home standby generators.
+
+
+---
+
+## `/services/residential/panel-replacement`
+
+- **Title** (54 chars): Panel Replacement in Metro Detroit | Handmade Electric
+- **Meta description** (157 chars): Electrical panel replacement and service upgrades across Metro Detroit. What drives the scope, what to expect on the day, and answers to the usual questions.
+- **Canonical**: https://www.handmadeelectric.com/services/residential/panel-replacement
+
+- Home
+- Services
+- Residential
+### H1: Electrical panel replacement in Metro Detroit
+
+Handmade Electric replaces electrical panels and upgrades services across Metro Detroit. A panel replacement swaps the box that every circuit in the house terminates in. A service upgrade goes further and increases how much power the utility delivers to the house in the first place. They are related jobs and they are not the same job, and which one you need changes the scope, the cost, and the day.
+
+#### H2: What determines the scope
+
+Two houses with identical panels can be very different jobs. These are the things that actually move it.
+
+- Replacement or upgradeSwapping a failing 200 amp panel for a new 200 amp panel is one job. Going from 100 amp to 200 amp service is another: it involves the utility, the meter, the service entrance conductors, and the grounding, not just the box on the wall.
+- Where the panel is and what feeds itA panel in an open basement next to the meter is straightforward. A panel in a finished room, on the far side of the house from the service entrance, or fed by conductors that are undersized for the new panel, adds real work.
+- The condition of what is already thereAluminum branch wiring, ungrounded circuits, cloth-insulated conductors, and previous work that was never done to code all surface during a panel replacement. Some of it has to be corrected as part of the job.
+- Circuit count and what the house actually runsA load calculation sets the panel size, not the number of breakers currently installed. Air conditioning, electric range, dryer, well pump, hot tub, and a standby generator all change the number.
+- The municipalityPanel and service work is permitted and inspected work in most municipalities, and requirements are not identical across Metro Detroit.
+#### H2: What to expect on the day
+
+This is the part most quotes leave out, and it is usually what people actually want to know.
+
+- The power to the house is off for a significant part of the day. Plan for it: refrigerator, freezer, medical equipment, anyone working from home.
+- On a service upgrade the utility has to be involved to pull and reset the meter, which has to be scheduled and is not fully within any contractor's control.
+- Every circuit gets landed and labeled on a new directory, which is the first time many houses have had an accurate one.
+- Problems that were hidden behind the old panel become visible, and you should expect to hear about them rather than have them quietly closed back up.
+- An inspector looks at the finished work. That is a second set of eyes on equipment your house depends on for decades.
+#### H2: How the work goes
+
+- Step 01Look at it in personPanel type, service size, meter and service entrance, grounding, and the condition of the branch circuits. A photo of the panel with the door open is a useful start, but this job is not quoted properly from a photo.
+- Step 02Load calculation and scopeThe calculation sets the service and panel size. You get told whether this is a replacement or a genuine service upgrade, and what that changes.
+- Step 03Permit, and the utility if neededThe permit is pulled before the work. On a service upgrade the meter work is coordinated with the utility.
+- Step 04Replacement dayPower off, old panel out, new panel set, every circuit landed and labeled, grounding and bonding brought up to current requirements.
+- Step 05InspectionThe municipality inspects the finished work.
+#### H2: Common questions
+
+**Q: How do I know if I need a panel replacement or a service upgrade?**
+
+A: If the panel is failing, rusted, scorched, full, or a type with known problems, but the house has enough power for how you live, that is a replacement. If you are constantly out of capacity, adding major equipment, or still on a 100 amp service in a house running modern loads, that is a service upgrade. The load calculation is what settles it rather than a guess.
+
+**Q: How long will the power be off?**
+
+A: Most of a working day for a straightforward replacement, and longer when the utility has to pull and reset the meter for a service upgrade. You will be told what to plan for on your specific job before the day, not on the morning of it. Anyone with medical equipment or a freezer full of food should plan around it.
+
+**Q: What does a panel replacement cost?**
+
+A: It depends on the things listed above: whether the service is changing, where the panel sits relative to the meter, the condition of the existing conductors and grounding, how many circuits there are, and what your municipality requires. The reason nobody quotes this honestly over the phone is that half of what drives it is not visible until someone looks at the equipment.
+
+**Q: Do I need a permit to replace an electrical panel?**
+
+A: In most municipalities, yes, and the work is inspected. This is worth wanting. A panel is the single point every circuit in the house passes through, it is installed once and lives for decades, and an independent inspection is cheap insurance on it.
+
+**Q: My panel is old but nothing is wrong. Should I replace it?**
+
+A: Age alone is not a reason. Condition is. Rust, heat damage, breakers that trip below their rating or will not reset, a full panel with no room to add a circuit, and certain panel types with known failure patterns are all reasons. If none of that is true, an inspection tells you where you stand without spending money on a replacement you may not need.
+
+**Q: Will you find other problems once the panel is open?**
+
+A: Often, yes, particularly in older houses. Ungrounded circuits, aluminum branch wiring, double-tapped breakers, and previous work that was never done correctly all live behind the panel cover. You will be told what is there and what it means before anything beyond the agreed scope happens.
+
+**Q: Can you add a standby generator to a new panel?**
+
+A: Yes, and if a generator is anywhere in your plans it is worth saying so before the panel is sized and installed. A transfer switch and the circuits it will carry are much easier to account for while the panel is being replaced than to retrofit afterward.
+
+#### H2: Tell us what is going on
+
+Call or send a text and describe the problem or the project. Handmade Electric works across Metro Detroit on residential, commercial, and industrial electrical, and on Generac home standby generators.
+
+
+---
+
+## `/work`
+
+- **Title** (48 chars): Recent Work in Metro Detroit | Handmade Electric
+- **Meta description** (149 chars): Photos of recent electrical work by Handmade Electric across Metro Detroit: panels, service equipment, lighting, and conduit in homes and businesses.
+- **Canonical**: https://www.handmadeelectric.com/work
+
+### H1: Recent work
+
+21 photographs from jobs across Metro Detroit: panels and service equipment, lighting in warehouses, offices, and retail space, and conduit runs in plants. These are real jobs, photographed on site, not stock images.
+
+- Residential
+- Residential
+- Residential
+- Residential
+- Residential
+- Residential
+- Residential
+- Commercial
+- Commercial
+- Commercial
+- Commercial
+- Commercial
+- Commercial
+- Commercial
+- Commercial
+- Commercial
+- Commercial
+- Industrial
+- Industrial
+- Industrial
+- Industrial
+21 photos
+
+#### H2: See something like your job?
+
+Call or send a text and describe what you need. Handmade Electric works across Metro Detroit on residential, commercial, and industrial electrical, and on Generac home standby generators.
+
 
 ---

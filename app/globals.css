@@ -127,8 +127,34 @@
   }
 }
 
+/* --- Scroll reveal --------------------------------------------------------
+   Opacity and transform ONLY. Neither affects layout, so an element occupies
+   its final box from first paint and a reveal contributes ZERO CLS. Never add
+   height, width, margin, or padding to these rules.
+
+   The hidden state is scoped to `.js`, set by a synchronous inline script
+   before paint. With JavaScript off nothing is ever hidden, which matters
+   because crawlers largely do not run JS. */
+[data-reveal] {
+  transition:
+    opacity 420ms ease-out,
+    transform 420ms ease-out;
+}
+
+.js [data-reveal]:not([data-shown]) {
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+[data-reveal][data-shown] {
+  opacity: 1;
+  transform: none;
+}
+
 /* --- Motion ---------------------------------------------------------------
-   Everything animated is decorative. Reduced motion kills all of it. */
+   Everything animated is decorative. Reduced motion kills all of it, including
+   the reveal hidden state, so content is simply present and never depends on
+   an observer firing. */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -137,5 +163,10 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
+  }
+
+  .js [data-reveal]:not([data-shown]) {
+    opacity: 1;
+    transform: none;
   }
 }

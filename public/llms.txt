@@ -19,6 +19,7 @@ Service area: Metro Detroit, Michigan
 
 - [Home](https://www.handmadeelectric.com/)
 - [All services](https://www.handmadeelectric.com/services)
+- [Recent work](https://www.handmadeelectric.com/work): 21 photographs from real jobs across Metro Detroit.
 - [About](https://www.handmadeelectric.com/about)
 - [Contact](https://www.handmadeelectric.com/contact)
 - [Privacy policy and SMS terms](https://www.handmadeelectric.com/privacy)
