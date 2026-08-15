@@ -28,13 +28,24 @@ Status vocabulary: `CONFIRMED` (supplied by client, usable) / `TODO` (missing, o
 | Owner first name | Trae | CONFIRMED |
 | Owner last name | - | TODO |
 | Owner name spelling | "Trae" per client folder and email address | UNVERIFIED - confirm spelling |
-| Trade | Licensed electrical contractor | CONFIRMED |
+| Trade | Electrical contractor | CONFIRMED |
+| Licensed (as a rendered claim) | - | **TODO, blocked until the section 6 license number lands** |
 | Website domain | handmadeelectric.com | CONFIRMED |
 | Canonical origin | `https://www.handmadeelectric.com` | CONFIRMED (www is primary per launch plan) |
 
 **Where used:** every page title suffix, footer, `Electrician` JSON-LD `name`, About page.
 **Owner last name** is only needed if the About page names him in full; until then the About
 page says "Trae" alone.
+
+**The word "licensed" is a gated claim, not a descriptor.** The brief described the business as
+"a licensed electrical contractor," but that is the brief's framing, not a supplied credential.
+Calling him licensed in rendered copy is a claim, and this file does not carry the license
+number that backs it, so the site says **"electrical contractor"** with no qualifier. `licensed`
+and `fully licensed` are in the `verify:copy` blocklist for exactly as long as the section 6
+license number is TODO. **Both unblock together, in the same edit, never separately.**
+
+Note the grammar consequence: "is a licensed electrical contractor" becomes "is **an** electrical
+contractor". Do not leave a stale article behind when this flips back.
 
 ## 2. Contact
 
@@ -128,7 +139,7 @@ without a row in this file.
 | Fact | Value | Status |
 |---|---|---|
 | Michigan electrical contractor license # | - | **TODO - highest-value missing fact** |
-| Licensed | implied by trade, but not stated with a number | TODO - confirm |
+| Licensed (as a rendered claim) | - | **TODO, blocked on the row above. Same edit unblocks both.** |
 | Insured | - | TODO |
 | Bonded | - | TODO |
 | Years in business | old site claimed "more than a decade" | **UNVERIFIED - do not reuse until confirmed** |
@@ -143,6 +154,13 @@ Michigan LARA license lookup, which is exactly why it converts.
 **Consequence while TODO:** the trust row omits the license item entirely rather than saying
 "licensed" without a number. The homepage trust row renders only the items that are confirmed,
 so it may start with fewer than three items. **An empty trust row is better than a padded one.**
+
+**The word itself is blocked, not just the trust row.** `licensed` and `fully licensed` are in
+the `verify:copy` blocklist and the build check fails if either appears anywhere in the rendered
+output, including headings, eyebrows, meta descriptions, alt text, and JSON-LD. Without the
+number, "licensed" is an unbacked credential claim, which is the same class of problem as the
+gated Generac wording in section 5. When the number lands, remove both terms from the blocklist
+and add the credential in the same commit.
 
 **The "more than a decade" claim is quarantined.** It came from Squarespace-era copy of unknown
 provenance on a page that also described a nationwide utility company that does not exist. It
@@ -166,8 +184,13 @@ does not go on the new site until Trae confirms a founding year.
   review markup on a business's own site has been ineligible for Google rich results since 2019
   and carries trust risk. Visible on-page reviews only. The schema validator fails the build if
   either type appears.
-- With zero reviews supplied, the reviews components are built and wired but gated behind
-  `site.reviews.enabled = false`, so nothing renders and `/reviews` shows an honest state.
+- With zero reviews supplied, **the `/reviews` route does not exist.** It is not built, not in
+  the nav, not in the sitemap, and not linked from anywhere in the internal link graph. An empty
+  reviews page is a thin page, and worse, it publishes the fact that this business has no
+  reviews. The homepage reviews strip is wired but renders nothing while the flag is false.
+- Flipping `site.reviews.enabled` to `true` is what creates the route, adds it to the nav and
+  the sitemap, and turns on the homepage strip. Launch route count is 9; it becomes 10 when
+  reviews go on.
 
 ## 8. Profiles and social
 
@@ -260,7 +283,47 @@ upscale and crop a portrait phone photo, which would look cheap. The Phase 1 her
 built as a typographic and graphic composition with a photo used at its native portrait aspect,
 where it looks intentional and stays sharp.
 
-## 12. Facts that must never appear
+### STANDING DESIGN RULE: the photo budget
+
+Five usable photos for the entire site. All portrait phone snapshots. `industrial.webp` is dark
+and unflattering and is the weakest of the set.
+
+1. **Never place the same image twice on one page, or in adjacent viewport space.** One repeat
+   across the whole site is unavoidable at this count; it must be spread as far apart as
+   possible. The homepage already burns its allowance: the hero and the generator-repair card
+   share `panel-wood-wall.webp`, deliberately separated by the full page.
+2. **If a section needs a photo that does not exist, build it typographically.** Do not stretch,
+   upscale, or heavily crop a portrait shot to fake a wide image. A well-set type composition
+   beats a mangled photo every time, and it is the reason the hero works.
+3. **An image-usage map is printed at Gate 3**, listing which file appears on which page in
+   which slot, so repeats are visible up front rather than discovered by a reader.
+4. **More photos from Trae is the single cheapest quality upgrade available** and sits above the
+   full-resolution-originals item on the launch checklist.
+
+## 12. Data handling, for the privacy policy
+
+The contact form carries an SMS consent checkbox, so the site needs a privacy policy. These are
+the only data-handling facts known to be true of this setup. **The privacy page states these and
+nothing more.** No retention periods, no third-party lists, no cookie or analytics claims, and
+no security guarantees, because none of those are established here.
+
+| Fact | Value | Status |
+|---|---|---|
+| What the form collects | name, phone, email, message, SMS consent | CONFIRMED (the payload contract, section 9) |
+| Where it goes | posted to the Align and Acquire lead platform, which notifies the business | CONFIRMED |
+| What the phone number is used for | to respond to the inquiry, by call or text | CONFIRMED |
+| Opt out | reply STOP to any text | CONFIRMED (platform behavior, TCPA requirement) |
+| Message and data rates | apply, standard carrier language | CONFIRMED |
+| Analytics or tracking pixels | none installed in this build | CONFIRMED |
+| Cookies | none set by this site in this build | CONFIRMED |
+| Data retention period | - | TODO, so the page says nothing about retention |
+| Sale or sharing of data to third parties | does not happen in this setup | CONFIRMED as a negative |
+
+**Before launch, a human who is accountable for it should read the privacy page.** It is
+generated from the rows above, but a privacy policy is a legal document and this build is not
+legal advice. That item is on the launch checklist and in the build report.
+
+## 13. Facts that must never appear
 
 Standing bans, independent of what anyone later supplies:
 
@@ -272,13 +335,16 @@ Standing bans, independent of what anyone later supplies:
 - Any brand, certification, or affiliation claim without a CONFIRMED row in this file.
 - Em dashes and en dashes in rendered copy (client style rule, enforced by the verify script).
 
+Conditionally banned, until the matching fact lands (see sections 5 and 6):
+`licensed`, `fully licensed`, `authorized`, `certified`, `factory-trained`, `dealer`.
+
 ---
 
 ## TODO summary, ordered by impact
 
 | # | Missing fact | Unlocks |
 |---|---|---|
-| 1 | Michigan electrical contractor license # | Footer trust line on every page, About trust paragraph, homepage trust row |
+| 1 | Michigan electrical contractor license # | Footer trust line on every page, About trust paragraph, homepage trust row, **and the word "licensed" anywhere in the copy** |
 | 2 | Google Business Profile (none found) | Local pack visibility, the single highest-impact off-site move available |
 | 3 | Real reviews | Whole reviews system is built and gated off, one config flag turns it on |
 | 4 | GENERAC STATUS | Stronger generator page copy, brand assets, dealer language |

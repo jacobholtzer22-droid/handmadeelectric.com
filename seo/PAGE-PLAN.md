@@ -13,22 +13,37 @@ are present in the initial HTML with zero JavaScript executed.
 | Route | Purpose | Primary JSON-LD |
 |---|---|---|
 | `/` | Direct-answer intro (who, what, where), services overview, prominent generator feature, reviews strip (gated off), trust row, service area, final CTA | `Electrician`, `WebSite`, `Organization` |
-| `/services` | Index of all six services, the hub every service page links back to, and the landing target for the ambiguous old store URLs | `BreadcrumbList` |
+| `/services` | Index of all five service pages, the hub every service page links back to, and the landing target for the ambiguous old store URLs | `BreadcrumbList` |
 | `/services/residential` | Homeowner-facing trade page: panel work, troubleshooting, renovations, safety upgrades | `Service`, `FAQPage`, `BreadcrumbList` |
 | `/services/commercial` | Retail, office, and commercial property work: build-outs, lighting upgrades, code compliance | `Service`, `FAQPage`, `BreadcrumbList` |
 | `/services/industrial` | Plants and warehouses: high-voltage systems, machinery hookups, panel inspections | `Service`, `FAQPage`, `BreadcrumbList` |
 | `/services/generac-generator-installation` | **Growth page.** Generac standby generator installation, how standby power works, sizing, transfer switches, permits and inspection | `Service`, `FAQPage`, `BreadcrumbList` |
 | `/services/generator-repair` | **Growth page.** Generator repair, service, and maintenance. Targets the "my generator will not start" searcher | `Service`, `FAQPage`, `BreadcrumbList` |
-| `/reviews` | Real reviews only. Built now, gated off while the REVIEWS block is empty, one config flag turns it on | `BreadcrumbList` |
 | `/about` | Written fresh from FACTS.md. The craft and owner angle, since the company is literally named Handmade | `BreadcrumbList` |
 | `/contact` | Form wired to the CRM, plus click-to-call and click-to-text | `BreadcrumbList` |
+| `/privacy` | Privacy policy. Required because the contact form carries an SMS consent checkbox | `BreadcrumbList` |
 
-**10 routes.** No city landing pages in this build, that is a future paid phase and it depends
-on the city list TODO. No thin filler pages.
+**9 routes at launch. 10 when reviews are turned on.**
+
+**`/reviews` is NOT built.** While `site.reviews.enabled` is `false` the route does not exist:
+not built, not in the nav, not in the sitemap, not linked from anywhere in the internal link
+graph. An empty reviews page is a thin page, and it publishes the fact that this business has
+no reviews yet. The homepage reviews strip is wired but renders nothing. Flipping the flag to
+`true` is what creates the route, adds it to the nav and sitemap, and turns on the strip. Its
+title gets written at that point, not now.
+
+**`/privacy` is required, not optional.** The contact form collects a phone number under an SMS
+consent checkbox, so the site must state what is collected, how the number is used, that message
+and data rates apply, and that replying STOP opts out. The same document is a prerequisite for
+10DLC registration and for running Google Ads. It is linked in the footer on every page and
+again directly under the consent checkbox on the form, where the visitor is actually consenting.
+Its content comes only from FACTS.md section 12: standard language, zero invented facts, and no
+retention or third-party-sharing specifics that are not true of this setup. **The build report
+flags that a human accountable for it should read it before launch.**
 
 **Deliberately not built:** a blog, a gallery (six photos is not a gallery), a financing page,
 a service-area page (the homepage section covers it until there is a real city list to justify
-a page).
+a page), and `/terms` (nothing is sold on this site, so there is nothing to set terms for).
 
 ## 2. Homepage section order
 
@@ -37,10 +52,14 @@ The homepage carries the most weight, so its order is explicit:
 1. **Hero.** H1 plus a first paragraph that reads as a direct answer: who they are, what they
    do, where they work. Written as an extraction target for search and AI answer engines, not
    as a slogan. Call and text CTAs.
-2. **Services overview.** Six services, linking to the six pages.
+2. **Services overview.** Five service cards, linking to the five service pages.
+   FACTS.md section 4 lists six service lines, but "generator maintenance and
+   service" shares a page with generator repair rather than getting a thin page
+   of its own. Five pages, six services covered.
 3. **Generator feature.** Full-width, visually distinct, the growth push. Does not get buried
    below the fold filler.
-4. **Reviews strip.** Gated off while empty.
+4. **Reviews strip.** Wired but renders nothing while `site.reviews.enabled` is false. No
+   placeholder, no "reviews coming soon", no empty state. The section is simply absent.
 5. **Trust row.** License number, insured, years in business. **Renders only confirmed items**,
    so it may start nearly empty. That is correct behavior, not a bug.
 6. **Service area.** Metro Detroit until the city list lands.
@@ -76,23 +95,36 @@ Titles target roughly 50 to 60 characters **counted on the rendered output inclu
 template suffix**, which is what Phase 3 measures. Metas run 140 to 160 characters and are
 written as direct answers, not as ad copy.
 
-Drafts, to be finalized in Phase 2 and character-counted in Phase 3:
+Counted, not estimated. These are exact `.length` values on the full rendered string including
+the suffix, printed by the title-count check and re-verified against the built HTML in Phase 3.
 
-| Route | Draft title | Approx |
+| Route | Title | Chars |
 |---|---|---|
-| `/` | `Handmade Electric \| Electrician in Metro Detroit` (absolute, brand first) | 48 |
+| `/` | `Electrician in Metro Detroit \| Handmade Electric` | 48 |
 | `/services` | `Electrical Services in Metro Detroit \| Handmade Electric` | 56 |
 | `/services/residential` | `Residential Electrician in Metro Detroit \| Handmade Electric` | 60 |
 | `/services/commercial` | `Commercial Electrician in Metro Detroit \| Handmade Electric` | 59 |
 | `/services/industrial` | `Industrial Electrician in Metro Detroit \| Handmade Electric` | 59 |
-| `/services/generac-generator-installation` | `Generac Generator Installation \| Handmade Electric` | 50 |
+| `/services/generac-generator-installation` | `Generac Generators in Metro Detroit \| Handmade Electric` | 55 |
 | `/services/generator-repair` | `Generator Repair in Metro Detroit \| Handmade Electric` | 53 |
-| `/reviews` | `Reviews \| Handmade Electric` | 27 |
-| `/about` | `About \| Handmade Electric` | 25 |
+| `/about` | `About Handmade Electric \| Metro Detroit Electrician` | 51 |
 | `/contact` | `Contact Handmade Electric \| Metro Detroit Electrician` | 53 |
+| `/privacy` | `Privacy Policy and SMS Terms \| Handmade Electric` | 48 |
 
-The homepage title is absolute and brand-first, because the homepage owns the branded search
-result. The service pages lead with the keyword.
+Range 48 to 60. Nothing exceeds 60, so nothing truncates.
+
+**Every title leads with the keyword, including the homepage.** The earlier brand-first homepage
+title was wrong for this business: nobody is searching "Handmade Electric" yet, there is no
+Google Business Profile, and there is no brand awareness to defend. The branded-result argument
+only applies once a brand exists. Revisit it if that changes.
+
+**Two titles sit at 48, two under the soft 50 floor, both deliberately.** The homepage uses the
+exact approved wording rather than padding it to hit a number. `/privacy` is a utility page that
+nobody searches for, and "Privacy Policy and SMS Terms" is more accurate than a padded
+alternative, since the document does cover the SMS consent terms.
+
+`/reviews` has no title because it has no route until reviews exist. It gets one when the flag
+flips, and "Reviews | Handmade Electric" at 27 characters is not it.
 
 ## 5. Redirect map (Appendix B)
 
@@ -125,7 +157,8 @@ this. None of that structure survives.
 - **`robots.txt`** allowing GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-User,
   Google-Extended, PerplexityBot, Perplexity-User, Applebot-Extended, Meta-ExternalAgent,
   Amazonbot, and CCBot, and referencing the sitemap.
-- **`sitemap.xml`** generated at build from the route list.
+- **`sitemap.xml`** generated at build from the route list. `/reviews` is absent from it while
+  the reviews flag is false, because the route does not exist.
 - **`llms.txt`** at root. Filed under future-proofing, not a headline feature.
 - **Favicon and app icons** generated from the logo, after the watermark and background issues
   in FACTS.md section 11 are resolved.
@@ -154,3 +187,6 @@ Scripted and printed, not asserted:
 7. Redirect map test with `curl -I` against the local server.
 8. Screenshots at 390px and desktop.
 9. Lighthouse mobile if available, target 90+.
+10. **Image-usage map**: which photo file appears on which page in which slot, so repeats are
+    visible rather than discovered. Enforces the photo budget rule in FACTS.md section 11.
+11. `seo/COPY.md` printed in full, so the words are reviewed alongside the checks.

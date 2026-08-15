@@ -2,4 +2,140 @@
 @tailwind components;
 @tailwind utilities;
 
-/* PHASE 0 SCAFFOLD ONLY. Design system lands in Phase 1 (Gate 2). */
+/* ==========================================================================
+   HANDMADE ELECTRIC - DESIGN SYSTEM
+   Direction: "Forged". Machined steel ground, warm off-white, one copper accent.
+   Signature element: the conduit run. A copper hairline that turns at right
+   angles the way EMT conduit does, used to underline the promise in the H1,
+   to divide sections, and to mark the live/energized state.
+   ========================================================================== */
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-iron font-body text-ash antialiased;
+    /* Prevent any horizontal overflow from the offset frame treatments. */
+    overflow-x: hidden;
+  }
+
+  /* Machined focus ring. Copper, square, always visible on keyboard nav. */
+  :focus-visible {
+    outline: 2px solid theme("colors.copper");
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: theme("colors.copper");
+    color: theme("colors.iron");
+  }
+}
+
+@layer components {
+  /* --- Layout ------------------------------------------------------------ */
+  .container-page {
+    @apply mx-auto w-full max-w-page px-5 sm:px-7 lg:px-10;
+  }
+
+  /* --- Display type ------------------------------------------------------
+     Dense and forged. Heavy weight, tight tracking, tight leading. The
+     opposite of an airy startup headline.
+
+     DO NOT let this drift toward expanded tracking on interior pages. The
+     tight setting is the deliberate difference between this site and the
+     expanded-Archivo look used elsewhere. Every page uses .h-display. */
+  .h-display {
+    @apply font-display font-extrabold tracking-forged;
+    line-height: 0.96;
+  }
+
+  /* --- Panel tag ---------------------------------------------------------
+     Micro-label styled like the directory tag inside a breaker panel door.
+     Uppercase mono, wide tracking, thin box. Electricians recognize this
+     instantly as their own world, which is the whole point. */
+  .panel-tag {
+    @apply inline-flex items-center gap-2.5 rounded-panel border px-2.5 py-1.5;
+    @apply font-panel text-[0.6875rem] font-medium uppercase leading-none tracking-panelwide;
+  }
+  .panel-tag-dark {
+    @apply border-steel text-ash;
+  }
+  .panel-tag-light {
+    @apply border-bone-dim text-ink-dim;
+  }
+  /* The lit indicator square. Carries the filament color, nothing else does. */
+  .panel-tag-led {
+    @apply block h-[6px] w-[6px] shrink-0 bg-filament;
+  }
+
+  /* --- THE SIGNATURE ELEMENT: the conduit run ---------------------------
+     A copper line that runs under a phrase and turns 90 degrees at the end,
+     the way a conduit elbow does. Applied to the key phrase in a heading. */
+  .conduit-underline {
+    position: relative;
+    padding-bottom: 0.14em;
+    background-image: linear-gradient(
+      to right,
+      theme("colors.copper"),
+      theme("colors.copper")
+    );
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 100% 2px;
+  }
+  /* The elbow: the run turns upward as it terminates. */
+  .conduit-underline::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 2px;
+    height: 0.44em;
+    background: theme("colors.copper");
+  }
+
+  /* Section divider: hairline with a junction node, same vocabulary. */
+  .conduit-rule {
+    @apply relative h-px w-full bg-steel;
+  }
+  .conduit-rule::before {
+    content: "";
+    @apply absolute left-0 top-1/2 h-[7px] w-[7px] -translate-y-1/2 bg-copper;
+  }
+  .conduit-rule-light {
+    @apply bg-bone-dim;
+  }
+
+  /* --- Buttons -----------------------------------------------------------
+     Minimum 44px touch target on every interactive control. Square-ish,
+     machined, never a pill. */
+  .btn {
+    @apply inline-flex min-h-[44px] items-center justify-center gap-2.5 rounded-panel px-6 py-3;
+    @apply font-panel text-[0.8125rem] font-semibold uppercase tracking-panelwide;
+    @apply transition-colors duration-150;
+  }
+  .btn-primary {
+    @apply btn bg-copper text-iron hover:bg-copper-bright;
+  }
+  .btn-secondary {
+    @apply btn border border-steel-light bg-transparent text-bone hover:border-copper hover:text-copper-bright;
+  }
+  .btn-secondary-light {
+    @apply btn border border-ink/20 bg-transparent text-ink hover:border-copper-deep hover:text-copper-deep;
+  }
+}
+
+/* --- Motion ---------------------------------------------------------------
+   Everything animated is decorative. Reduced motion kills all of it. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
