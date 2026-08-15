@@ -9,7 +9,8 @@
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "verify:schema": "node scripts/validate-jsonld.mjs",
-    "verify:copy": "node scripts/verify-copy.mjs"
+    "verify:copy": "node scripts/verify-copy.mjs",
+    "copy:gen": "node scripts/generate-copy.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.408.0",

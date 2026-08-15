@@ -41,11 +41,10 @@ const PHONE = "(248) 787-0071";
 
 /**
  * Routes exempt from the phone-presence check.
- * `/_not-found` is still Next's stock 404. Phase 2 replaces it with a real one
- * that carries the phone, since a 404 on a trades site should offer a call
- * rather than a dead end. Delete this exemption when that page lands.
+ * EMPTY, and it should stay that way. The 404 now carries the phone too, so
+ * every rendered page in the build is checked with no exceptions.
  */
-const PHONE_EXEMPT = new Set(["/_not-found"]);
+const PHONE_EXEMPT = new Set([]);
 
 function walk(dir) {
   const out = [];

@@ -1,55 +1,50 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { site } from "@/site.config";
+import { tradeServices, standbyServices, type ServiceContent } from "@/lib/content/services";
 import PanelTag from "./PanelTag";
 
-type Service = (typeof site.services)[number];
-
 /**
- * The section flips to the light ground on purpose. The whole site being dark
- * would fatigue, and these photos are already dim, so they need a light frame
- * to read against.
+ * TYPOGRAPHIC ON PURPOSE, see the photo budget rule in seo/FACTS.md section 11.
  *
- * Services are split into two labelled groups rather than one flat grid, so the
- * generator line reads as its own business rather than as two more cards.
+ * The homepage has six image slots (a hero plus five service cards) and the
+ * site has five usable photos, so a photographic grid here would repeat an
+ * image on a single page. Rather than repeat one, the homepage teases the
+ * services as numbered panel entries and the photographs live on /services and
+ * on the individual service pages, where every page uses distinct images.
+ *
+ * The numbering reads as a panel directory, which is the same vocabulary as the
+ * panel tags, so the constraint produced a better section than a photo grid.
  */
-function ServiceCard({ service, wide = false }: { service: Service; wide?: boolean }) {
+function ServiceRow({ service, index }: { service: ServiceContent; index: number }) {
   return (
     <Link
-      href={service.href}
-      className="group flex flex-col overflow-hidden rounded-panel border border-bone-dim bg-white/40 transition-colors hover:border-copper"
+      href={`/services/${service.slug}`}
+      className="group flex items-start gap-4 rounded-panel border border-bone-dim bg-white/40 p-5 transition-colors hover:border-copper sm:gap-5 sm:p-6"
     >
-      <div className={`relative w-full ${wide ? "aspect-[16/10]" : "aspect-[4/5]"}`}>
-        <Image
-          src={service.image}
-          alt={service.alt}
-          fill
-          sizes="(min-width: 1024px) 380px, (min-width: 640px) 50vw, 100vw"
-          className="object-cover"
-        />
-      </div>
-      <div className="flex flex-1 flex-col p-5">
-        <h3 className="h-display text-xl text-ink">{service.title}</h3>
-        <p className="mt-2.5 flex-1 text-[0.9375rem] leading-relaxed text-ink-dim">
-          {service.short}
-        </p>
-        <span className="mt-4 inline-flex items-center gap-1.5 font-panel text-[0.6875rem] uppercase tracking-panelwide text-copper-deep">
-          See details
-          <ArrowRight
-            className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5"
-            aria-hidden="true"
-          />
+      <span
+        className="mt-0.5 font-panel text-[0.6875rem] tracking-panelwide text-copper-deep"
+        aria-hidden="true"
+      >
+        {String(index + 1).padStart(2, "0")}
+      </span>
+      <span className="flex-1">
+        <span className="h-display block text-lg text-ink sm:text-xl">
+          {service.navTitle}
         </span>
-      </div>
+        <span className="mt-2 block text-[0.9375rem] leading-relaxed text-ink-dim">
+          {service.short}
+        </span>
+      </span>
+      <ArrowRight
+        className="mt-1 h-4 w-4 shrink-0 text-copper-deep transition-transform group-hover:translate-x-0.5"
+        aria-hidden="true"
+      />
     </Link>
   );
 }
 
 export default function ServicesOverview() {
-  const trades = site.services.filter((s) => !("featured" in s && s.featured));
-  const generators = site.services.filter((s) => "featured" in s && s.featured);
-
   return (
     <section className="bg-bone py-16 lg:py-24">
       <div className="container-page">
@@ -58,28 +53,26 @@ export default function ServicesOverview() {
           Electrical services across {site.business.areaServed}
         </h2>
 
-        {/* --- Trades --- */}
         <div className="mt-10">
           <div className="conduit-rule conduit-rule-light" aria-hidden="true" />
           <p className="mt-4 font-panel text-[0.6875rem] uppercase tracking-panelwide text-ink-dim">
             Electrical
           </p>
-          <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {trades.map((s) => (
-              <ServiceCard key={s.slug} service={s} />
+          <div className="mt-5 grid gap-4 lg:grid-cols-3">
+            {tradeServices.map((s, i) => (
+              <ServiceRow key={s.slug} service={s} index={i} />
             ))}
           </div>
         </div>
 
-        {/* --- Standby power --- */}
-        <div className="mt-12">
+        <div className="mt-10">
           <div className="conduit-rule conduit-rule-light" aria-hidden="true" />
           <p className="mt-4 font-panel text-[0.6875rem] uppercase tracking-panelwide text-ink-dim">
             Standby power
           </p>
-          <div className="mt-5 grid gap-5 sm:grid-cols-2">
-            {generators.map((s) => (
-              <ServiceCard key={s.slug} service={s} wide />
+          <div className="mt-5 grid gap-4 sm:grid-cols-2">
+            {standbyServices.map((s, i) => (
+              <ServiceRow key={s.slug} service={s} index={tradeServices.length + i} />
             ))}
           </div>
         </div>

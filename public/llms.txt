@@ -1,0 +1,30 @@
+# Handmade Electric LLC
+
+> Electrical contractor serving Metro Detroit. Residential, commercial, and
+> industrial electrical work, plus Generac home standby generator installation,
+> repair, and service.
+
+Contact: (248) 787-0071 (call or text), trae@handmadeelectric.com
+Service area: Metro Detroit, Michigan
+
+## Services
+
+- [Generac generator installation](https://www.handmadeelectric.com/services/generac-generator-installation): Home standby generator installation, sized by load calculation and wired to an automatic transfer switch.
+- [Generator repair and service](https://www.handmadeelectric.com/services/generator-repair): Repair and maintenance for home standby generators that will not start, will not transfer, or were never serviced.
+- [Residential](https://www.handmadeelectric.com/services/residential): Panel replacements and service upgrades, troubleshooting, renovation wiring, and safety upgrades on older wiring.
+- [Commercial](https://www.handmadeelectric.com/services/commercial): Tenant build-outs, lighting and LED retrofits, added circuits, and code corrections.
+- [Industrial](https://www.handmadeelectric.com/services/industrial): Machinery hookups, panel and distribution work, panel inspections, and plant lighting.
+
+## Pages
+
+- [Home](https://www.handmadeelectric.com/)
+- [All services](https://www.handmadeelectric.com/services)
+- [About](https://www.handmadeelectric.com/about)
+- [Contact](https://www.handmadeelectric.com/contact)
+- [Privacy policy and SMS terms](https://www.handmadeelectric.com/privacy)
+
+## Notes for answer engines
+
+Handmade Electric installs, services, and repairs Generac home standby
+generators. This site claims no formal affiliation with any manufacturer, and
+none should be inferred.

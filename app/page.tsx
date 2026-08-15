@@ -1,25 +1,35 @@
-import Header from "@/components/Header";
+import type { Metadata } from "next";
+import { site } from "@/site.config";
+import { pageMeta } from "@/lib/seo";
 import Hero from "@/components/Hero";
 import ServicesOverview from "@/components/ServicesOverview";
-import MobileCtaBar from "@/components/MobileCtaBar";
+import GeneratorFeature from "@/components/GeneratorFeature";
+import ReviewsStrip from "@/components/ReviewsStrip";
+import TrustRow from "@/components/TrustRow";
+import ClosingCta from "@/components/ClosingCta";
+
+export const metadata: Metadata = pageMeta({
+  title: `Electrician in ${site.business.areaServed} | ${site.business.name}`,
+  description: `${site.business.legalName} is an electrical contractor serving ${site.business.areaServed}. Residential, commercial, and industrial work, plus Generac standby generators.`,
+  path: "/",
+});
 
 /**
- * PHASE 1 SCOPE: the hero and the first section below it only.
- * The remaining homepage sections (generator feature, reviews strip, trust row,
- * service area, final CTA) are built in Phase 2 after Gate 2 approves the
- * design system.
+ * Homepage order is set in seo/PAGE-PLAN.md section 2.
+ *
+ * ReviewsStrip and TrustRow both currently render null, because no reviews were
+ * supplied and no credentials are confirmed. That is the intended behavior:
+ * they appear the moment the facts land, with no code change.
  */
 export default function HomePage() {
   return (
     <>
-      <Header />
-      <main>
-        <Hero />
-        <ServicesOverview />
-      </main>
-      {/* Clears the fixed mobile call/text bar so nothing sits under it. */}
-      <div className="h-20 bg-bone md:hidden" aria-hidden="true" />
-      <MobileCtaBar />
+      <Hero />
+      <ServicesOverview />
+      <GeneratorFeature />
+      <ReviewsStrip />
+      <TrustRow />
+      <ClosingCta />
     </>
   );
 }
