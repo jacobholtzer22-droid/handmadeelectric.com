@@ -73,7 +73,7 @@ for (const file of walk(BUILD_DIR)) {
 
   const blocks = [];
   for (const m of main.matchAll(
-    /<(h1|h2|h3|p|li|dt|dd)\b[^>]*>([\s\S]*?)<\/\1>/g
+    /<(h1|h2|h3|p|li|dt|dd|label|button)\b[^>]*>([\s\S]*?)<\/\1>/g
   )) {
     const tag = m[1];
     const text = decode(m[2]);
@@ -136,6 +136,8 @@ for (const page of pages) {
     else if (block.tag === "dt") lines.push(`**Q: ${block.text}**`, "");
     else if (block.tag === "dd") lines.push(`A: ${block.text}`, "");
     else if (block.tag === "li") lines.push(`- ${block.text}`);
+    else if (block.tag === "label") lines.push(`FIELD LABEL: ${block.text}`, "");
+    else if (block.tag === "button") lines.push(`BUTTON: ${block.text}`, "");
     else lines.push(block.text, "");
   }
 

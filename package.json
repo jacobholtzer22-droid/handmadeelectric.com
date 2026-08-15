@@ -11,7 +11,8 @@
     "verify:schema": "node scripts/validate-jsonld.mjs",
     "verify:copy": "node scripts/verify-copy.mjs",
     "copy:gen": "node scripts/generate-copy.mjs",
-    "verify:images": "node scripts/image-map.mjs"
+    "verify:images": "node scripts/image-map.mjs",
+    "verify:contract": "node --experimental-strip-types scripts/sample-quote.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.408.0",

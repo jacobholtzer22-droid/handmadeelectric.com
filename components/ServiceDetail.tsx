@@ -7,6 +7,7 @@ import { subServicesFor } from "@/lib/content/subservices";
 import PanelTag from "./PanelTag";
 import Reveal from "./motion/Reveal";
 import ClosingCta from "./ClosingCta";
+import QuoteForm from "./QuoteForm";
 
 /**
  * One shape for all five service pages, so none of them is thin and none
@@ -209,6 +210,34 @@ export default function ServiceDetail({ service }: { service: ServiceContent }) 
           </Link>
         </div>
       </section>
+
+      {/* The two generator pages carry a short form. Someone pricing a standby
+          install is usually not going to call first. */}
+      {service.group === "standby" && (
+        <section className="bg-bone py-16 lg:py-20">
+          <div className="container-page">
+            <div className="lg:grid lg:grid-cols-12 lg:gap-14">
+              <div className="lg:col-span-5">
+                <PanelTag tone="light">Quote request</PanelTag>
+                <h2 className="h-display mt-5 text-[1.75rem] text-ink sm:text-3xl">
+                  Ask about your generator
+                </h2>
+                <p className="mt-4 max-w-prose text-[0.9375rem] leading-relaxed text-ink-dim">
+                  Send the basics and we will pick it up from there. For the full
+                  form, including address and property type, use the{" "}
+                  <Link href="/contact" className="font-semibold text-copper-deep underline underline-offset-2">
+                    quote page
+                  </Link>
+                  .
+                </p>
+              </div>
+              <div className="mt-8 lg:col-span-7 lg:mt-0">
+                <QuoteForm variant="short" id={`quote-${service.slug}`} />
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       <ClosingCta />
     </>

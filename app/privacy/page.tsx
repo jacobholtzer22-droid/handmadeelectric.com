@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { site } from "@/site.config";
+import { SMS_CONSENT_SENTENCES } from "@/lib/content/consent";
 import { breadcrumbNode } from "@/lib/schema";
 import { pageMeta } from "@/lib/seo";
 import JsonLd from "@/components/JsonLd";
@@ -34,13 +35,13 @@ export default function PrivacyPage() {
     {
       heading: "What this page covers",
       body: [
-        `This page explains what ${business.legalName} collects when you use this website, what we do with it, and how to stop receiving text messages from us. It applies to this website and to the contact form on it.`,
+        `This page explains what ${business.legalName} collects when you use this website, what we do with it, and how to stop receiving text messages from us. It applies to this website and to the quote request form on it.`,
       ],
     },
     {
       heading: "What we collect",
       body: [
-        "If you fill out the contact form, we collect the name, phone number, and email address you enter, whatever you write in the message, and whether you checked the box consenting to text messages.",
+        "If you send the quote request form, we collect the name, phone number, and email address you enter, the service, property type, address or city, and job details you provide, and whether you checked the box consenting to text messages.",
         "If you call, text, or email us directly, we have whatever you send us in that message. We do not collect anything else from you through this website.",
       ],
     },
@@ -54,15 +55,17 @@ export default function PrivacyPage() {
       heading: "How we use it",
       body: [
         "We use your information to respond to your request. That means calling you, texting you, or emailing you about the work you asked about, and following up on that job.",
-        "Form submissions are delivered to us through the lead platform that runs this site's contact form, which notifies us when someone reaches out.",
+        "Form submissions are delivered to us through the lead platform that runs this site's quote form, which notifies us when someone reaches out.",
       ],
     },
     {
       heading: "Text messages",
       body: [
-        `The consent checkbox on the contact form is what permits us to text you about your request. It is never checked for you, and you can submit the form without it.`,
-        "Message and data rates may apply, depending on your mobile plan.",
-        "Reply STOP to any text message to opt out, and you will stop receiving them. Opting out of texts does not prevent us from reaching you by phone or email about a job you asked us about.",
+        // Word for word what the quote form says, from the same constant, so
+        // the two can never drift apart.
+        ...SMS_CONSENT_SENTENCES,
+        "The box is never checked for you, and you can send the form without it.",
+        "Opting out of texts does not prevent us from reaching you by phone or email about a job you asked us about.",
       ],
     },
     {

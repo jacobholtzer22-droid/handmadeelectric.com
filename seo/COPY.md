@@ -157,6 +157,22 @@ A: In most municipalities, yes, and the finished work is inspected. That is a go
 
 A: It depends on how much electrical and fuel work the house needs, and on how quickly the municipality turns the permit and the inspection around. We will tell you what to expect for your specific job when we quote it, rather than quoting you someone else's timeline.
 
+#### H2: Ask about your generator
+
+Send the basics and we will pick it up from there. For the full form, including address and property type, use the quote page.
+
+FIELD LABEL: Name
+
+FIELD LABEL: Phone
+
+FIELD LABEL: Service needed
+
+FIELD LABEL: Job details
+
+FIELD LABEL: Checking this box permits Handmade Electric LLC to text you about your request. Message and data rates may apply. Reply STOP to any text message to opt out. Privacy policy and SMS terms.
+
+BUTTON: Request a quote
+
 #### H2: Tell us what is going on
 
 Call or send a text and describe the problem or the project. Handmade Electric works across Metro Detroit on residential, commercial, and industrial electrical, and on Generac home standby generators.
@@ -223,6 +239,22 @@ A: It depends entirely on what is actually wrong, which is why nobody can quote 
 **Q: Is it worth repairing an old generator or should I replace it?**
 
 A: That depends on the age of the unit, the hours on it, what has failed, and whether parts are still available for it. Sometimes the repair is clearly the right call and sometimes you would be putting money into a unit that is going to fail again. We will tell you which one you are looking at and let you make the decision.
+
+#### H2: Ask about your generator
+
+Send the basics and we will pick it up from there. For the full form, including address and property type, use the quote page.
+
+FIELD LABEL: Name
+
+FIELD LABEL: Phone
+
+FIELD LABEL: Service needed
+
+FIELD LABEL: Job details
+
+FIELD LABEL: Checking this box permits Handmade Electric LLC to text you about your request. Message and data rates may apply. Reply STOP to any text message to opt out. Privacy policy and SMS terms.
+
+BUTTON: Request a quote
 
 #### H2: Tell us what is going on
 
@@ -457,15 +489,17 @@ Residential, commercial, and industrial electrical work, plus Generac home stand
 
 ## `/contact`
 
-- **Title** (53 chars): Contact Handmade Electric | Metro Detroit Electrician
-- **Meta description** (155 chars): Get in touch with Handmade Electric LLC, an electrical contractor serving Metro Detroit. Call or text 248-787-0071, or send a message and describe the job.
+- **Title** (52 chars): Request a Quote in Metro Detroit | Handmade Electric
+- **Meta description** (143 chars): Request a quote from Handmade Electric LLC, an electrical contractor serving Metro Detroit. Send the job details, or call or text 248-787-0071.
 - **Canonical**: https://www.handmadeelectric.com/contact
 
-### H1: Contact Handmade Electric
+### H1: Request an electrical quote
 
-Handmade Electric LLC is an electrical contractor serving Metro Detroit. Call or send a text, or fill out the form and describe the job. Texting is welcome, and it is often the easiest way to send a photo of a panel or a fault code.
+Send the details of the job and Handmade Electric LLC will get back to you. If you would rather talk it through, calling or texting reaches us the same way. Texting is often easiest for sending a photo of a panel or a fault code on a generator controller.
 
-#### H2: Reach us directly
+#### H2: Tell us about the job
+
+The more you can describe, the more useful the first conversation is. Address or city matters most, because it tells us whether the job is in range.
 
 **Q: Phone and text**
 
@@ -478,6 +512,26 @@ A: trae@handmadeelectric.com
 **Q: Service area**
 
 A: Metro Detroit
+
+FIELD LABEL: Name
+
+FIELD LABEL: Phone
+
+FIELD LABEL: Email (optional)
+
+FIELD LABEL: Service needed
+
+FIELD LABEL: Property type
+
+FIELD LABEL: Address or city
+
+Used to check the job is within Metro Detroit.
+
+FIELD LABEL: Job details
+
+FIELD LABEL: Checking this box permits Handmade Electric LLC to text you about your request. Message and data rates may apply. Reply STOP to any text message to opt out. Privacy policy and SMS terms.
+
+BUTTON: Request a quote
 
 
 ---
@@ -494,11 +548,11 @@ Handmade Electric LLC is an electrical contractor serving Metro Detroit. This pa
 
 #### H2: What this page covers
 
-This page explains what Handmade Electric LLC collects when you use this website, what we do with it, and how to stop receiving text messages from us. It applies to this website and to the contact form on it.
+This page explains what Handmade Electric LLC collects when you use this website, what we do with it, and how to stop receiving text messages from us. It applies to this website and to the quote request form on it.
 
 #### H2: What we collect
 
-If you fill out the contact form, we collect the name, phone number, and email address you enter, whatever you write in the message, and whether you checked the box consenting to text messages.
+If you send the quote request form, we collect the name, phone number, and email address you enter, the service, property type, address or city, and job details you provide, and whether you checked the box consenting to text messages.
 
 If you call, text, or email us directly, we have whatever you send us in that message. We do not collect anything else from you through this website.
 
@@ -510,15 +564,19 @@ This website does not set cookies, and it does not install analytics or advertis
 
 We use your information to respond to your request. That means calling you, texting you, or emailing you about the work you asked about, and following up on that job.
 
-Form submissions are delivered to us through the lead platform that runs this site's contact form, which notifies us when someone reaches out.
+Form submissions are delivered to us through the lead platform that runs this site's quote form, which notifies us when someone reaches out.
 
 #### H2: Text messages
 
-The consent checkbox on the contact form is what permits us to text you about your request. It is never checked for you, and you can submit the form without it.
+Checking this box permits Handmade Electric LLC to text you about your request.
 
-Message and data rates may apply, depending on your mobile plan.
+Message and data rates may apply.
 
-Reply STOP to any text message to opt out, and you will stop receiving them. Opting out of texts does not prevent us from reaching you by phone or email about a job you asked us about.
+Reply STOP to any text message to opt out.
+
+The box is never checked for you, and you can send the form without it.
+
+Opting out of texts does not prevent us from reaching you by phone or email about a job you asked us about.
 
 #### H2: What we do not do
 
@@ -705,6 +763,14 @@ Call or send a text and describe the problem or the project. Handmade Electric w
 ### H1: Recent work
 
 21 photographs from jobs across Metro Detroit: panels and service equipment, lighting in warehouses, offices, and retail space, and conduit runs in plants. These are real jobs, photographed on site, not stock images.
+
+BUTTON: All work
+
+BUTTON: Residential
+
+BUTTON: Commercial
+
+BUTTON: Industrial
 
 - Residential
 - Residential
