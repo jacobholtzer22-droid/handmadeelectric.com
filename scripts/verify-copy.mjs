@@ -113,6 +113,28 @@ for (const file of files.sort()) {
     }
   }
 
+  /**
+   * FACTS.md section 13: price questions explain what drives the cost and
+   * invite a quote. They never contain a number, a range, or a currency
+   * symbol. This checks the rendered FAQ pairs rather than trusting the author.
+   */
+  for (const [, q, a] of scannable(raw).matchAll(
+    /<dt[^>]*>([\s\S]*?)<\/dt>\s*<dd[^>]*>([\s\S]*?)<\/dd>/g
+  )) {
+    const question = visibleText(q);
+    if (!/cost|price|how much|worth/i.test(question)) continue;
+    const answer = visibleText(a);
+    const numbers = answer.match(/[$£€]|\b\d[\d,.]*\b/g);
+    if (numbers) {
+      failures++;
+      console.log(
+        pad(route, 34) +
+          pad("price answer has a number", 34) +
+          `FAIL  ${JSON.stringify(numbers)} in "${question.slice(0, 40)}"`
+      );
+    }
+  }
+
   if (PHONE_EXEMPT.has(route)) {
     console.log(pad(route, 34) + pad("phone in crawlable text", 34) + "SKIP  (exempt, see PHONE_EXEMPT)");
   } else if (!text.includes(PHONE)) {
