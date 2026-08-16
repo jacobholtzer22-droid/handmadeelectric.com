@@ -33,12 +33,12 @@ export default function Footer() {
             <h2 className="font-panel text-[0.6875rem] uppercase tracking-panelwide text-bone">
               Services
             </h2>
-            <ul className="mt-4 space-y-2.5">
+            <ul className="mt-1">
               {services.map((s) => (
                 <li key={s.slug}>
                   <Link
                     href={`/services/${s.slug}`}
-                    className="text-sm text-ash transition-colors hover:text-copper-bright"
+                    className="inline-flex min-h-[44px] items-center text-sm text-ash transition-colors hover:text-copper-bright"
                   >
                     {s.navTitle}
                   </Link>
@@ -51,24 +51,24 @@ export default function Footer() {
             <h2 className="font-panel text-[0.6875rem] uppercase tracking-panelwide text-bone">
               Company
             </h2>
-            <ul className="mt-4 space-y-2.5">
+            <ul className="mt-1">
               <li>
-                <Link href="/work" className="text-sm text-ash transition-colors hover:text-copper-bright">
+                <Link href="/work" className="inline-flex min-h-[44px] items-center text-sm text-ash transition-colors hover:text-copper-bright">
                   Recent work
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-sm text-ash transition-colors hover:text-copper-bright">
+                <Link href="/about" className="inline-flex min-h-[44px] items-center text-sm text-ash transition-colors hover:text-copper-bright">
                   About
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-sm text-ash transition-colors hover:text-copper-bright">
+                <Link href="/contact" className="inline-flex min-h-[44px] items-center text-sm text-ash transition-colors hover:text-copper-bright">
                   Contact
                 </Link>
               </li>
               <li>
-                <Link href="/privacy" className="text-sm text-ash transition-colors hover:text-copper-bright">
+                <Link href="/privacy" className="inline-flex min-h-[44px] items-center text-sm text-ash transition-colors hover:text-copper-bright">
                   Privacy policy and SMS terms
                 </Link>
               </li>

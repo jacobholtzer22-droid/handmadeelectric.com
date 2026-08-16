@@ -206,18 +206,38 @@
     transform: none;
   }
 
-  /* Expanding sublist. grid-template-rows animates without a hard-coded
-     height. It lives inside a fixed overlay, so it cannot shift the page. */
+  /* Expanding sublist. grid-template-rows animates height without a hard-coded
+     value, and opacity comes with it so the list fades rather than wiping. It
+     lives inside a fixed overlay, so it cannot shift the page. */
   .nav-sublist {
     display: grid;
     grid-template-rows: 0fr;
-    transition: grid-template-rows 200ms ease-out;
+    opacity: 0;
+    transition:
+      grid-template-rows 220ms ease-out,
+      opacity 180ms ease-out;
   }
   .nav-sublist > * {
     overflow: hidden;
   }
   .nav-sublist[data-open] {
     grid-template-rows: 1fr;
+    opacity: 1;
+  }
+
+  /* Drawer items stagger in behind the panel. Delay is set inline per row so
+     the sequence stays readable in the markup. Opacity and transform only, and
+     it is inside a fixed overlay, so no layout can shift. */
+  .drawer-item {
+    opacity: 0;
+    transform: translateX(14px);
+    transition:
+      opacity 260ms ease-out,
+      transform 260ms ease-out;
+  }
+  .nav-drawer[data-open] .drawer-item {
+    opacity: 1;
+    transform: none;
   }
 
   /* --- Hero entrance ------------------------------------------------------
@@ -331,6 +351,11 @@
   }
   .nav-sublist[data-open] {
     grid-template-rows: 1fr !important;
+    opacity: 1 !important;
+  }
+  .drawer-item {
+    opacity: 1 !important;
+    transform: none !important;
   }
   .btn:active {
     transform: none !important;

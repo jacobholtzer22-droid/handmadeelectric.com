@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ChevronDown, Menu, X, ArrowRight } from "lucide-react";
+import { ChevronDown, Menu, X, ArrowRight, Phone, Mail } from "lucide-react";
 import { site } from "@/site.config";
 import {
   navServiceGroups,
@@ -42,6 +42,8 @@ export default function HeaderNav() {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
 
   const triggerRef = useRef<HTMLButtonElement | null>(null);
+  const drawerTriggerRef = useRef<HTMLButtonElement | null>(null);
+  const drawerPanelRef = useRef<HTMLDivElement | null>(null);
   const panelRef = useRef<HTMLDivElement | null>(null);
   const closeTimer = useRef<number | null>(null);
 
@@ -59,6 +61,63 @@ export default function HeaderNav() {
   }, [cancelClose]);
 
   useEffect(() => () => cancelClose(), [cancelClose]);
+
+  /* Body scroll lock while the drawer is open, with the scrollbar width
+     compensated so locking cannot shift the page behind it. */
+  useEffect(() => {
+    if (!drawerOpen) return;
+    const { body, documentElement } = document;
+    const barWidth = window.innerWidth - documentElement.clientWidth;
+    const prevOverflow = body.style.overflow;
+    const prevPad = body.style.paddingRight;
+    body.style.overflow = "hidden";
+    if (barWidth > 0) body.style.paddingRight = `${barWidth}px`;
+    return () => {
+      body.style.overflow = prevOverflow;
+      body.style.paddingRight = prevPad;
+    };
+  }, [drawerOpen]);
+
+  /* Focus moves into the drawer on open, is trapped while open, and returns to
+     the trigger on close. Without the trap, Tab walks straight out of an open
+     overlay into the page behind it, which is invisible to a sighted mouse user
+     and completely disorienting on a keyboard or a screen reader. */
+  useEffect(() => {
+    if (!drawerOpen) return;
+    const panel = drawerPanelRef.current;
+    if (!panel) return;
+
+    const focusables = () =>
+      Array.from(
+        panel.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        )
+      ).filter((el) => el.offsetParent !== null);
+
+    const first = focusables()[0];
+    first?.focus();
+
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key !== "Tab") return;
+      const items = focusables();
+      if (items.length === 0) return;
+      const firstEl = items[0];
+      const lastEl = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === firstEl) {
+        e.preventDefault();
+        lastEl.focus();
+      } else if (!e.shiftKey && document.activeElement === lastEl) {
+        e.preventDefault();
+        firstEl.focus();
+      }
+    }
+
+    panel.addEventListener("keydown", onKeyDown);
+    return () => {
+      panel.removeEventListener("keydown", onKeyDown);
+      drawerTriggerRef.current?.focus();
+    };
+  }, [drawerOpen]);
 
   /* Route change closes everything. */
   useEffect(() => {
@@ -274,14 +333,28 @@ export default function HeaderNav() {
 
       {/* ---------------- Mobile trigger ---------------- */}
       <button
+        ref={drawerTriggerRef}
         type="button"
-        onClick={() => setDrawerOpen(true)}
+        onClick={() => setDrawerOpen((v) => !v)}
         aria-expanded={drawerOpen}
         aria-controls={mobilePanelId}
-        aria-label="Open menu"
-        className="inline-flex h-11 w-11 items-center justify-center rounded-panel border border-steel-light text-bone lg:hidden"
+        className="inline-flex min-h-[44px] items-center gap-2 rounded-panel border border-steel-light px-3 font-panel text-[0.6875rem] uppercase tracking-panelwide text-bone lg:hidden"
       >
-        <Menu className="h-5 w-5" aria-hidden="true" />
+        {/* Both icons are always present and cross-fade, so the control never
+            reflows as the label and box stay a fixed size. */}
+        <span className="relative block h-5 w-5" aria-hidden="true">
+          <Menu
+            className={`absolute inset-0 h-5 w-5 transition-all duration-200 ${
+              drawerOpen ? "rotate-90 opacity-0" : "rotate-0 opacity-100"
+            }`}
+          />
+          <X
+            className={`absolute inset-0 h-5 w-5 transition-all duration-200 ${
+              drawerOpen ? "rotate-0 opacity-100" : "-rotate-90 opacity-0"
+            }`}
+          />
+        </span>
+        {drawerOpen ? "Close" : "Menu"}
       </button>
 
       {/* ---------------- Mobile drawer ---------------- */}
@@ -296,7 +369,10 @@ export default function HeaderNav() {
           onClick={() => setDrawerOpen(false)}
           aria-hidden="true"
         />
-        <div className="nav-drawer-panel absolute inset-y-0 right-0 w-[86%] max-w-sm overflow-y-auto border-l border-steel bg-graphite">
+        <div
+          ref={drawerPanelRef}
+          className="nav-drawer-panel absolute inset-y-0 right-0 w-[86%] max-w-sm overflow-y-auto border-l border-steel bg-graphite"
+        >
           <div className="flex h-16 items-center justify-between border-b border-steel px-5">
             <span className="font-panel text-[0.6875rem] uppercase tracking-panelwide text-ash">
               Menu
@@ -312,10 +388,28 @@ export default function HeaderNav() {
           </div>
 
           <ul className="px-5 py-4">
+            {/* Home first, so the drawer mirrors the site rather than starting
+                mid-hierarchy. */}
+            <li className="border-b border-steel/70">
+              <Link
+                href="/"
+                tabIndex={drawerOpen ? 0 : -1}
+                style={{ transitionDelay: "40ms" }}
+                className={`drawer-item flex min-h-[52px] items-center font-panel text-[0.75rem] uppercase tracking-panelwide ${
+                  pathname === "/" ? "text-copper-bright" : "text-bone"
+                }`}
+              >
+                Home
+              </Link>
+            </li>
+
             {/* The parent stays reachable: the LABEL navigates, the CHEVRON
                 expands. Two separate controls, never one overloaded row. */}
             <li className="border-b border-steel/70">
-              <div className="flex items-stretch">
+              <div
+                className="drawer-item flex items-stretch"
+                style={{ transitionDelay: "80ms" }}
+              >
                 <Link
                   href="/services"
                   tabIndex={drawerOpen ? 0 : -1}
@@ -338,7 +432,7 @@ export default function HeaderNav() {
                   className="inline-flex h-[52px] w-12 items-center justify-center text-ash"
                 >
                   <ChevronDown
-                    className={`h-4 w-4 transition-transform duration-150 ${
+                    className={`h-4 w-4 transition-transform duration-200 ${
                       mobileServicesOpen ? "rotate-180" : ""
                     }`}
                     aria-hidden="true"
@@ -382,12 +476,13 @@ export default function HeaderNav() {
 
             {site.nav
               .filter((i) => i.href !== "/services")
-              .map((item) => (
+              .map((item, i) => (
                 <li key={item.href} className="border-b border-steel/70">
                   <Link
                     href={item.href}
                     tabIndex={drawerOpen ? 0 : -1}
-                    className={`flex min-h-[52px] items-center font-panel text-[0.75rem] uppercase tracking-panelwide ${
+                    style={{ transitionDelay: `${120 + i * 40}ms` }}
+                    className={`drawer-item flex min-h-[52px] items-center font-panel text-[0.75rem] uppercase tracking-panelwide ${
                       isActive(pathname, item.href)
                         ? "text-copper-bright"
                         : "text-bone"
@@ -399,7 +494,11 @@ export default function HeaderNav() {
               ))}
           </ul>
 
-          <div className="px-5 pb-8">
+          {/* Convert without closing the menu. */}
+          <div
+            className="drawer-item px-5 pt-2"
+            style={{ transitionDelay: "260ms" }}
+          >
             <Link
               href="/contact"
               tabIndex={drawerOpen ? 0 : -1}
@@ -407,6 +506,48 @@ export default function HeaderNav() {
             >
               Get a quote
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+            <a
+              href={site.business.phoneHref}
+              tabIndex={drawerOpen ? 0 : -1}
+              className="btn-secondary mt-3 w-full"
+            >
+              <Phone className="h-4 w-4" aria-hidden="true" />
+              {site.business.phoneDisplay}
+            </a>
+          </div>
+
+          {/* Tappable contact rows. */}
+          <div
+            className="drawer-item mt-6 border-t border-steel px-5 py-4"
+            style={{ transitionDelay: "300ms" }}
+          >
+            <a
+              href={site.business.smsHref}
+              tabIndex={drawerOpen ? 0 : -1}
+              className="flex min-h-[48px] items-center gap-3 text-[0.9375rem] text-ash"
+            >
+              <Phone className="h-4 w-4 shrink-0" aria-hidden="true" />
+              Text {site.business.phoneDisplay}
+            </a>
+            <a
+              href={`mailto:${site.business.email}`}
+              tabIndex={drawerOpen ? 0 : -1}
+              className="flex min-h-[48px] items-center gap-3 break-all text-[0.9375rem] text-ash"
+            >
+              <Mail className="h-4 w-4 shrink-0" aria-hidden="true" />
+              {site.business.email}
+            </a>
+          </div>
+
+          {/* Drawer footer. */}
+          <div className="border-t border-steel px-5 py-4 pb-8">
+            <Link
+              href="/privacy"
+              tabIndex={drawerOpen ? 0 : -1}
+              className="inline-flex min-h-[44px] items-center font-panel text-[0.625rem] uppercase tracking-panelwide text-ash/70"
+            >
+              Privacy policy and SMS terms
             </Link>
           </div>
         </div>

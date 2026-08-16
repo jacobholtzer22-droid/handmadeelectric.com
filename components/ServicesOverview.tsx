@@ -37,18 +37,21 @@ function TradeCard({ service, src }: { service: ServiceContent; src: string }) {
   return (
     <Link
       href={`/services/${service.slug}`}
-      className="card-lift group flex flex-col overflow-hidden rounded-panel border border-bone-dim bg-white/50"
+      /* Horizontal at 390, vertical from sm up. Three full-width portrait
+         cards stacked to 3.3 screens on a phone and pushed the generator
+         feature, the growth push, down to 4.6 screens. Measured, not guessed. */
+      className="card-lift group flex overflow-hidden rounded-panel border border-bone-dim bg-white/50 sm:flex-col"
     >
-      <div className="relative aspect-[3/4] w-full overflow-hidden">
+      <div className="relative aspect-[3/4] w-28 shrink-0 overflow-hidden sm:w-full">
         <Image
           src={photo.src}
           alt={photo.alt}
           fill
-          sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
+          sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 112px"
           className="object-cover"
         />
       </div>
-      <div className="flex flex-1 flex-col p-5">
+      <div className="flex flex-1 flex-col justify-center p-5 sm:justify-start">
         <h3 className="h-display text-xl text-ink">{service.navTitle}</h3>
         <p className="mt-2.5 flex-1 text-[0.9375rem] leading-relaxed text-ink-dim">
           {service.short}
@@ -105,7 +108,7 @@ function StandbyCard({ service, index }: { service: ServiceContent; index: numbe
 
 export default function ServicesOverview() {
   return (
-    <section className="bg-bone py-16 lg:py-24">
+    <section className="bg-bone py-12 lg:py-24">
       <div className="container-page">
         <PanelTag tone="light">Services</PanelTag>
         <h2 className="h-display mt-5 max-w-2xl text-[1.875rem] text-ink sm:text-4xl lg:text-[2.75rem]">
@@ -123,7 +126,7 @@ export default function ServicesOverview() {
         <p className="mt-4 font-panel text-[0.6875rem] uppercase tracking-panelwide text-ink-dim">
           Electrical
         </p>
-        <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-4 grid gap-3 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {tradeServices.map((s, i) => (
             <Reveal key={s.slug} index={i} className="block">
               <TradeCard service={s} src={TRADE_PHOTOS[s.slug]} />
@@ -131,10 +134,10 @@ export default function ServicesOverview() {
           ))}
         </div>
 
-        <p className="mt-12 font-panel text-[0.6875rem] uppercase tracking-panelwide text-ink-dim">
+        <p className="mt-8 font-panel text-[0.6875rem] uppercase tracking-panelwide text-ink-dim">
           Standby power
         </p>
-        <div className="mt-5 grid gap-5 lg:grid-cols-2">
+        <div className="mt-4 grid gap-3 sm:gap-5 lg:grid-cols-2">
           {standbyServices.map((s, i) => (
             <Reveal key={s.slug} index={i} className="block">
               <StandbyCard service={s} index={tradeServices.length + i + 1} />
