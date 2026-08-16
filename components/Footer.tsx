@@ -18,9 +18,9 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-steel bg-iron">
-      <div className="container-page py-14">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-          <div>
+      <div className="container-page py-11 lg:py-14">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-9 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="col-span-2 lg:col-span-1">
             <Wordmark />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-ash">
               {business.trade} serving {business.areaServed}. Residential,

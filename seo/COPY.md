@@ -181,34 +181,6 @@ A: Permitted and inspected An independent check on equipment that runs while you
 - Step 05 Startup and inspection The unit is commissioned and tested under a real transfer, and the work is inspected by the municipality.
 #### H2: Common questions
 
-**Q: How does a home standby generator actually work?**
-
-A: It is wired to your house permanently and monitors the utility power. When the power drops, the transfer switch disconnects the house from the utility and the generator starts and picks up the load, usually within seconds. When utility power comes back and stays steady, the switch transfers the house back and the generator shuts down. You do not have to be home for any of it.
-
-**Q: What size generator do I need?**
-
-A: It depends on what you want running during an outage. Some people want the whole house to behave normally. Others only want the furnace, the sump pump, the refrigerator, and a few outlets and lights. That decision, plus the electrical load of the equipment involved, is what a load calculation measures. Sizing off a neighbor's unit or off a square-foot rule of thumb is how people end up with a generator that cannot carry the house.
-
-**Q: What is a transfer switch, and do I need one?**
-
-A: Yes. A transfer switch is what separates your house from the utility grid while the generator is running. It exists so generator power cannot travel back out onto the utility lines, which is a serious hazard to the line crews working to restore your power. An automatic transfer switch does it by itself. A manual one requires you to be home and throw it. A standby generator is not a legal or safe installation without one.
-
-**Q: Does a standby generator run on natural gas or propane?**
-
-A: Either. If the house already has natural gas service, the unit usually runs on that and there is nothing to refill. If there is no gas at the house, the unit runs on propane from a tank on the property, which does need to be kept full. Which one makes sense is mostly decided by what is already at your house.
-
-**Q: How much does it cost to install a Generac generator?**
-
-A: There is no one number, because the install is most of the job. What moves the price is the size of the unit, how far it sits from the electrical panel and the gas supply, whether your existing panel and service can support it as-is, what the pad and the trenching involve, and the permit your municipality requires. The honest way to answer it is to look at your house. Call or text and we will come out and put real numbers to your situation.
-
-**Q: Do I need a permit for a generator?**
-
-A: In most municipalities, yes, and the finished work is inspected. That is a good thing for you: the inspection is an independent check that the transfer switch, the grounding, and the fuel connection were done correctly on equipment that is going to run unattended while you are asleep or away.
-
-**Q: How long does an installation take?**
-
-A: It depends on how much electrical and fuel work the house needs, and on how quickly the municipality turns the permit and the inspection around. We will tell you what to expect for your specific job when we quote it, rather than quoting you someone else's timeline.
-
 #### H2: Ask about your generator
 
 Send the basics and we will pick it up from there. For the full form, including address and property type, use the quote page .
@@ -282,30 +254,6 @@ A: Tested on a real transfer Starting and carrying the house are two different t
 - Step 04 Repair and test After the repair the unit is tested on a real transfer, not just started up, because starting and carrying the house are two different things.
 #### H2: Common questions
 
-**Q: My standby generator will not start. What is usually wrong?**
-
-A: The battery, more often than anything else. A standby generator sits unused for months at a time and the battery quietly dies where you cannot see it, so the first you learn of it is during an outage. After that the common causes are fuel supply problems, a low oil level tripping the safety shutdown, a controller fault, and maintenance that was never done. It needs to be diagnosed rather than guessed at, because several of those look identical from the driveway.
-
-**Q: How often does a standby generator need to be serviced?**
-
-A: Standby generators are serviced on a schedule the same way a furnace is, based on the manufacturer's interval and on run hours, and units that run through a long outage need attention sooner. The point of the schedule is that the failure gets found on a calm afternoon instead of during the storm that takes your power out.
-
-**Q: Why does my generator run by itself once a week?**
-
-A: That is the exercise cycle and it is supposed to happen. The unit starts itself briefly on a schedule to circulate oil, keep the engine from seizing up, and keep the battery charged. If yours used to do it and has gone quiet, that is a real warning sign and it is worth a call, because a unit that has stopped exercising will usually not start when you need it.
-
-**Q: Do you work on brands other than Generac?**
-
-A: We install, service, and repair Generac home standby generators. If you have a different brand, call or text with the make and the model and you will get a straight answer about whether we can help you, rather than a truck showing up and a bill for finding out we cannot.
-
-**Q: What does a generator repair cost?**
-
-A: It depends entirely on what is actually wrong, which is why nobody can quote it honestly over the phone. A battery is a very different job from a controller or an engine problem, and parts availability on older units affects it too. You get the diagnosis and your options before any repair work starts.
-
-**Q: Is it worth repairing an old generator or should I replace it?**
-
-A: That depends on the age of the unit, the hours on it, what has failed, and whether parts are still available for it. Sometimes the repair is clearly the right call and sometimes you would be putting money into a unit that is going to fail again. We will tell you which one you are looking at and let you make the decision.
-
 #### H2: Ask about your generator
 
 Send the basics and we will pick it up from there. For the full form, including address and property type, use the quote page .
@@ -369,26 +317,6 @@ Handmade Electric does residential electrical work across Metro Detroit, from tr
 
 #### H2: Common questions
 
-**Q: How do I know if my electrical panel needs to be replaced?**
-
-A: The usual signs are a panel with no space left for new circuits, breakers that trip with no real load behind them, rust or scorching inside the cabinet, or a service that is too small for how the house is actually used now. Age alone is not automatically a reason, but some older panel types have known problems worth having looked at.
-
-**Q: Why do my breakers keep tripping?**
-
-A: A breaker trips because it is doing its job. The usual causes are too much load on one circuit, a short, a ground fault, or a breaker that has worn out and now trips below its rating. The important part is which one it is, because a repeatedly overloaded circuit and a short in the wall are very different levels of urgency. Resetting a breaker over and over without finding the cause is the one thing not to do.
-
-**Q: Do you pull permits for residential work?**
-
-A: Permits go with the scope of the work. Panel replacements and service upgrades are permitted and inspected work in most municipalities. Smaller repairs often are not. You will be told which category your job falls into up front rather than after the fact.
-
-**Q: Can you work on an older home?**
-
-A: Yes, and there are a lot of them in Metro Detroit. Older houses bring ungrounded circuits, undersized services, and wiring that has been added to by several people over several decades. That work needs someone who will look at what is actually behind the wall rather than assuming it matches what is on the panel directory.
-
-**Q: What does an electrician cost for a small job?**
-
-A: It depends on what the job turns out to be, which is often not what it looks like from the outside. A dead outlet can be a five minute fix or the visible end of a problem further up the circuit. Describe what is happening when you call or text and you will get a straight answer about what it takes to find out.
-
 #### H2: Tell us what is going on
 
 Describe the problem or the project and we will pick it up from there. Handmade Electric works across Metro Detroit on residential, commercial, and industrial electrical, and on Generac home standby generators.
@@ -436,26 +364,6 @@ Handmade Electric does commercial electrical work across Metro Detroit for retai
 
 #### H2: Common questions
 
-**Q: Can you work outside of our business hours?**
-
-A: Where the job allows it, work that would interrupt operations gets scheduled around them. Some work cannot be done live and needs the power off, and in that case the honest thing is to plan the outage with you in advance rather than discover it mid-job.
-
-**Q: Do you handle tenant build-outs?**
-
-A: Yes. Build-outs are a large part of commercial electrical work: new circuits, lighting, and power laid out for how the tenant will actually use the space, coordinated with the rest of the trades on the job.
-
-**Q: Is upgrading to LED lighting worth it?**
-
-A: In a commercial space it usually comes down to three things: what you currently spend running the lighting, how often someone is up on a ladder replacing lamps and ballasts, and whether the light levels are right for the work being done. A warehouse or a shop running old fixtures for long hours is where the case is strongest.
-
-**Q: What does commercial electrical work cost?**
-
-A: It is driven by the scope, the condition and capacity of the existing distribution, how accessible the work is, whether it has to happen outside operating hours, and what the municipality requires. Commercial spaces vary too much for a number to mean anything before someone has walked it.
-
-**Q: Do you work with the property manager or the tenant?**
-
-A: Either. Who is responsible for a given piece of electrical work depends on the lease, and it is worth being clear about that before the work starts rather than after the invoice.
-
 #### H2: Tell us what is going on
 
 Describe the problem or the project and we will pick it up from there. Handmade Electric works across Metro Detroit on residential, commercial, and industrial electrical, and on Generac home standby generators.
@@ -500,22 +408,6 @@ Handmade Electric does industrial electrical work across Metro Detroit for manuf
 - Step 03 Schedule around production Work that requires equipment down gets planned with you rather than sprung on you.
 - Step 04 Execute, test, and document The work is tested before it is handed back, so equipment is not started up on an assumption.
 #### H2: Common questions
-
-**Q: Can you connect new machinery?**
-
-A: Yes. Machinery hookups cover running the feed, the disconnect, and the connection to the equipment, sized to what the machine actually draws rather than to what is convenient to run. Part of that job is confirming the existing distribution can carry the new load before the machine shows up.
-
-**Q: What is a panel inspection and why does it matter?**
-
-A: It is a look at the condition of the distribution equipment: connections, signs of heat, corrosion, loading, and whether what is installed still matches what the panel says is installed. In an industrial facility a failing connection inside a panel is both a fire risk and an unplanned line-down event, and both are cheaper to find on purpose.
-
-**Q: Can you work around our production schedule?**
-
-A: Where the job allows it, yes. Some work requires equipment to be down, and in that case the outage gets planned with you in advance so the shutdown lands where it costs the least.
-
-**Q: What does industrial electrical work cost?**
-
-A: It depends on the equipment involved, the condition and capacity of the existing distribution, access, and whether the work can be done live or requires a shutdown. Industrial jobs vary too widely for a number to be meaningful before the facility has been walked.
 
 #### H2: Tell us what is going on
 
@@ -724,30 +616,6 @@ For a facility manager, the disruption question matters as much as the quote.
 - Step 05 Walk it before signing off Look at the finished areas with the lights on during the hours the space is actually used.
 #### H2: Common questions
 
-**Q: Is an LED retrofit actually worth it?**
-
-A: It comes down to three things. What you currently spend running the lighting, how often someone is on a ladder or a lift replacing lamps and ballasts, and whether the light levels are right for the work. A space running old fixtures long hours, especially with a high ceiling where every lamp change is a production, is where the case is strongest. A small space with a few fixtures on a few hours a day is a much weaker case, and you should hear that.
-
-**Q: Can you do the work without shutting down the business?**
-
-A: Usually. Retrofits are normally staged by area so you keep operating while a section is done. Some work needs the circuit off and some areas need to be clear underneath, so the sequence gets planned with you. If a piece genuinely cannot be done during business hours, you will hear that when it is quoted rather than on the day.
-
-**Q: What does a lighting retrofit cost?**
-
-A: The fixture count matters less than people expect. Ceiling height and access, whether it is a retrofit kit or a full fixture replacement, the state of the existing wiring and controls, and whether the work has to happen after hours are what actually drive it. It needs someone to walk the space.
-
-**Q: Should we add occupancy sensors?**
-
-A: In spaces that are genuinely empty a lot of the time, warehouse aisles, storage rooms, and back of house areas, sensors are usually where the real savings are, because the cheapest light is the one that is off. In a space that is occupied continuously they add cost without much return. It depends on the area, and different areas in one building can go different ways.
-
-**Q: What happens to the old fixtures and lamps?**
-
-A: They come out and are handled properly. Older lamps and ballasts have disposal requirements, and that is part of the job rather than something left for you to deal with.
-
-**Q: Are there rebates for commercial lighting upgrades?**
-
-A: Utility rebate programs for commercial lighting do exist, and the details, eligibility, and paperwork change over time and vary by utility and by program. It is worth checking what is available before the product is ordered, because program requirements can affect which fixtures qualify. Confirm the current terms with the utility rather than relying on what was true last year.
-
 #### H2: Tell us what is going on
 
 Describe the problem or the project and we will pick it up from there. Handmade Electric works across Metro Detroit on residential, commercial, and industrial electrical, and on Generac home standby generators.
@@ -796,34 +664,6 @@ This is the part most quotes leave out, and it is usually what people actually w
 - Step 04 Replacement day Power off, old panel out, new panel set, every circuit landed and labeled, grounding and bonding brought up to current requirements.
 - Step 05 Inspection The municipality inspects the finished work.
 #### H2: Common questions
-
-**Q: How do I know if I need a panel replacement or a service upgrade?**
-
-A: If the panel is failing, rusted, scorched, full, or a type with known problems, but the house has enough power for how you live, that is a replacement. If you are constantly out of capacity, adding major equipment, or still on a 100 amp service in a house running modern loads, that is a service upgrade. The load calculation is what settles it rather than a guess.
-
-**Q: How long will the power be off?**
-
-A: Most of a working day for a straightforward replacement, and longer when the utility has to pull and reset the meter for a service upgrade. You will be told what to plan for on your specific job before the day, not on the morning of it. Anyone with medical equipment or a freezer full of food should plan around it.
-
-**Q: What does a panel replacement cost?**
-
-A: It depends on the things listed above: whether the service is changing, where the panel sits relative to the meter, the condition of the existing conductors and grounding, how many circuits there are, and what your municipality requires. The reason nobody quotes this honestly over the phone is that half of what drives it is not visible until someone looks at the equipment.
-
-**Q: Do I need a permit to replace an electrical panel?**
-
-A: In most municipalities, yes, and the work is inspected. This is worth wanting. A panel is the single point every circuit in the house passes through, it is installed once and lives for decades, and an independent inspection is cheap insurance on it.
-
-**Q: My panel is old but nothing is wrong. Should I replace it?**
-
-A: Age alone is not a reason. Condition is. Rust, heat damage, breakers that trip below their rating or will not reset, a full panel with no room to add a circuit, and certain panel types with known failure patterns are all reasons. If none of that is true, an inspection tells you where you stand without spending money on a replacement you may not need.
-
-**Q: Will you find other problems once the panel is open?**
-
-A: Often, yes, particularly in older houses. Ungrounded circuits, aluminum branch wiring, double-tapped breakers, and previous work that was never done correctly all live behind the panel cover. You will be told what is there and what it means before anything beyond the agreed scope happens.
-
-**Q: Can you add a standby generator to a new panel?**
-
-A: Yes, and if a generator is anywhere in your plans it is worth saying so before the panel is sized and installed. A transfer switch and the circuits it will carry are much easier to account for while the panel is being replaced than to retrofit afterward.
 
 #### H2: Tell us what is going on
 

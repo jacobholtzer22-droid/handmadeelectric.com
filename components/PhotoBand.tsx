@@ -12,20 +12,22 @@ import Reveal from "./motion/Reveal";
  * conduit are the strongest asset this business has, and until now almost all
  * of them were parked on /work where most visitors never go.
  *
- * Portrait is respected: four tall frames in a row, which is what these photos
+ * Portrait is respected: three tall frames in a row, which is what these photos
  * actually are. On mobile it scrolls horizontally rather than stacking into a
- * column four screens tall.
+ * column several screens tall.
+ *
+ * Three, not four. The fourth tile added scroll on mobile for no extra
+ * information; this band is evidence, not a gallery, and /work is one tap away.
  */
 const BAND = [
   "/images/work/commercial-retail-lighting.webp",
   "/images/work/residential-recessed-lighting.webp",
   "/images/work/industrial-conduit-run.webp",
-  "/images/work/commercial-office-troffers.webp",
 ];
 
 export default function PhotoBand() {
   return (
-    <section className="border-y border-steel bg-iron py-16 lg:py-20">
+    <section className="border-y border-steel bg-iron py-12 lg:py-20">
       <div className="container-page">
         <div className="flex flex-wrap items-end justify-between gap-5">
           <div>
@@ -43,8 +45,8 @@ export default function PhotoBand() {
           </Link>
         </div>
 
-        {/* Horizontal scroll on mobile, four across from sm up. */}
-        <ul className="mt-9 -mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 sm:mx-0 sm:grid sm:grid-cols-4 sm:overflow-visible sm:px-0 sm:pb-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+        {/* Horizontal scroll on mobile, three across from sm up. */}
+        <ul className="mt-9 -mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0 sm:pb-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {BAND.map((src, i) => {
             const photo = workPhoto(src);
             return (
@@ -54,7 +56,7 @@ export default function PhotoBand() {
                     src={photo.src}
                     alt={photo.alt}
                     fill
-                    sizes="(min-width: 640px) 280px, 68vw"
+                    sizes="(min-width: 640px) 380px, 68vw"
                     className="object-cover"
                   />
                 </div>

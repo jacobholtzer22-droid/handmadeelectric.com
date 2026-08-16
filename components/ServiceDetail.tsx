@@ -11,6 +11,7 @@ import EmblemWatermark from "./EmblemWatermark";
 import StandbySpecPanel from "./StandbySpecPanel";
 import CtaPair from "./CtaPair";
 import QuoteForm from "./QuoteForm";
+import FaqList from "./FaqList";
 
 /**
  * One shape for all five service pages, so none of them is thin and none
@@ -33,13 +34,13 @@ export default function ServiceDetail({ service }: { service: ServiceContent }) 
           <nav aria-label="Breadcrumb" className="mb-6">
             <ol className="flex flex-wrap items-center gap-2 font-panel text-[0.6875rem] uppercase tracking-panelwide text-ash">
               <li>
-                <Link href="/" className="transition-colors hover:text-copper-bright">
+                <Link href="/" className="inline-flex min-h-[44px] items-center transition-colors hover:text-copper-bright">
                   Home
                 </Link>
               </li>
               <li aria-hidden="true">/</li>
               <li>
-                <Link href="/services" className="transition-colors hover:text-copper-bright">
+                <Link href="/services" className="inline-flex min-h-[44px] items-center transition-colors hover:text-copper-bright">
                   Services
                 </Link>
               </li>
@@ -206,20 +207,11 @@ export default function ServiceDetail({ service }: { service: ServiceContent }) 
           <h2 className="h-display mt-5 max-w-2xl text-[1.75rem] text-bone sm:text-3xl lg:text-4xl">
             Common questions
           </h2>
-          <dl className="mt-9 max-w-3xl divide-y divide-steel border-y border-steel">
-            {service.faq.map((item) => (
-              <div key={item.q} className="py-7">
-                <dt className="h-display text-lg text-bone sm:text-xl">{item.q}</dt>
-                <dd className="mt-3 text-[0.9375rem] leading-relaxed text-ash sm:text-base">
-                  {item.a}
-                </dd>
-              </div>
-            ))}
-          </dl>
+          <FaqList faq={service.faq} />
 
           <Link
             href="/services"
-            className="mt-10 inline-flex items-center gap-2 font-panel text-[0.6875rem] uppercase tracking-panelwide text-copper-bright"
+            className="mt-10 inline-flex min-h-[44px] items-center gap-2 font-panel text-[0.6875rem] uppercase tracking-panelwide text-copper-bright"
           >
             All services
             <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />

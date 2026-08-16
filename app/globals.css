@@ -13,6 +13,24 @@
 @layer base {
   html {
     -webkit-text-size-adjust: 100%;
+    /* The header is sticky at 64px. Without this, any future in-page anchor
+       lands with its heading tucked underneath it. */
+    scroll-padding-top: 5rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  [id] {
+    scroll-margin-top: 5rem;
+  }
+
+  /* Native disclosure marker off; the chevron is the affordance. */
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  summary::marker {
+    content: "";
   }
 
   body {
@@ -153,6 +171,12 @@
     @apply scale-[1.03];
   }
 
+
+  /* Horizontal scroller fade, so it is obvious more exists off screen. */
+  .scroll-fade {
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 2.5rem), transparent 100%);
+    mask-image: linear-gradient(to right, #000 calc(100% - 2.5rem), transparent 100%);
+  }
 
   /* --- Buttons: a real pressed state, not just a colour swap -------------- */
   .btn {

@@ -49,7 +49,9 @@ export default function WorkGallery() {
       const strip = stripRef.current;
       if (!btn || !strip) return;
       setIndicator({
-        x: btn.offsetLeft - strip.scrollLeft,
+        // offsetLeft is relative to the scroller (position: relative), so the
+        // indicator scrolls with the tabs and must NOT subtract scrollLeft.
+        x: btn.offsetLeft,
         w: btn.offsetWidth,
       });
     }
@@ -62,7 +64,7 @@ export default function WorkGallery() {
     <>
       <div
         ref={stripRef}
-        className="relative flex flex-wrap gap-2.5"
+        className="scroll-fade relative -mx-5 flex gap-2.5 overflow-x-auto px-5 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
         role="group"
         aria-label="Filter work by property type"
       >
@@ -90,7 +92,7 @@ export default function WorkGallery() {
               type="button"
               onClick={() => setFilter(f.key)}
               aria-pressed={active}
-              className={`relative z-10 inline-flex min-h-[44px] items-center rounded-panel border px-4 font-panel text-[0.6875rem] uppercase tracking-panelwide transition-colors duration-200 ${
+              className={`relative z-10 inline-flex min-h-[44px] shrink-0 items-center rounded-panel border px-4 font-panel text-[0.6875rem] uppercase tracking-panelwide transition-colors duration-200 ${
                 active
                   ? "border-copper text-iron"
                   : "border-bone-dim text-ink-dim hover:border-copper-deep hover:text-copper-deep"

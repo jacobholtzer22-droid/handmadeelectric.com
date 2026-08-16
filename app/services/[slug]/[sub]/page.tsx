@@ -8,6 +8,7 @@ import { subServices, subServicesBySlug } from "@/lib/content/subservices";
 import { breadcrumbNode, faqNode, serviceNode } from "@/lib/schema";
 import { pageMeta } from "@/lib/seo";
 import JsonLd from "@/components/JsonLd";
+import FaqList from "@/components/FaqList";
 import PanelTag from "@/components/PanelTag";
 import Reveal from "@/components/motion/Reveal";
 import ClosingCta from "@/components/ClosingCta";
@@ -69,13 +70,13 @@ export default function SubServicePage({
           <nav aria-label="Breadcrumb" className="mb-6">
             <ol className="flex flex-wrap items-center gap-2 font-panel text-[0.6875rem] uppercase tracking-panelwide text-ash">
               <li>
-                <Link href="/" className="transition-colors hover:text-copper-bright">
+                <Link href="/" className="inline-flex min-h-[44px] items-center transition-colors hover:text-copper-bright">
                   Home
                 </Link>
               </li>
               <li aria-hidden="true">/</li>
               <li>
-                <Link href="/services" className="transition-colors hover:text-copper-bright">
+                <Link href="/services" className="inline-flex min-h-[44px] items-center transition-colors hover:text-copper-bright">
                   Services
                 </Link>
               </li>
@@ -83,7 +84,7 @@ export default function SubServicePage({
               <li>
                 <Link
                   href={`/services/${parent.slug}`}
-                  className="transition-colors hover:text-copper-bright"
+                  className="inline-flex min-h-[44px] items-center transition-colors hover:text-copper-bright"
                 >
                   {parent.navTitle}
                 </Link>
@@ -215,20 +216,11 @@ export default function SubServicePage({
           <h2 className="h-display mt-5 max-w-2xl text-[1.75rem] text-bone sm:text-3xl lg:text-4xl">
             Common questions
           </h2>
-          <dl className="mt-9 max-w-3xl divide-y divide-steel border-y border-steel">
-            {page.faq.map((item) => (
-              <div key={item.q} className="py-7">
-                <dt className="h-display text-lg text-bone sm:text-xl">{item.q}</dt>
-                <dd className="mt-3 text-[0.9375rem] leading-relaxed text-ash sm:text-base">
-                  {item.a}
-                </dd>
-              </div>
-            ))}
-          </dl>
+          <FaqList faq={page.faq} />
 
           <Link
             href={`/services/${parent.slug}`}
-            className="mt-10 inline-flex items-center gap-2 font-panel text-[0.6875rem] uppercase tracking-panelwide text-copper-bright"
+            className="mt-10 inline-flex min-h-[44px] items-center gap-2 font-panel text-[0.6875rem] uppercase tracking-panelwide text-copper-bright"
           >
             All {parent.navTitle.toLowerCase()} work
           </Link>

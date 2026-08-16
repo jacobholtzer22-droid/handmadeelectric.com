@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Phone, MessageSquare, ArrowRight } from "lucide-react";
 import { site } from "@/site.config";
@@ -22,6 +23,7 @@ import { site } from "@/site.config";
  */
 export default function MobileCtaBar() {
   const { business } = site;
+  const pathname = usePathname();
   const [shown, setShown] = useState(false);
 
   useEffect(() => {
@@ -30,6 +32,11 @@ export default function MobileCtaBar() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  /* Not on /contact. The quote form is already on screen there, so the bar is
+     competing with the conversion path rather than supporting it, and it eats
+     thumb-zone space next to the submit button. */
+  if (pathname === "/contact") return null;
 
   return (
     <div

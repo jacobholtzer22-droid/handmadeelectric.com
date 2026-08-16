@@ -38,7 +38,7 @@ export default function ClosingCta({
     <section
       className={`relative overflow-hidden ${
         hasPhoto ? "bg-iron" : "bg-graphite"
-      } py-16 lg:py-24`}
+      } py-12 lg:py-24`}
     >
       {hasPhoto && (
         <div className="photo-scrim absolute inset-0" aria-hidden="true">
@@ -57,12 +57,12 @@ export default function ClosingCta({
         <h2 className="h-display mt-5 max-w-3xl text-[1.875rem] text-bone sm:text-4xl lg:text-[2.5rem]">
           {heading}
         </h2>
-        <p className="mt-5 max-w-prose text-[1.0625rem] leading-relaxed text-ash">
+        <p className="mt-4 max-w-prose text-[1.0625rem] leading-relaxed text-ash">
           {body ??
             `Describe the problem or the project and we will pick it up from there. ${business.name} works across ${business.areaServed} on residential, commercial, and industrial electrical, and on Generac home standby generators.`}
         </p>
 
-        <CtaPair className="mt-8" />
+        <CtaPair className="mt-7" />
 
         {/* Texting is a confirmed behaviour of this business, so it keeps a
             place here even though the two primary controls are quote and call. */}
