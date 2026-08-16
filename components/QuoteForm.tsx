@@ -33,6 +33,20 @@ type FieldName = "name" | "phone" | "email" | "service" | "propertyType" | "loca
 
 const PROPERTY_TYPES = ["Residential", "Commercial"];
 
+/**
+ * Routing escape hatch, NOT a service claim.
+ *
+ * An electrician gets called for outlets, fixtures, fans, and troubleshooting
+ * that fit none of the five service pages. Without this option those people
+ * abandon the form. It is deliberately NOT in lib/content/services.ts, because
+ * that file drives the nav, the sitemap, and the Service schema, and this is a
+ * dropdown value only. It makes no claim about what the business does.
+ *
+ * This does NOT reopen EV chargers. There is no EV option and no EV wording
+ * anywhere. Someone wanting one types it into the job details field themselves.
+ */
+const OTHER_SERVICE = "Other electrical work";
+
 /** Messages name what is wrong AND what to do about it. */
 const VALIDATORS: Record<FieldName, (v: string) => string | null> = {
   name: (v) => (v.trim() ? null : "Enter your name so we know who to reply to."),
@@ -315,6 +329,8 @@ export default function QuoteForm({
                 {s.navTitle}
               </option>
             ))}
+            {/* Always last. See OTHER_SERVICE above. */}
+            <option value={OTHER_SERVICE}>{OTHER_SERVICE}</option>
           </select>
           <Err f="service" />
         </div>

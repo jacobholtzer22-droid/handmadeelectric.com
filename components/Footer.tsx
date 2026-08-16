@@ -53,6 +53,11 @@ export default function Footer() {
             </h2>
             <ul className="mt-4 space-y-2.5">
               <li>
+                <Link href="/work" className="text-sm text-ash transition-colors hover:text-copper-bright">
+                  Recent work
+                </Link>
+              </li>
+              <li>
                 <Link href="/about" className="text-sm text-ash transition-colors hover:text-copper-bright">
                   About
                 </Link>

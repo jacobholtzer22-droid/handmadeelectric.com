@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Archivo, Public_Sans, IBM_Plex_Mono } from "next/font/google";
 import { site } from "@/site.config";
 import { electricianNode, organizationNode, webSiteNode } from "@/lib/schema";
+import { ROBOTS_META } from "@/lib/indexable";
 import JsonLd from "@/components/JsonLd";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -42,6 +43,8 @@ export const metadata: Metadata = {
   description: `${site.business.legalName} is an electrical contractor serving ${site.business.areaServed}.`,
   openGraph: { siteName: site.business.name, type: "website", locale: "en_US" },
   twitter: { card: "summary_large_image" },
+  // noindex on every host that is not the canonical one. See lib/indexable.ts.
+  ...ROBOTS_META,
 };
 
 export const viewport = {

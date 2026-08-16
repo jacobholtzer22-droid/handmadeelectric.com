@@ -4,21 +4,13 @@ import { site } from "@/site.config";
 import Wordmark from "./Wordmark";
 
 /**
- * Phase 1: the nav targets are the Phase 2 routes. They are rendered now
- * because the header is part of judging the hero, but only the homepage
- * exists until Phase 2 builds the rest.
+ * Nav comes from site.config.nav, which is the ONLY nav source. A local copy
+ * here previously shadowed it, so editing the config silently did nothing and
+ * /work never appeared in the link graph despite being configured.
+ *
+ * No Reviews entry: while site.reviews.enabled is false that route does not
+ * exist, so it must not appear in the nav or anywhere in the link graph.
  */
-/**
- * No Reviews entry. While site.reviews.enabled is false the /reviews route does
- * not exist, so it must not appear in the nav or anywhere in the internal link
- * graph. Flipping the flag is what adds it back.
- */
-const NAV = [
-  { label: "Services", href: "/services" },
-  { label: "Generators", href: "/services/generac-generator-installation" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
-];
 
 export default function Header() {
   const { business } = site;
@@ -36,7 +28,7 @@ export default function Header() {
 
         <nav aria-label="Main" className="hidden lg:block">
           <ul className="flex items-center gap-7">
-            {NAV.map((item) => (
+            {site.nav.map((item) => (
               <li key={item.href}>
                 <Link
                   href={item.href}

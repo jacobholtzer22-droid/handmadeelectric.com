@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/site.config";
+import { INDEXABLE } from "@/lib/indexable";
 
 /**
  * AI answer engines are explicitly allowed by name, not just left to the
@@ -25,6 +26,12 @@ const AI_AGENTS = [
 ];
 
 export default function robots(): MetadataRoute.Robots {
+  // Off-canonical hosts (preview deploys, *.vercel.app) refuse all crawling,
+  // belt and braces with the noindex meta. See lib/indexable.ts.
+  if (!INDEXABLE) {
+    return { rules: [{ userAgent: "*", disallow: "/" }] };
+  }
+
   return {
     rules: [
       { userAgent: "*", allow: "/" },
