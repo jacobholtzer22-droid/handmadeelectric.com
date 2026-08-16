@@ -122,11 +122,11 @@ Handmade Electric installs Generac home standby generators across Metro Detroit.
 - You are done dragging a portable generator out in the rain and running cords through a window
 #### H2: How the work goes
 
-- Step 01WalkthroughWe look at your panel, your gas supply, and where a unit could sit, and talk through what you want running when the power is out. Whole house and essential circuits are different jobs with different costs.
-- Step 02SizingThe load calculation sets the generator size. Undersizing means the unit cannot carry what you asked it to. Oversizing means paying for capacity that never gets used.
-- Step 03PermitA standby generator installation is permitted work in most municipalities, and the permit is pulled before the work starts.
-- Step 04InstallationThe pad goes in, the unit is set, the transfer switch is installed at the panel, and the fuel supply is connected.
-- Step 05Startup and inspectionThe unit is commissioned and tested under a real transfer, and the work is inspected by the municipality.
+- Step 01 Walkthrough We look at your panel, your gas supply, and where a unit could sit, and talk through what you want running when the power is out. Whole house and essential circuits are different jobs with different costs.
+- Step 02 Sizing The load calculation sets the generator size. Undersizing means the unit cannot carry what you asked it to. Oversizing means paying for capacity that never gets used.
+- Step 03 Permit A standby generator installation is permitted work in most municipalities, and the permit is pulled before the work starts.
+- Step 04 Installation The pad goes in, the unit is set, the transfer switch is installed at the panel, and the fuel supply is connected.
+- Step 05 Startup and inspection The unit is commissioned and tested under a real transfer, and the work is inspected by the municipality.
 #### H2: Common questions
 
 **Q: How does a home standby generator actually work?**
@@ -159,7 +159,7 @@ A: It depends on how much electrical and fuel work the house needs, and on how q
 
 #### H2: Ask about your generator
 
-Send the basics and we will pick it up from there. For the full form, including address and property type, use the quote page.
+Send the basics and we will pick it up from there. For the full form, including address and property type, use the quote page .
 
 FIELD LABEL: Name
 
@@ -169,7 +169,7 @@ FIELD LABEL: Service needed
 
 FIELD LABEL: Job details
 
-FIELD LABEL: Checking this box permits Handmade Electric LLC to text you about your request. Message and data rates may apply. Reply STOP to any text message to opt out. Privacy policy and SMS terms.
+FIELD LABEL: Checking this box permits Handmade Electric LLC to text you about your request. Message and data rates may apply. Reply STOP to any text message to opt out. Privacy policy and SMS terms .
 
 BUTTON: Request a quote
 
@@ -210,10 +210,10 @@ Handmade Electric repairs and services home standby generators across Metro Detr
 - It has not been serviced since the day it was installed
 #### H2: How the work goes
 
-- Step 01Tell us what it is doingCall or text with the make, the model, and what the unit is or is not doing. Any fault code on the controller is worth writing down before you call.
-- Step 02Diagnosis on siteWe test rather than guess. Battery and charging system, fuel supply, oil level and the safety shutdowns tied to it, the controller, and the transfer switch.
-- Step 03Findings firstYou get told what is wrong and what the options are before any repair work happens. On an older unit that includes an honest read on whether the repair is worth doing.
-- Step 04Repair and testAfter the repair the unit is tested on a real transfer, not just started up, because starting and carrying the house are two different things.
+- Step 01 Tell us what it is doing Call or text with the make, the model, and what the unit is or is not doing. Any fault code on the controller is worth writing down before you call.
+- Step 02 Diagnosis on site We test rather than guess. Battery and charging system, fuel supply, oil level and the safety shutdowns tied to it, the controller, and the transfer switch.
+- Step 03 Findings first You get told what is wrong and what the options are before any repair work happens. On an older unit that includes an honest read on whether the repair is worth doing.
+- Step 04 Repair and test After the repair the unit is tested on a real transfer, not just started up, because starting and carrying the house are two different things.
 #### H2: Common questions
 
 **Q: My standby generator will not start. What is usually wrong?**
@@ -242,7 +242,7 @@ A: That depends on the age of the unit, the hours on it, what has failed, and wh
 
 #### H2: Ask about your generator
 
-Send the basics and we will pick it up from there. For the full form, including address and property type, use the quote page.
+Send the basics and we will pick it up from there. For the full form, including address and property type, use the quote page .
 
 FIELD LABEL: Name
 
@@ -252,7 +252,7 @@ FIELD LABEL: Service needed
 
 FIELD LABEL: Job details
 
-FIELD LABEL: Checking this box permits Handmade Electric LLC to text you about your request. Message and data rates may apply. Reply STOP to any text message to opt out. Privacy policy and SMS terms.
+FIELD LABEL: Checking this box permits Handmade Electric LLC to text you about your request. Message and data rates may apply. Reply STOP to any text message to opt out. Privacy policy and SMS terms .
 
 BUTTON: Request a quote
 
@@ -293,10 +293,10 @@ Handmade Electric does residential electrical work across Metro Detroit, from tr
 - You are planning a remodel and need the wiring done before the walls close
 #### H2: How the work goes
 
-- Step 01Tell us what is happeningCall or text a description of the problem. For a quote on planned work, a walkthrough is usually the fastest way to a real number.
-- Step 02Diagnose or quoteFor a fault, the work starts with finding the actual cause instead of replacing parts and hoping. For planned work, you get a quote on the scope before anything begins.
-- Step 03The workDone to code, tested before we leave, and the area is cleaned up.
-- Step 04Permit and inspection where requiredPanel and service work is permitted work in most municipalities, and the finished job is inspected.
+- Step 01 Tell us what is happening Call or text a description of the problem. For a quote on planned work, a walkthrough is usually the fastest way to a real number.
+- Step 02 Diagnose or quote For a fault, the work starts with finding the actual cause instead of replacing parts and hoping. For planned work, you get a quote on the scope before anything begins.
+- Step 03 The work Done to code, tested before we leave, and the area is cleaned up.
+- Step 04 Permit and inspection where required Panel and service work is permitted work in most municipalities, and the finished job is inspected.
 #### H2: Go deeper
 
 #### H2: Common questions
@@ -358,10 +358,10 @@ Handmade Electric does commercial electrical work across Metro Detroit for retai
 - The space has been added onto so many times nobody knows what feeds what
 #### H2: How the work goes
 
-- Step 01Walkthrough and scopeWe look at the space, the existing distribution, and what the work actually requires, including anything the current setup will not support.
-- Step 02QuoteYou get the scope and the cost before the work starts, so it can be planned against your schedule.
-- Step 03Scheduling around operationsWork that would interrupt the business gets scheduled around the business wherever the job allows it.
-- Step 04Permit, inspection, and closeoutPermitted work is inspected, and you are left with a space that passes rather than a list of items to chase.
+- Step 01 Walkthrough and scope We look at the space, the existing distribution, and what the work actually requires, including anything the current setup will not support.
+- Step 02 Quote You get the scope and the cost before the work starts, so it can be planned against your schedule.
+- Step 03 Scheduling around operations Work that would interrupt the business gets scheduled around the business wherever the job allows it.
+- Step 04 Permit, inspection, and closeout Permitted work is inspected, and you are left with a space that passes rather than a list of items to chase.
 #### H2: Go deeper
 
 #### H2: Common questions
@@ -423,10 +423,10 @@ Handmade Electric does industrial electrical work across Metro Detroit for manuf
 - Documentation no longer matches what is actually installed
 #### H2: How the work goes
 
-- Step 01Walk the facilityWe look at the equipment, the existing distribution, and the access and safety constraints the work has to happen inside of.
-- Step 02Scope and quoteYou get the scope and the cost up front, including any capacity limits in the existing system that the new work would expose.
-- Step 03Schedule around productionWork that requires equipment down gets planned with you rather than sprung on you.
-- Step 04Execute, test, and documentThe work is tested before it is handed back, so equipment is not started up on an assumption.
+- Step 01 Walk the facility We look at the equipment, the existing distribution, and the access and safety constraints the work has to happen inside of.
+- Step 02 Scope and quote You get the scope and the cost up front, including any capacity limits in the existing system that the new work would expose.
+- Step 03 Schedule around production Work that requires equipment down gets planned with you rather than sprung on you.
+- Step 04 Execute, test, and document The work is tested before it is handed back, so equipment is not started up on an assumption.
 #### H2: Common questions
 
 **Q: Can you connect new machinery?**
@@ -529,7 +529,7 @@ Used to check the job is within Metro Detroit.
 
 FIELD LABEL: Job details
 
-FIELD LABEL: Checking this box permits Handmade Electric LLC to text you about your request. Message and data rates may apply. Reply STOP to any text message to opt out. Privacy policy and SMS terms.
+FIELD LABEL: Checking this box permits Handmade Electric LLC to text you about your request. Message and data rates may apply. Reply STOP to any text message to opt out. Privacy policy and SMS terms .
 
 BUTTON: Request a quote
 
@@ -544,7 +544,7 @@ BUTTON: Request a quote
 
 ### H1: Privacy policy and SMS terms
 
-Handmade Electric LLC is an electrical contractor serving Metro Detroit. This page explains what this website collects and how your phone number is used. You can reach us any time at (248) 787-0071.
+Handmade Electric LLC is an electrical contractor serving Metro Detroit. This page explains what this website collects and how your phone number is used. You can reach us any time at (248) 787-0071 .
 
 #### H2: What this page covers
 
@@ -623,12 +623,12 @@ Handmade Electric retrofits commercial lighting across Metro Detroit in warehous
 
 The fixture count is the number everyone asks about first. It is rarely the thing that decides the job.
 
-- Ceiling height and accessA twelve foot office ceiling and a thirty foot warehouse ceiling are different jobs at the same fixture count, because the second one needs a lift, more time per fixture, and a plan for working over racking and inventory.
-- Retrofit kit or full fixture replacementSometimes the existing housing stays and the internals are replaced. Sometimes the whole fixture comes out. Condition, age, and what you are trying to achieve on light levels decide which, and they cost differently.
-- What is behind the fixturesExisting wiring, ballasts, and switching are frequently the actual work. A space that has been reconfigured several times often has circuits and controls that no longer match how the space is used.
-- ControlsOccupancy sensors, daylight sensors, and zoning change both the install and how much the lighting actually saves once it is running. A warehouse aisle that is empty most of the day is the clearest case for them.
-- Light levels for the work being doneA parts counter, a packing bench, a retail display, and a storage aisle do not want the same amount of light. Matching the space to the work is the difference between a retrofit that people are glad about and one they complain about.
-- When it can happenWork that has to happen outside operating hours costs differently from work that can happen during the day.
+- Ceiling height and access A twelve foot office ceiling and a thirty foot warehouse ceiling are different jobs at the same fixture count, because the second one needs a lift, more time per fixture, and a plan for working over racking and inventory.
+- Retrofit kit or full fixture replacement Sometimes the existing housing stays and the internals are replaced. Sometimes the whole fixture comes out. Condition, age, and what you are trying to achieve on light levels decide which, and they cost differently.
+- What is behind the fixtures Existing wiring, ballasts, and switching are frequently the actual work. A space that has been reconfigured several times often has circuits and controls that no longer match how the space is used.
+- Controls Occupancy sensors, daylight sensors, and zoning change both the install and how much the lighting actually saves once it is running. A warehouse aisle that is empty most of the day is the clearest case for them.
+- Light levels for the work being done A parts counter, a packing bench, a retail display, and a storage aisle do not want the same amount of light. Matching the space to the work is the difference between a retrofit that people are glad about and one they complain about.
+- When it can happen Work that has to happen outside operating hours costs differently from work that can happen during the day.
 #### H2: What to expect during the work
 
 For a facility manager, the disruption question matters as much as the quote.
@@ -641,11 +641,11 @@ For a facility manager, the disruption question matters as much as the quote.
 - Any utility rebate programs that apply have their own paperwork and their own requirements, and those requirements can affect which product goes in. Worth raising before the order rather than after.
 #### H2: How the work goes
 
-- Step 01Walk the spaceFixture count and type, ceiling height, access, existing circuits and controls, and what work is actually happening under each area.
-- Step 02Scope and quoteYou get the approach, the product, and the cost, including anything in the existing wiring or controls that the retrofit would expose.
-- Step 03Schedule around operationsAreas, sequence, and hours are planned with you, so the work lands where it costs your business the least.
-- Step 04Install by areaSection by section, with the old material removed as it goes rather than stacked in a corner.
-- Step 05Walk it before signing offLook at the finished areas with the lights on during the hours the space is actually used.
+- Step 01 Walk the space Fixture count and type, ceiling height, access, existing circuits and controls, and what work is actually happening under each area.
+- Step 02 Scope and quote You get the approach, the product, and the cost, including anything in the existing wiring or controls that the retrofit would expose.
+- Step 03 Schedule around operations Areas, sequence, and hours are planned with you, so the work lands where it costs your business the least.
+- Step 04 Install by area Section by section, with the old material removed as it goes rather than stacked in a corner.
+- Step 05 Walk it before signing off Look at the finished areas with the lights on during the hours the space is actually used.
 #### H2: Common questions
 
 **Q: Is an LED retrofit actually worth it?**
@@ -696,11 +696,11 @@ Handmade Electric replaces electrical panels and upgrades services across Metro 
 
 Two houses with identical panels can be very different jobs. These are the things that actually move it.
 
-- Replacement or upgradeSwapping a failing 200 amp panel for a new 200 amp panel is one job. Going from 100 amp to 200 amp service is another: it involves the utility, the meter, the service entrance conductors, and the grounding, not just the box on the wall.
-- Where the panel is and what feeds itA panel in an open basement next to the meter is straightforward. A panel in a finished room, on the far side of the house from the service entrance, or fed by conductors that are undersized for the new panel, adds real work.
-- The condition of what is already thereAluminum branch wiring, ungrounded circuits, cloth-insulated conductors, and previous work that was never done to code all surface during a panel replacement. Some of it has to be corrected as part of the job.
-- Circuit count and what the house actually runsA load calculation sets the panel size, not the number of breakers currently installed. Air conditioning, electric range, dryer, well pump, hot tub, and a standby generator all change the number.
-- The municipalityPanel and service work is permitted and inspected work in most municipalities, and requirements are not identical across Metro Detroit.
+- Replacement or upgrade Swapping a failing 200 amp panel for a new 200 amp panel is one job. Going from 100 amp to 200 amp service is another: it involves the utility, the meter, the service entrance conductors, and the grounding, not just the box on the wall.
+- Where the panel is and what feeds it A panel in an open basement next to the meter is straightforward. A panel in a finished room, on the far side of the house from the service entrance, or fed by conductors that are undersized for the new panel, adds real work.
+- The condition of what is already there Aluminum branch wiring, ungrounded circuits, cloth-insulated conductors, and previous work that was never done to code all surface during a panel replacement. Some of it has to be corrected as part of the job.
+- Circuit count and what the house actually runs A load calculation sets the panel size, not the number of breakers currently installed. Air conditioning, electric range, dryer, well pump, hot tub, and a standby generator all change the number.
+- The municipality Panel and service work is permitted and inspected work in most municipalities, and requirements are not identical across Metro Detroit.
 #### H2: What to expect on the day
 
 This is the part most quotes leave out, and it is usually what people actually want to know.
@@ -712,11 +712,11 @@ This is the part most quotes leave out, and it is usually what people actually w
 - An inspector looks at the finished work. That is a second set of eyes on equipment your house depends on for decades.
 #### H2: How the work goes
 
-- Step 01Look at it in personPanel type, service size, meter and service entrance, grounding, and the condition of the branch circuits. A photo of the panel with the door open is a useful start, but this job is not quoted properly from a photo.
-- Step 02Load calculation and scopeThe calculation sets the service and panel size. You get told whether this is a replacement or a genuine service upgrade, and what that changes.
-- Step 03Permit, and the utility if neededThe permit is pulled before the work. On a service upgrade the meter work is coordinated with the utility.
-- Step 04Replacement dayPower off, old panel out, new panel set, every circuit landed and labeled, grounding and bonding brought up to current requirements.
-- Step 05InspectionThe municipality inspects the finished work.
+- Step 01 Look at it in person Panel type, service size, meter and service entrance, grounding, and the condition of the branch circuits. A photo of the panel with the door open is a useful start, but this job is not quoted properly from a photo.
+- Step 02 Load calculation and scope The calculation sets the service and panel size. You get told whether this is a replacement or a genuine service upgrade, and what that changes.
+- Step 03 Permit, and the utility if needed The permit is pulled before the work. On a service upgrade the meter work is coordinated with the utility.
+- Step 04 Replacement day Power off, old panel out, new panel set, every circuit landed and labeled, grounding and bonding brought up to current requirements.
+- Step 05 Inspection The municipality inspects the finished work.
 #### H2: Common questions
 
 **Q: How do I know if I need a panel replacement or a service upgrade?**

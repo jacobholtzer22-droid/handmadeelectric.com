@@ -26,7 +26,12 @@ function walk(dir) {
 
 const decode = (s) =>
   s
-    .replace(/<[^>]+>/g, "")
+    // React emits <!-- --> between adjacent text nodes; drop it first.
+    .replace(/<!--[\s\S]*?-->/g, "")
+    // Replace tags with a SPACE, not nothing. Stripping them bare ran nested
+    // elements together, so a process step read "Step 01WalkthroughWe look at".
+    // The whitespace collapse below tidies up the doubled spaces.
+    .replace(/<[^>]+>/g, " ")
     .replace(/&amp;/g, "&")
     .replace(/&#x27;|&#39;/g, "'")
     .replace(/&quot;/g, '"')
