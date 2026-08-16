@@ -143,3 +143,18 @@ export const WORK_CATEGORY_LABELS: Record<WorkCategory, string> = {
 export function workByCategory(category: WorkCategory) {
   return workPhotos.filter((p) => p.category === category);
 }
+
+/**
+ * Photo lookup by src.
+ *
+ * Alt text lives here and ONLY here. Any other component that shows one of
+ * these photographs resolves its alt through this map rather than retyping it,
+ * so a description can never drift from what is actually in the frame.
+ */
+export const workPhotoBySrc = new Map(workPhotos.map((p) => [p.src, p]));
+
+export function workPhoto(src: string): WorkPhoto {
+  const found = workPhotoBySrc.get(src);
+  if (!found) throw new Error(`No work photo registered for ${src}`);
+  return found;
+}

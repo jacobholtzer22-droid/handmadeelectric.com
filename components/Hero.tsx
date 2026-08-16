@@ -1,31 +1,38 @@
 import Image from "next/image";
-import { Phone, MessageSquare } from "lucide-react";
 import { site } from "@/site.config";
 import PanelTag from "./PanelTag";
+import CtaPair from "./CtaPair";
+import EmblemWatermark from "./EmblemWatermark";
 
 /**
  * The H1 and the first paragraph together are the direct answer: who, what,
- * where. Written to be extracted by a search or answer engine, not to be a
- * slogan. Every claim in here traces to a CONFIRMED row in seo/FACTS.md.
+ * where. Written to be extracted, not to be a slogan. Every claim traces to a
+ * CONFIRMED row in seo/FACTS.md, and the Generac sentence is the exact
+ * permitted wording while GENERAC STATUS is TODO.
  *
- * The Generac sentence is the exact permitted wording while GENERAC STATUS is
- * still TODO. It says what the business does, and claims no relationship.
+ * DEPTH: three grounds stacked, iron behind, graphite panel around the
+ * photograph, steel hairline between them. The emblem sits behind everything at
+ * watermark scale, which is the one place on this page it gets to be large.
  *
- * No photo in the set is hero grade: they are all 998x1330 portrait phone
- * snapshots and the CDN has nothing larger. So the hero is typographic, and the
- * photo runs at its native portrait aspect where it stays sharp.
+ * NOTHING HERE ANIMATES ON LOAD. No Reveal wrapper, no entrance transition. The
+ * LCP element is the photograph and it paints immediately at fetchpriority
+ * high. The emblem watermark is static.
  */
 export default function Hero() {
   const { business } = site;
 
   return (
     <section className="relative overflow-hidden bg-iron">
+      {/* The one large emblem placement on this page. */}
+      <EmblemWatermark
+        size={680}
+        className="-right-40 top-1/2 hidden -translate-y-1/2 lg:block"
+      />
+
       <div className="container-page relative pb-14 pt-11 sm:pt-14 lg:pb-24 lg:pt-20">
-        <div className="lg:grid lg:grid-cols-12 lg:items-center lg:gap-14">
+        <div className="lg:grid lg:grid-cols-12 lg:items-center lg:gap-12">
           {/* --- Copy --- */}
           <div className="lg:col-span-7">
-            {/* The location is carried by the H1, so the tag holds the
-                credential alone and stays on one line at 390px. */}
             <PanelTag lit>{business.trade}</PanelTag>
 
             <h1 className="h-display mt-6 text-[2.125rem] text-bone sm:text-5xl lg:text-[3.85rem]">
@@ -42,47 +49,30 @@ export default function Hero() {
               standby generators.
             </p>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <a href={business.phoneHref} className="btn-primary">
-                <Phone className="h-4 w-4" aria-hidden="true" />
-                Call {business.phoneDisplay}
-              </a>
-              <a href={business.smsHref} className="btn-secondary">
-                <MessageSquare className="h-4 w-4" aria-hidden="true" />
-                Or send a text
-              </a>
-            </div>
+            <CtaPair className="mt-8" />
           </div>
 
-          {/* --- Photo, native portrait aspect, offset copper frame --- */}
+          {/* --- Photograph, on a raised graphite panel --- */}
           <div className="mt-12 lg:col-span-5 lg:mt-0">
-            {/* Capped so a 3:4 portrait does not push the hero past the fold
-                on a 1280x800 desktop viewport. */}
-            <div className="relative mx-auto max-w-[22rem] lg:ml-auto lg:mr-0 lg:max-w-[23.5rem]">
-              <div
-                className="absolute -bottom-3 -right-3 h-full w-full rounded-panel border-2 border-copper"
-                aria-hidden="true"
-              />
-              {/* There are 5 photos for 6 image slots, so exactly one repeats.
-                  This is the far end of that repeat: the same photo is used on
-                  the generator repair card near the bottom of the page, rather
-                  than on the Residential card directly below this hero. Its
-                  warm stained wood also sits better against copper than the
-                  gray-on-white panel does. */}
+            <div className="panel-raised relative mx-auto max-w-[23rem] p-2.5 lg:ml-auto lg:mr-0 lg:max-w-none">
               <Image
                 src="/images/panel-wood-wall.webp"
                 alt="A subpanel mounted on a stained wood wall with a yellow cable run to an outlet and switch below"
                 width={998}
                 height={1330}
                 priority
-                sizes="(min-width: 1024px) 420px, (min-width: 640px) 352px, 100vw"
-                className="relative rounded-panel"
+                fetchPriority="high"
+                sizes="(min-width: 1024px) 420px, (min-width: 640px) 368px, 100vw"
+                className="rounded-panel"
+              />
+              {/* Copper corner, the machined detail rather than a full frame. */}
+              <span
+                className="absolute -bottom-px -right-px h-14 w-14 border-b-2 border-r-2 border-copper"
+                aria-hidden="true"
               />
             </div>
           </div>
         </div>
-
-        <div className="conduit-rule mt-14 lg:mt-20" aria-hidden="true" />
       </div>
     </section>
   );

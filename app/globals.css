@@ -108,6 +108,63 @@
     @apply bg-bone-dim;
   }
 
+
+  /* --- Depth -------------------------------------------------------------
+     The site was flat because it alternated two grounds with nothing between
+     them. Graphite is the middle layer: a raised surface on iron, separated by
+     a steel hairline rather than by a shadow, because this system is machined,
+     not soft. */
+  .panel-raised {
+    @apply rounded-panel border border-steel bg-graphite;
+  }
+
+  /* --- Photo treatments --------------------------------------------------
+     Full-bleed photographs need a scrim or the copy on them fails contrast.
+     The scrim is heavier at the bottom where the copy sits, so the top of the
+     image still reads as a photograph rather than as a grey panel. */
+  .photo-scrim::after {
+    content: "";
+    @apply absolute inset-0;
+    background: linear-gradient(
+      to top,
+      rgba(15, 18, 21, 0.94) 0%,
+      rgba(15, 18, 21, 0.78) 38%,
+      rgba(15, 18, 21, 0.42) 68%,
+      rgba(15, 18, 21, 0.25) 100%
+    );
+  }
+
+  /* Card hover. Transform and colour only, so hovering can never shift
+     layout or contribute to CLS. */
+  .card-lift {
+    @apply transition-[transform,border-color] duration-200 ease-out;
+    will-change: transform;
+  }
+  .card-lift:hover {
+    @apply -translate-y-1 border-copper;
+  }
+  /* The image inside a card grows very slightly, clipped by the card. */
+  .card-lift img {
+    @apply transition-transform duration-300 ease-out;
+  }
+  .card-lift:hover img {
+    @apply scale-[1.03];
+  }
+
+  /* --- The conduit motif, animated ---------------------------------------
+     ONE PER PAGE maximum. The rule draws itself left to right on section
+     enter, like a conduit run being pulled. scaleX only, so it reserves its
+     full width from first paint and contributes nothing to CLS. */
+  .conduit-draw {
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 620ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  [data-shown] .conduit-draw,
+  .conduit-draw[data-shown] {
+    transform: scaleX(1);
+  }
+
   /* --- Buttons -----------------------------------------------------------
      Minimum 44px touch target on every interactive control. Square-ish,
      machined, never a pill. */
@@ -156,6 +213,12 @@
    the reveal hidden state, so content is simply present and never depends on
    an observer firing. */
 @media (prefers-reduced-motion: reduce) {
+  /* The conduit draw is a transform, not a transition-duration, so it needs
+     an explicit reset or the rule would stay collapsed at scaleX(0). */
+  .conduit-draw {
+    transform: scaleX(1) !important;
+  }
+
   *,
   *::before,
   *::after {

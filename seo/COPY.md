@@ -36,17 +36,41 @@ Handmade Electric LLC is an electrical contractor serving Metro Detroit, coverin
 
 Electrical
 
+##### H3: Residential
+
+Panel work, troubleshooting, renovations, and safety upgrades for homes.
+
+##### H3: Commercial
+
+Build-outs, lighting upgrades, and code-compliant power for businesses.
+
+##### H3: Industrial
+
+Machinery hookups, panel inspections, and high-voltage systems.
+
 Standby power
+
+##### H3: Generac generator installation
+
+Standby generator installation, sized for the house and wired to a transfer switch.
+
+##### H3: Generator repair and service
+
+Repair and maintenance for home standby generators that will not start or run.
 
 #### H2: When the power goes out, the house stays on
 
 We install, service, and repair Generac home standby generators. A standby unit sits outside, watches the utility power, and starts on its own when it drops, so the furnace, the sump pump, and the refrigerator keep running whether or not anyone is home.
 
-Not sure what size you need? Call (248) 787-0071
+Generator installation Repair and service
+
+#### H2: Real jobs, photographed on site
 
 #### H2: Tell us what is going on
 
-Call or send a text and describe the problem or the project. Handmade Electric works across Metro Detroit on residential, commercial, and industrial electrical, and on Generac home standby generators.
+Describe the problem or the project and we will pick it up from there. Handmade Electric works across Metro Detroit on residential, commercial, and industrial electrical, and on Generac home standby generators.
+
+Prefer to text? Send a text to (248) 787-0071
 
 
 ---
@@ -59,9 +83,21 @@ Call or send a text and describe the problem or the project. Handmade Electric w
 
 ### H1: Electrical services across Metro Detroit
 
-Handmade Electric LLC handles residential, commercial, and industrial electrical work, and installs, services, and repairs Generac home standby generators. Pick the work you need and you will find what it covers, what it costs to find out, and the questions people ask most.
+Handmade Electric LLC handles residential, commercial, and industrial electrical work, and installs, services, and repairs Generac home standby generators. Pick the work you need and you will find what it covers, what determines the cost, and the questions people ask most.
 
-#### H2: Electrical
+#### H2: When the power goes out, the house stays on
+
+We install, service, and repair Generac home standby generators. A standby unit sits outside, watches the utility power, and starts on its own when it drops, so the furnace, the sump pump, and the refrigerator keep running whether or not anyone is home.
+
+##### H3: Generac generator installation
+
+Standby generator installation, sized for the house and wired to a transfer switch.
+
+##### H3: Generator repair and service
+
+Repair and maintenance for home standby generators that will not start or run.
+
+#### H2: Residential, commercial, and industrial
 
 ##### H3: Residential
 
@@ -75,19 +111,11 @@ Build-outs, lighting upgrades, and code-compliant power for businesses.
 
 Machinery hookups, panel inspections, and high-voltage systems.
 
-#### H2: Standby power
-
-##### H3: Generac generator installation
-
-Standby generator installation, sized for the house and wired to a transfer switch.
-
-##### H3: Generator repair and service
-
-Repair and maintenance for home standby generators that will not start or run.
-
 #### H2: Tell us what is going on
 
-Call or send a text and describe the problem or the project. Handmade Electric works across Metro Detroit on residential, commercial, and industrial electrical, and on Generac home standby generators.
+Describe the problem or the project and we will pick it up from there. Handmade Electric works across Metro Detroit on residential, commercial, and industrial electrical, and on Generac home standby generators.
+
+Prefer to text? Send a text to (248) 787-0071
 
 
 ---
@@ -175,7 +203,9 @@ BUTTON: Request a quote
 
 #### H2: Tell us what is going on
 
-Call or send a text and describe the problem or the project. Handmade Electric works across Metro Detroit on residential, commercial, and industrial electrical, and on Generac home standby generators.
+Describe the problem or the project and we will pick it up from there. Handmade Electric works across Metro Detroit on residential, commercial, and industrial electrical, and on Generac home standby generators.
+
+Prefer to text? Send a text to (248) 787-0071
 
 
 ---
@@ -258,7 +288,9 @@ BUTTON: Request a quote
 
 #### H2: Tell us what is going on
 
-Call or send a text and describe the problem or the project. Handmade Electric works across Metro Detroit on residential, commercial, and industrial electrical, and on Generac home standby generators.
+Describe the problem or the project and we will pick it up from there. Handmade Electric works across Metro Detroit on residential, commercial, and industrial electrical, and on Generac home standby generators.
+
+Prefer to text? Send a text to (248) 787-0071
 
 
 ---
@@ -323,7 +355,9 @@ A: It depends on what the job turns out to be, which is often not what it looks 
 
 #### H2: Tell us what is going on
 
-Call or send a text and describe the problem or the project. Handmade Electric works across Metro Detroit on residential, commercial, and industrial electrical, and on Generac home standby generators.
+Describe the problem or the project and we will pick it up from there. Handmade Electric works across Metro Detroit on residential, commercial, and industrial electrical, and on Generac home standby generators.
+
+Prefer to text? Send a text to (248) 787-0071
 
 
 ---
@@ -388,7 +422,9 @@ A: Either. Who is responsible for a given piece of electrical work depends on th
 
 #### H2: Tell us what is going on
 
-Call or send a text and describe the problem or the project. Handmade Electric works across Metro Detroit on residential, commercial, and industrial electrical, and on Generac home standby generators.
+Describe the problem or the project and we will pick it up from there. Handmade Electric works across Metro Detroit on residential, commercial, and industrial electrical, and on Generac home standby generators.
+
+Prefer to text? Send a text to (248) 787-0071
 
 
 ---
@@ -447,7 +483,9 @@ A: It depends on the equipment involved, the condition and capacity of the exist
 
 #### H2: Tell us what is going on
 
-Call or send a text and describe the problem or the project. Handmade Electric works across Metro Detroit on residential, commercial, and industrial electrical, and on Generac home standby generators.
+Describe the problem or the project and we will pick it up from there. Handmade Electric works across Metro Detroit on residential, commercial, and industrial electrical, and on Generac home standby generators.
+
+Prefer to text? Send a text to (248) 787-0071
 
 
 ---
@@ -483,6 +521,8 @@ The same number takes calls and texts. Photos of a panel, a nameplate, or a faul
 #### H2: Working across Metro Detroit
 
 Residential, commercial, and industrial electrical work, plus Generac home standby generator installation, repair, and service. Call or text (248) 787-0071 and describe what is going on.
+
+Prefer to text? Send a text to (248) 787-0071
 
 
 ---
@@ -674,7 +714,9 @@ A: Utility rebate programs for commercial lighting do exist, and the details, el
 
 #### H2: Tell us what is going on
 
-Call or send a text and describe the problem or the project. Handmade Electric works across Metro Detroit on residential, commercial, and industrial electrical, and on Generac home standby generators.
+Describe the problem or the project and we will pick it up from there. Handmade Electric works across Metro Detroit on residential, commercial, and industrial electrical, and on Generac home standby generators.
+
+Prefer to text? Send a text to (248) 787-0071
 
 
 ---
@@ -749,7 +791,9 @@ A: Yes, and if a generator is anywhere in your plans it is worth saying so befor
 
 #### H2: Tell us what is going on
 
-Call or send a text and describe the problem or the project. Handmade Electric works across Metro Detroit on residential, commercial, and industrial electrical, and on Generac home standby generators.
+Describe the problem or the project and we will pick it up from there. Handmade Electric works across Metro Detroit on residential, commercial, and industrial electrical, and on Generac home standby generators.
+
+Prefer to text? Send a text to (248) 787-0071
 
 
 ---
@@ -798,6 +842,8 @@ BUTTON: Industrial
 #### H2: See something like your job?
 
 Call or send a text and describe what you need. Handmade Electric works across Metro Detroit on residential, commercial, and industrial electrical, and on Generac home standby generators.
+
+Prefer to text? Send a text to (248) 787-0071
 
 
 ---

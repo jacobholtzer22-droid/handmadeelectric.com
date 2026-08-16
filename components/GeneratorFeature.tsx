@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { site } from "@/site.config";
 import PanelTag from "./PanelTag";
+import CtaPair from "./CtaPair";
 
 /**
  * The growth push, given its own full-width dark band so it is not just two
@@ -17,7 +18,7 @@ export default function GeneratorFeature() {
   const { business } = site;
 
   return (
-    <section className="bg-iron py-16 lg:py-24">
+    <section className="bg-graphite py-16 lg:py-24">
       <div className="container-page">
         <div className="lg:grid lg:grid-cols-12 lg:items-center lg:gap-14">
           <div className="lg:col-span-6">
@@ -35,28 +36,25 @@ export default function GeneratorFeature() {
               refrigerator keep running whether or not anyone is home.
             </p>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <CtaPair className="mt-8" />
+
+            {/* Navigation into the two dedicated pages, as links rather than
+                more buttons. Four buttons in one block reads as a toolbar. */}
+            <p className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm">
               <Link
                 href="/services/generac-generator-installation"
-                className="btn-primary"
+                className="inline-flex min-h-[44px] items-center gap-1.5 font-semibold text-copper-bright underline underline-offset-4"
               >
                 Generator installation
-                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
               </Link>
-              <Link href="/services/generator-repair" className="btn-secondary">
-                Repair and service
-              </Link>
-            </div>
-
-            <p className="mt-6 text-sm text-ash">
-              Not sure what size you need?{" "}
-              <a
-                href={business.phoneHref}
-                className="inline-flex items-center gap-1.5 font-semibold text-copper-bright underline underline-offset-4"
+              <Link
+                href="/services/generator-repair"
+                className="inline-flex min-h-[44px] items-center gap-1.5 font-semibold text-copper-bright underline underline-offset-4"
               >
-                <Phone className="h-3.5 w-3.5" aria-hidden="true" />
-                Call {business.phoneDisplay}
-              </a>
+                Repair and service
+                <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+              </Link>
             </p>
           </div>
 

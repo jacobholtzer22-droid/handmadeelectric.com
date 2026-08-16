@@ -4,6 +4,7 @@ import { pageMeta } from "@/lib/seo";
 import Hero from "@/components/Hero";
 import ServicesOverview from "@/components/ServicesOverview";
 import GeneratorFeature from "@/components/GeneratorFeature";
+import PhotoBand from "@/components/PhotoBand";
 import ReviewsStrip from "@/components/ReviewsStrip";
 import TrustRow from "@/components/TrustRow";
 import ClosingCta from "@/components/ClosingCta";
@@ -27,9 +28,16 @@ export default function HomePage() {
       <Hero />
       <ServicesOverview />
       <GeneratorFeature />
+      <PhotoBand />
       <ReviewsStrip />
       <TrustRow />
-      <ClosingCta />
+      {/* industrial.webp is the darkest and least flattering photo in the set,
+          which makes it the right one to sit under a scrim as a background
+          rather than in a card. It is used nowhere else on this page. */}
+      <ClosingCta
+        bgImage="/images/industrial.webp"
+        bgAlt=""
+      />
     </>
   );
 }
