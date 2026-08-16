@@ -5,6 +5,8 @@ import { breadcrumbNode } from "@/lib/schema";
 import { pageMeta } from "@/lib/seo";
 import JsonLd from "@/components/JsonLd";
 import PanelTag from "@/components/PanelTag";
+import EmblemWatermark from "@/components/EmblemWatermark";
+import CtaPair from "@/components/CtaPair";
 import ClosingCta from "@/components/ClosingCta";
 
 export const metadata: Metadata = pageMeta({
@@ -39,8 +41,10 @@ export default function AboutPage() {
         ]}
       />
 
-      <section className="bg-iron pb-14 pt-11 sm:pt-14 lg:pb-20 lg:pt-16">
-        <div className="container-page">
+      <section className="relative overflow-hidden bg-iron pb-14 pt-11 sm:pt-14 lg:pb-20 lg:pt-16">
+        {/* The one large emblem placement on this page. */}
+        <EmblemWatermark size={520} className="-right-28 -top-20 hidden lg:block" />
+        <div className="container-page relative">
           <div className="lg:grid lg:grid-cols-12 lg:items-start lg:gap-14">
             <div className="lg:col-span-7">
               <PanelTag lit>About</PanelTag>
@@ -54,6 +58,7 @@ export default function AboutPage() {
                 with your hands, in someone else's house or shop, and the person
                 who did it should be willing to stand next to it afterward.
               </p>
+              <CtaPair className="mt-8" />
             </div>
 
             <div className="mt-10 lg:col-span-5 lg:mt-0">

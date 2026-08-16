@@ -7,6 +7,9 @@ import { subServicesFor } from "@/lib/content/subservices";
 import PanelTag from "./PanelTag";
 import Reveal from "./motion/Reveal";
 import ClosingCta from "./ClosingCta";
+import EmblemWatermark from "./EmblemWatermark";
+import StandbySpecPanel from "./StandbySpecPanel";
+import CtaPair from "./CtaPair";
 import QuoteForm from "./QuoteForm";
 
 /**
@@ -23,8 +26,10 @@ export default function ServiceDetail({ service }: { service: ServiceContent }) 
   return (
     <>
       {/* --- Intro --- */}
-      <section className="bg-iron pb-14 pt-11 sm:pt-14 lg:pb-20 lg:pt-16">
-        <div className="container-page">
+      <section className="relative overflow-hidden bg-iron pb-14 pt-11 sm:pt-14 lg:pb-20 lg:pt-16">
+        {/* The one large emblem placement on this page. */}
+        <EmblemWatermark size={520} className="-right-28 -top-16 hidden lg:block" />
+        <div className="container-page relative">
           <nav aria-label="Breadcrumb" className="mb-6">
             <ol className="flex flex-wrap items-center gap-2 font-panel text-[0.6875rem] uppercase tracking-panelwide text-ash">
               <li>
@@ -50,24 +55,35 @@ export default function ServiceDetail({ service }: { service: ServiceContent }) 
               <p className="mt-6 max-w-prose text-[1.0625rem] leading-relaxed text-ash sm:text-lg">
                 {service.intro}
               </p>
+              <CtaPair className="mt-8" />
             </div>
 
             <div className="mt-10 lg:col-span-5 lg:mt-0">
-              <div className="relative mx-auto max-w-[20rem] lg:ml-auto lg:mr-0 lg:max-w-none">
-                <div
-                  className="absolute -bottom-3 -right-3 h-full w-full rounded-panel border-2 border-copper"
-                  aria-hidden="true"
+              {service.group === "standby" ? (
+                /* NO PHOTOGRAPH. There is no generator photo in the set, and a
+                   panel or a meter beside generator copy reads as the product.
+                   See StandbySpecPanel. */
+                <StandbySpecPanel
+                  variant={service.slug === "generator-repair" ? "repair" : "install"}
                 />
-                <Image
-                  src={service.image}
-                  alt={service.alt}
-                  width={998}
-                  height={1330}
-                  priority
-                  sizes="(min-width: 1024px) 400px, (min-width: 640px) 320px, 100vw"
-                  className="relative rounded-panel"
-                />
-              </div>
+              ) : (
+                <div className="panel-raised relative mx-auto max-w-[21rem] p-2.5 lg:ml-auto lg:mr-0 lg:max-w-none">
+                  <Image
+                    src={service.image}
+                    alt={service.alt}
+                    width={998}
+                    height={1330}
+                    priority
+                    fetchPriority="high"
+                    sizes="(min-width: 1024px) 400px, (min-width: 640px) 336px, 100vw"
+                    className="rounded-panel"
+                  />
+                  <span
+                    className="absolute -bottom-px -right-px h-14 w-14 border-b-2 border-r-2 border-copper"
+                    aria-hidden="true"
+                  />
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -101,7 +117,7 @@ export default function ServiceDetail({ service }: { service: ServiceContent }) 
       </section>
 
       {/* --- Signs --- */}
-      <section className="bg-iron py-16 lg:py-20">
+      <section className="bg-graphite py-16 lg:py-20">
         <div className="container-page">
           <PanelTag>Symptoms</PanelTag>
           <h2 className="h-display mt-5 max-w-2xl text-[1.75rem] text-bone sm:text-3xl lg:text-4xl">

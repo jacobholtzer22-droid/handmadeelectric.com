@@ -5,6 +5,7 @@ import { breadcrumbNode } from "@/lib/schema";
 import { pageMeta } from "@/lib/seo";
 import JsonLd from "@/components/JsonLd";
 import PanelTag from "@/components/PanelTag";
+import EmblemWatermark from "@/components/EmblemWatermark";
 
 export const metadata: Metadata = pageMeta({
   title: `Privacy Policy and SMS Terms | ${site.business.name}`,
@@ -93,8 +94,10 @@ export default function PrivacyPage() {
         ]}
       />
 
-      <section className="bg-iron pb-14 pt-11 sm:pt-14 lg:pb-16 lg:pt-16">
-        <div className="container-page">
+      <section className="relative overflow-hidden bg-iron pb-14 pt-11 sm:pt-14 lg:pb-16 lg:pt-16">
+        {/* The one large emblem placement on this page. */}
+        <EmblemWatermark size={520} className="-right-28 -top-20 hidden lg:block" />
+        <div className="container-page relative">
           <PanelTag lit>Legal</PanelTag>
           <h1 className="h-display mt-6 max-w-3xl text-[2rem] text-bone sm:text-[2.5rem] lg:text-[3rem]">
             Privacy policy and SMS terms
@@ -116,7 +119,7 @@ export default function PrivacyPage() {
 
       <section className="bg-bone py-16 lg:py-20">
         <div className="container-page">
-          <div className="max-w-prose space-y-10">
+          <div className="max-w-prose space-y-10 rounded-panel border border-bone-dim bg-white/40 p-6 sm:p-9">
             {sections.map((section) => (
               <div key={section.heading}>
                 <div className="conduit-rule conduit-rule-light" aria-hidden="true" />

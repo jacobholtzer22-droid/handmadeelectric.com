@@ -5,6 +5,7 @@ import { breadcrumbNode } from "@/lib/schema";
 import { pageMeta } from "@/lib/seo";
 import JsonLd from "@/components/JsonLd";
 import PanelTag from "@/components/PanelTag";
+import EmblemWatermark from "@/components/EmblemWatermark";
 import QuoteForm from "@/components/QuoteForm";
 
 export const metadata: Metadata = pageMeta({
@@ -36,8 +37,10 @@ export default function ContactPage() {
         ]}
       />
 
-      <section className="bg-iron pb-14 pt-11 sm:pt-14 lg:pb-16 lg:pt-16">
-        <div className="container-page">
+      <section className="relative overflow-hidden bg-iron pb-14 pt-11 sm:pt-14 lg:pb-16 lg:pt-16">
+        {/* The one large emblem placement on this page. */}
+        <EmblemWatermark size={520} className="-right-28 -top-20 hidden lg:block" />
+        <div className="container-page relative">
           <PanelTag lit>{business.areaServed}</PanelTag>
           <h1 className="h-display mt-6 max-w-3xl text-[2rem] text-bone sm:text-[2.75rem] lg:text-[3.25rem]">
             Request an electrical quote

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Phone, MessageSquare } from "lucide-react";
 import { site } from "@/site.config";
 import PanelTag from "@/components/PanelTag";
+import CtaPair from "@/components/CtaPair";
 
 /**
  * A 404 on a trades site should offer a way to reach a human, not a dead end.
@@ -25,16 +26,7 @@ export default function NotFound() {
           the right page.
         </p>
 
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <a href={business.phoneHref} className="btn-primary">
-            <Phone className="h-4 w-4" aria-hidden="true" />
-            Call {business.phoneDisplay}
-          </a>
-          <a href={business.smsHref} className="btn-secondary">
-            <MessageSquare className="h-4 w-4" aria-hidden="true" />
-            Send a text
-          </a>
-        </div>
+        <CtaPair className="mt-8" />
 
         <div className="conduit-rule mt-12" aria-hidden="true" />
         <ul className="mt-6 flex flex-wrap gap-x-7 gap-y-3">

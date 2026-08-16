@@ -17,11 +17,11 @@ import Reveal from "./motion/Reveal";
  * real job photos that constraint is gone, and a list of links was reading as a
  * template.
  *
- * The two groups deliberately use DIFFERENT CARD SHAPES rather than one uniform
- * grid: the trades are three vertical cards, standby power is two horizontal
- * ones. That is where the asymmetry comes from, not from cropping. Every photo
- * here is portrait and stays portrait, because squeezing a portrait phone photo
- * into a wide crop is what makes a site look cheap.
+ * The two groups deliberately use DIFFERENT TREATMENTS rather than one uniform
+ * grid: the trades are photographic cards, standby power is typographic. That
+ * is where the asymmetry comes from, not from cropping. Every photo here is
+ * portrait and stays portrait, because squeezing a portrait phone photo into a
+ * wide crop is what makes a site look cheap.
  *
  * Alt text is resolved through workPhoto() so it can never drift from the frame.
  * Group order is unchanged: trades read as a set and stay first.
@@ -30,12 +30,6 @@ const TRADE_PHOTOS: Record<string, string> = {
   residential: "/images/work/residential-panel-open.webp",
   commercial: "/images/work/commercial-warehouse-highbay.webp",
   industrial: "/images/work/industrial-ceiling-conduit.webp",
-};
-
-const STANDBY_PHOTOS: Record<string, string> = {
-  "generac-generator-installation":
-    "/images/work/residential-service-exterior.webp",
-  "generator-repair": "/images/work/commercial-panel-board.webp",
 };
 
 function TradeCard({ service, src }: { service: ServiceContent; src: string }) {
@@ -71,38 +65,40 @@ function TradeCard({ service, src }: { service: ServiceContent; src: string }) {
   );
 }
 
-/** Horizontal card. The different shape is what separates standby from trades. */
-function StandbyCard({ service, src }: { service: ServiceContent; src: string }) {
-  const photo = workPhoto(src);
+/**
+ * Standby cards are TYPOGRAPHIC, not photographic, and that is deliberate.
+ * There is no generator photograph in the set, and a panel or a meter sitting
+ * beside "Generac generator installation" reads as the product to anyone
+ * skimming. The different treatment also separates standby from the trades
+ * more sharply than a different card shape did.
+ */
+function StandbyCard({ service, index }: { service: ServiceContent; index: number }) {
   return (
     <Link
       href={`/services/${service.slug}`}
-      className="card-lift group flex overflow-hidden rounded-panel border border-bone-dim bg-white/50"
+      className="card-lift group flex flex-col justify-between rounded-panel border border-bone-dim bg-white/50 p-6 sm:p-7"
     >
-      <div className="relative aspect-[3/4] w-28 shrink-0 overflow-hidden sm:w-36">
-        <Image
-          src={photo.src}
-          alt={photo.alt}
-          fill
-          sizes="(min-width: 640px) 144px, 112px"
-          className="object-cover"
-        />
-      </div>
-      <div className="flex flex-1 flex-col justify-center p-5">
-        <h3 className="h-display text-lg text-ink sm:text-xl">
+      <div>
+        <span
+          className="font-panel text-[0.6875rem] tracking-panelwide text-copper-deep"
+          aria-hidden="true"
+        >
+          {String(index).padStart(2, "0")}
+        </span>
+        <h3 className="h-display mt-3 text-xl text-ink sm:text-2xl">
           {service.navTitle}
         </h3>
-        <p className="mt-2 text-[0.9375rem] leading-relaxed text-ink-dim">
+        <p className="mt-2.5 text-[0.9375rem] leading-relaxed text-ink-dim">
           {service.short}
         </p>
-        <span className="mt-3 inline-flex items-center gap-1.5 font-panel text-[0.6875rem] uppercase tracking-panelwide text-copper-deep">
-          See details
-          <ArrowRight
-            className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5"
-            aria-hidden="true"
-          />
-        </span>
       </div>
+      <span className="mt-6 inline-flex items-center gap-1.5 font-panel text-[0.6875rem] uppercase tracking-panelwide text-copper-deep">
+        See details
+        <ArrowRight
+          className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5"
+          aria-hidden="true"
+        />
+      </span>
     </Link>
   );
 }
@@ -141,7 +137,7 @@ export default function ServicesOverview() {
         <div className="mt-5 grid gap-5 lg:grid-cols-2">
           {standbyServices.map((s, i) => (
             <Reveal key={s.slug} index={i} className="block">
-              <StandbyCard service={s} src={STANDBY_PHOTOS[s.slug]} />
+              <StandbyCard service={s} index={tradeServices.length + i + 1} />
             </Reveal>
           ))}
         </div>

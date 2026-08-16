@@ -89,6 +89,18 @@ Handmade Electric LLC handles residential, commercial, and industrial electrical
 
 We install, service, and repair Generac home standby generators. A standby unit sits outside, watches the utility power, and starts on its own when it drops, so the furnace, the sump pump, and the refrigerator keep running whether or not anyone is home.
 
+**Q: Sized**
+
+A: By load calculation Not by square footage, and not off the neighbour's unit.
+
+**Q: Switched**
+
+A: Automatic transfer switch The house disconnects from the utility before the generator picks it up.
+
+**Q: Signed off**
+
+A: Permitted and inspected An independent check on equipment that runs while you are asleep.
+
 ##### H3: Generac generator installation
 
 Standby generator installation, sized for the house and wired to a transfer switch.
@@ -131,6 +143,18 @@ Prefer to text? Send a text to (248) 787-0071
 ### H1: Generac generator installation in Metro Detroit
 
 Handmade Electric installs Generac home standby generators across Metro Detroit. A standby generator sits outside the house, watches the utility power, and starts on its own when the power drops, usually within seconds. We size the unit to what you actually want to run, set it, and wire it to an automatic transfer switch at your panel.
+
+**Q: Sized**
+
+A: By load calculation Not by square footage, and not off the neighbour's unit.
+
+**Q: Switched**
+
+A: Automatic transfer switch The house disconnects from the utility before the generator picks it up.
+
+**Q: Signed off**
+
+A: Permitted and inspected An independent check on equipment that runs while you are asleep.
 
 #### H2: What an installation covers
 
@@ -221,6 +245,18 @@ Prefer to text? Send a text to (248) 787-0071
 ### H1: Generator repair and service in Metro Detroit
 
 Handmade Electric repairs and services home standby generators across Metro Detroit. We install, service, and repair Generac home standby generators. The unit that matters is the one that starts when the power goes out, and a generator that has sat for years without service is not that unit.
+
+**Q: Tested**
+
+A: Diagnosed, not guessed Battery and charging, fuel, oil and its safety shutdowns, controller, transfer switch.
+
+**Q: Told first**
+
+A: Findings before any repair You get what is wrong and what the options are before work starts.
+
+**Q: Proven**
+
+A: Tested on a real transfer Starting and carrying the house are two different things.
 
 #### H2: What we work on
 
