@@ -33,7 +33,9 @@ export default function Hero() {
         <div className="lg:grid lg:grid-cols-12 lg:items-center lg:gap-12">
           {/* --- Copy --- */}
           <div className="lg:col-span-7">
-            <PanelTag lit>{business.trade}</PanelTag>
+            <div className="hero-enter hero-enter-1">
+              <PanelTag lit>{business.trade}</PanelTag>
+            </div>
 
             <h1 className="h-display mt-6 text-[2.125rem] text-bone sm:text-5xl lg:text-[3.85rem]">
               Electrical work and Generac generators in{" "}
@@ -42,14 +44,14 @@ export default function Hero() {
               </span>
             </h1>
 
-            <p className="mt-6 max-w-prose text-[1.0625rem] leading-relaxed text-ash sm:text-lg">
+            <p className="hero-enter hero-enter-2 mt-6 max-w-prose text-[1.0625rem] leading-relaxed text-ash sm:text-lg">
               {business.legalName} is an electrical contractor serving{" "}
               {business.areaServed}, covering residential, commercial, and
               industrial work. We install, service, and repair Generac home
               standby generators.
             </p>
 
-            <CtaPair className="mt-8" />
+            <CtaPair className="hero-enter hero-enter-3 mt-8" />
           </div>
 
           {/* --- Photograph, on a raised graphite panel --- */}

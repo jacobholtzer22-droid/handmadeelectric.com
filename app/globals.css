@@ -136,12 +136,14 @@
 
   /* Card hover. Transform and colour only, so hovering can never shift
      layout or contribute to CLS. */
+  /* The frame NEVER moves. Only the image inside it scales, clipped by the
+     card's overflow. A card that lifts nudges everything around it and makes a
+     grid feel unstable under the pointer. */
   .card-lift {
-    @apply transition-[transform,border-color] duration-200 ease-out;
-    will-change: transform;
+    @apply transition-colors duration-200 ease-out;
   }
   .card-lift:hover {
-    @apply -translate-y-1 border-copper;
+    @apply border-copper;
   }
   /* The image inside a card grows very slightly, clipped by the card. */
   .card-lift img {
@@ -149,6 +151,103 @@
   }
   .card-lift:hover img {
     @apply scale-[1.03];
+  }
+
+
+  /* --- Buttons: a real pressed state, not just a colour swap -------------- */
+  .btn {
+    @apply transition-[background-color,border-color,color,transform] duration-150;
+  }
+  .btn:active {
+    transform: translateY(1px) scale(0.985);
+  }
+
+  /* --- Nav dropdown -------------------------------------------------------
+     NEVER conditionally rendered. Hidden with visibility and opacity so all
+     seven service links stay in the static HTML for crawlers. 170ms, ease-out,
+     small y offset, no bounce. */
+  .nav-panel {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition:
+      opacity 170ms ease-out,
+      transform 170ms ease-out,
+      visibility 0s linear 170ms;
+  }
+  .nav-panel[data-open] {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition:
+      opacity 170ms ease-out,
+      transform 170ms ease-out,
+      visibility 0s;
+  }
+
+  /* --- Mobile drawer ----------------------------------------------------- */
+  .nav-drawer {
+    visibility: hidden;
+    opacity: 0;
+    transition:
+      opacity 190ms ease-out,
+      visibility 0s linear 190ms;
+  }
+  .nav-drawer[data-open] {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 190ms ease-out, visibility 0s;
+  }
+  .nav-drawer-panel {
+    transform: translateX(100%);
+    transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .nav-drawer[data-open] .nav-drawer-panel {
+    transform: none;
+  }
+
+  /* Expanding sublist. grid-template-rows animates without a hard-coded
+     height. It lives inside a fixed overlay, so it cannot shift the page. */
+  .nav-sublist {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 200ms ease-out;
+  }
+  .nav-sublist > * {
+    overflow: hidden;
+  }
+  .nav-sublist[data-open] {
+    grid-template-rows: 1fr;
+  }
+
+  /* --- Hero entrance ------------------------------------------------------
+     One orchestrated sequence on load. Deliberately EXCLUDES the H1 and the
+     photograph: the image is the LCP element and is never animated, and the H1
+     is left alone so that if the image ever fails to load the fallback LCP
+     candidate is not sitting at opacity 0 waiting on an animation. */
+  .js .hero-enter {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: hero-enter 460ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .js .hero-enter-1 { animation-delay: 60ms; }
+  .js .hero-enter-2 { animation-delay: 130ms; }
+  .js .hero-enter-3 { animation-delay: 200ms; }
+
+  @keyframes hero-enter {
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* --- Sticky mobile bar entrance ---------------------------------------- */
+  .cta-bar {
+    transform: translateY(100%);
+    transition: transform 220ms ease-out;
+  }
+  .cta-bar[data-shown] {
+    transform: none;
   }
 
   /* --- The conduit motif, animated ---------------------------------------
@@ -217,6 +316,24 @@
      an explicit reset or the rule would stay collapsed at scaleX(0). */
   .conduit-draw {
     transform: scaleX(1) !important;
+  }
+  /* Every transform-based state resets to its resolved end state, so nothing
+     is left collapsed, offscreen, or invisible when motion is disabled. */
+  .js .hero-enter {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+  .nav-drawer-panel,
+  .cta-bar,
+  .nav-panel[data-open] {
+    transform: none !important;
+  }
+  .nav-sublist[data-open] {
+    grid-template-rows: 1fr !important;
+  }
+  .btn:active {
+    transform: none !important;
   }
 
   *,
