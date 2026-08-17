@@ -74,7 +74,10 @@ export const site = {
     { label: "Generators", href: "/services/generac-generator-installation" },
     { label: "Work", href: "/work" },
     { label: "About", href: "/about" },
-    { label: "Contact", href: "/contact" },
+    /* Contact is deliberately NOT here. It is rendered as the "Get a quote"
+       button in the header and the drawer instead, so the conversion path is a
+       control rather than a menu item. The word Contact still appears in the
+       footer. */
   ] as NavItem[],
 };
 

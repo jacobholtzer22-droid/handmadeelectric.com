@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Phone } from "lucide-react";
 import { site } from "@/site.config";
-import Wordmark from "./Wordmark";
+import HomeLink from "./HomeLink";
 import HeaderNav from "./HeaderNav";
 
 /**
@@ -31,22 +31,17 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-steel bg-iron">
       <div className="container-page flex h-16 items-center justify-between gap-4">
-        <Link
-          href="/"
-          className="flex min-h-[44px] items-center"
-          aria-label={`${business.name}, home`}
-        >
-          <Wordmark />
-        </Link>
+        <HomeLink />
 
 
         <div className="flex items-center gap-3 lg:gap-7">
           <HeaderNav />
-        {/* The phone is the conversion path, so it is a control, not a link.
-            Below sm it collapses to an icon so the header never looks empty. */}
+        {/* Call sits beside the quote button as the outlined half of the pair,
+            the same relationship they have everywhere else on the site. Below
+            sm it collapses to an icon so the header never crowds. */}
         <a
           href={business.phoneHref}
-          className="btn-primary !px-4 sm:!px-6"
+          className="btn-secondary !px-4 sm:!px-6"
           aria-label={`Call ${business.name} at ${business.phoneDisplay}`}
         >
           <Phone className="h-4 w-4" aria-hidden="true" />

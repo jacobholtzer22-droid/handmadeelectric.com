@@ -32,6 +32,15 @@ function isActive(pathname: string, href: string) {
   return pathname === href || pathname.startsWith(`${href}/`);
 }
 
+/**
+ * aria-current="page" only on an EXACT match. A section ancestor gets the
+ * copper colour so you can see where you are, but announcing two "current"
+ * items to a screen reader on /services/residential would be a lie.
+ */
+function currentAttr(pathname: string, href: string) {
+  return pathname === href ? ("page" as const) : undefined;
+}
+
 export default function HeaderNav() {
   const pathname = usePathname();
   const panelId = useId();
@@ -276,6 +285,7 @@ export default function HeaderNav() {
                           <li key={it.href}>
                             <Link
                               href={it.href}
+                              aria-current={currentAttr(pathname, it.href)}
                               data-menuitem=""
                               tabIndex={open ? 0 : -1}
                               className="block rounded-panel px-2 py-1.5 transition-colors hover:bg-iron"
@@ -302,6 +312,7 @@ export default function HeaderNav() {
               <div className="conduit-rule mt-6" aria-hidden="true" />
               <Link
                 href="/services"
+                aria-current={currentAttr(pathname, "/services")}
                 data-menuitem=""
                 tabIndex={open ? 0 : -1}
                 className="mt-4 inline-flex min-h-[44px] items-center gap-2 font-panel text-[0.6875rem] uppercase tracking-panelwide text-copper-bright"
@@ -318,6 +329,7 @@ export default function HeaderNav() {
               <li key={item.href}>
                 <Link
                   href={item.href}
+                  aria-current={currentAttr(pathname, item.href)}
                   className={`inline-flex min-h-[44px] items-center font-panel text-[0.6875rem] uppercase tracking-panelwide transition-colors ${
                     isActive(pathname, item.href)
                       ? "text-copper-bright"
@@ -330,6 +342,16 @@ export default function HeaderNav() {
             ))}
         </ul>
       </nav>
+
+      {/* The conversion path is a control, not a menu item. Filled copper here
+          and outlined phone beside it, matching CtaPair everywhere else. */}
+      <Link
+        href="/contact"
+        aria-current={currentAttr(pathname, "/contact")}
+        className="btn-primary hidden !px-5 lg:inline-flex"
+      >
+        Get a quote
+      </Link>
 
       {/* ---------------- Mobile trigger ---------------- */}
       <button
@@ -393,6 +415,7 @@ export default function HeaderNav() {
             <li className="border-b border-steel/70">
               <Link
                 href="/"
+                aria-current={currentAttr(pathname, "/")}
                 tabIndex={drawerOpen ? 0 : -1}
                 style={{ transitionDelay: "40ms" }}
                 className={`drawer-item flex min-h-[52px] items-center font-panel text-[0.75rem] uppercase tracking-panelwide ${
@@ -412,6 +435,7 @@ export default function HeaderNav() {
               >
                 <Link
                   href="/services"
+                  aria-current={currentAttr(pathname, "/services")}
                   tabIndex={drawerOpen ? 0 : -1}
                   className={`flex min-h-[52px] flex-1 items-center font-panel text-[0.75rem] uppercase tracking-panelwide ${
                     servicesActive ? "text-copper-bright" : "text-bone"
@@ -456,6 +480,7 @@ export default function HeaderNav() {
                           <li key={it.href}>
                             <Link
                               href={it.href}
+                              aria-current={currentAttr(pathname, it.href)}
                               tabIndex={drawerOpen && mobileServicesOpen ? 0 : -1}
                               className={`flex min-h-[44px] items-center py-1.5 text-[0.9375rem] ${
                                 pathname === it.href
@@ -480,6 +505,7 @@ export default function HeaderNav() {
                 <li key={item.href} className="border-b border-steel/70">
                   <Link
                     href={item.href}
+                    aria-current={currentAttr(pathname, item.href)}
                     tabIndex={drawerOpen ? 0 : -1}
                     style={{ transitionDelay: `${120 + i * 40}ms` }}
                     className={`drawer-item flex min-h-[52px] items-center font-panel text-[0.75rem] uppercase tracking-panelwide ${
