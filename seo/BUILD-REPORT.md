@@ -77,6 +77,19 @@ something up. That is why the list at the end of this document matters.
 
 ---
 
+### Three ways to reach you, on every page
+
+Someone who wants to talk can call. Someone who would rather not talk to a
+stranger can text, or send a quote request without speaking to anyone. That
+last one matters more than it sounds: a good share of people will simply leave
+rather than phone a contractor they have never met.
+
+The quote form asks what the job is, whether it is a house or a business, and
+roughly where it is, so you can tell before you call back whether it is worth
+the drive. On a phone, a bar sits at the bottom of the screen with Call, Text,
+and Get a quote, so no matter how far down the page someone is, reaching you is
+one thumb away.
+
 ## What is deliberately not on the site yet
 
 **No reviews.** You have not sent any, and I will not write fake ones. The review

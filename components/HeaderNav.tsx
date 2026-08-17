@@ -49,6 +49,10 @@ export default function HeaderNav() {
   const [open, setOpen] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  /* The header quote button stays hidden while the page's own hero CTA is on
+     screen, so the same filled copper button is never shown twice above the
+     fold. It reuses the sticky bar's data-shown mechanism. */
+  const [headerCtaShown, setHeaderCtaShown] = useState(false);
 
   const triggerRef = useRef<HTMLButtonElement | null>(null);
   const drawerTriggerRef = useRef<HTMLButtonElement | null>(null);
@@ -127,6 +131,64 @@ export default function HeaderNav() {
       drawerTriggerRef.current?.focus();
     };
   }, [drawerOpen]);
+
+  /**
+   * Show the header quote button only once the hero CTA has left the viewport,
+   * so the same filled copper button is never on screen twice above the fold.
+   *
+   * MEASURED ON SCROLL, not with IntersectionObserver. IO callbacks do not fire
+   * while a document is not being rendered (hidden tab at load, some prerender
+   * and bfcache paths), and unlike a scroll reveal there is no safe fail-open
+   * here: a 1200ms fallback would pop the button in while the hero CTA is still
+   * on screen, which is the exact duplication this exists to prevent. Reading
+   * the rect on scroll has no such dependency and matches MobileCtaBar.
+   *
+   * The hero CTA is FOUND rather than marked: the first /contact control inside
+   * <main> that is within the first viewport at load. Pages whose hero has no
+   * CTA show the header button immediately, with no per-page wiring.
+   *
+   * Opacity and transform only, on an element that keeps its box, so this
+   * contributes no CLS.
+   */
+  useEffect(() => {
+    const heroCta = Array.from(
+      document.querySelectorAll<HTMLElement>('main a[href="/contact"]')
+    ).find((el) => el.getBoundingClientRect().top < window.innerHeight);
+
+    // No CTA above the fold on this page, so the header carries it from the start.
+    if (!heroCta) {
+      setHeaderCtaShown(true);
+      return;
+    }
+
+    let frame = 0;
+    const measure = () => {
+      frame = 0;
+      setHeaderCtaShown(heroCta.getBoundingClientRect().bottom <= 0);
+    };
+    const onScroll = () => {
+      if (frame) return;
+      frame = requestAnimationFrame(measure);
+    };
+
+    /* requestAnimationFrame is paused while a document is not being rendered,
+       so a tab that was scrolled while hidden would resume with a stale value.
+       Measuring directly on visibilitychange closes that gap. */
+    const onVisible = () => {
+      if (document.visibilityState === "visible") measure();
+    };
+
+    measure();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+    document.addEventListener("visibilitychange", onVisible);
+    return () => {
+      if (frame) cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      document.removeEventListener("visibilitychange", onVisible);
+    };
+  }, [pathname]);
 
   /* Route change closes everything. */
   useEffect(() => {
@@ -348,7 +410,10 @@ export default function HeaderNav() {
       <Link
         href="/contact"
         aria-current={currentAttr(pathname, "/contact")}
-        className="btn-primary hidden !px-5 lg:inline-flex"
+        data-shown={headerCtaShown ? "" : undefined}
+        tabIndex={headerCtaShown ? 0 : -1}
+        aria-hidden={!headerCtaShown}
+        className="header-cta btn-primary hidden !px-5 lg:inline-flex"
       >
         Get a quote
       </Link>

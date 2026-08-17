@@ -285,6 +285,24 @@
     }
   }
 
+  /* --- Header quote button ------------------------------------------------
+     Hidden while the page's own hero CTA is on screen, so the same filled
+     copper button is never on screen twice above the fold. It keeps its box at
+     all times, so this contributes no CLS. */
+  .header-cta {
+    opacity: 0;
+    transform: translateY(-6px);
+    pointer-events: none;
+    transition:
+      opacity 200ms ease-out,
+      transform 200ms ease-out;
+  }
+  .header-cta[data-shown] {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
+
   /* --- Sticky mobile bar entrance ---------------------------------------- */
   .cta-bar {
     transform: translateY(100%);
@@ -370,6 +388,7 @@
   }
   .nav-drawer-panel,
   .cta-bar,
+  .header-cta,
   .nav-panel[data-open] {
     transform: none !important;
   }
