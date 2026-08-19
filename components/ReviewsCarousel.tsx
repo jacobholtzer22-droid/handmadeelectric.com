@@ -83,7 +83,7 @@ export default function ReviewsCarousel() {
   };
 
   return (
-    <section className="relative border-y border-steel bg-graphite py-12 lg:py-20">
+    <section className="relative border-y border-steel bg-iron py-12 lg:py-20">
       {/* Copper hairline across the top edge, so the band reads as its own
           thing rather than as more hero. */}
       <span
@@ -104,12 +104,16 @@ export default function ReviewsCarousel() {
                 <StarRating
                   rating={reviews.averageRating}
                   size="lg"
+                  tone="dark"
                   label={`Rated ${reviews.averageRating} out of 5 on Google`}
                 />
-                <span className="font-panel text-[0.75rem] uppercase tracking-panelwide text-bone">
-                  {reviews.averageRating} out of 5 on Google
+                <span className="font-panel text-[0.8125rem] uppercase tracking-panelwide text-bone">
+                  <span className="h-display text-xl text-filament">
+                    {reviews.averageRating.toFixed(1)}
+                  </span>{" "}
+                  out of 5 on Google
                   {reviews.reviewCount !== null
-                    ? `, ${reviews.reviewCount} reviews`
+                    ? `, from ${reviews.reviewCount} reviews`
                     : ""}
                 </span>
               </p>

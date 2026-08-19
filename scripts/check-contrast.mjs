@@ -20,6 +20,7 @@ const C = {
   "copper-bright": "#E8955A",
   "copper-deep": "#9A5526",
   filament: "#FFC15E",
+  "gold-deep": "#8A6100",
 };
 
 function srgbToLin(v) {
@@ -60,6 +61,8 @@ const PAIRS = [
   ["copper-deep", "bone", "Copper TEXT on light, eyebrows and links", 4.5],
   ["copper", "bone", "Copper rules and borders on light (non-text)", 3.0],
   ["bone-dim", "bone", "Card borders on light (non-text)", 1.0],
+  ["gold-deep", "bone", "Review stars on a light card (meaningful graphic)", 3.0],
+  ["filament", "graphite", "Review stars on a dark card (meaningful graphic)", 3.0],
 
   // --- Buttons ---
   ["iron", "copper", "Dark label on the copper primary button", 4.5],

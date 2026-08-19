@@ -66,14 +66,14 @@ export default function ReviewsPage() {
         </div>
       </section>
 
-      <section className="bg-graphite py-14 lg:py-20">
+      <section className="bg-iron py-14 lg:py-20">
         <div className="container-page">
           {/* Masonry feel via CSS columns: cards keep their natural height
               instead of being stretched to match a grid row. */}
           <div className="[column-gap:1.25rem] sm:columns-2 lg:columns-3">
             {reviews.quotes.map((quote, i) => (
               <Reveal key={quote.name + i} index={i} className="mb-5 block break-inside-avoid">
-                <ReviewCard quote={quote} className="!bg-iron" />
+                <ReviewCard quote={quote} className="h-full" />
               </Reveal>
             ))}
           </div>

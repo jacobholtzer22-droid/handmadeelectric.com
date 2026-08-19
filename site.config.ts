@@ -71,37 +71,30 @@ export const site = {
     profileUrl: "https://share.google/PLzVzgUjENf8vHNiw",
 
     /**
-     * RATINGS: UNCONFIRMED, so nothing renders.
+     * RATINGS: CONFIRMED from the Google Business Profile.
      *
-     * The six reviews were supplied without per-review star ratings, and the
-     * Google list view they came from did not expose them. Every star on this
-     * site is driven by these three values, and every one of them is null until
-     * the numbers are read off the Google Business Profile.
-     *
-     * To turn stars on: open the profile, confirm the overall rating, the
-     * review count, and each review's own rating, then set `averageRating`,
-     * `reviewCount`, and each quote's `rating`. Stars appear everywhere at once.
-     *
-     * Do NOT set these to 5 because 5 is likely. If one of the six is a 4, the
-     * site would be publishing a false average, which is exactly the class of
-     * claim the rest of this file exists to prevent.
+     * Read directly off the profile: overall 5.0, six reviews, and every one of
+     * the six individually showing five stars. The distribution bar confirms it,
+     * all six sit in the 5 row and the 4, 3, 2, and 1 rows are empty.
      *
      * NOTE: even with confirmed ratings there is still NO Review and NO
      * aggregateRating JSON-LD. That ban is separate and permanent. Visible
      * on-page stars only; the schema gate fails the build if either type
      * appears.
      */
-    averageRating: null as number | null,
-    reviewCount: null as number | null,
+    averageRating: 5.0 as number | null,
+    reviewCount: 6 as number | null,
     quotes: [
       {
         name: "Jerry W.",
         source: "Google review",
+        rating: 5,
         text: "We have used them on several jobs. Pricing is great, they communicate well and show up when they say.",
       },
       {
         name: "Carl Q.",
         source: "Google review",
+        rating: 5,
         // Truncated by Google. Ends at the last complete sentence shown.
         truncated: true,
         text: "I had a whole-house surge protector installed by this company, and I couldn't be happier with the service. Trae was professional, arrived on time, and took the time to explain the installation and answer my questions.",
@@ -109,16 +102,19 @@ export const site = {
       {
         name: "Kirk L.",
         source: "Google review",
+        rating: 5,
         text: "Phenomenal experience from start to finish extremely professional and quick",
       },
       {
         name: "Carolyn P.",
         source: "Google review",
+        rating: 5,
         text: "Dependable, great work",
       },
       {
         name: "Ed G.",
         source: "Google review",
+        rating: 5,
         // Truncated by Google.
         truncated: true,
         text: "I can't say enough good things about Handmade Electric and the outstanding service they provided.",
@@ -126,9 +122,10 @@ export const site = {
       {
         name: "Michael W.",
         source: "Google review",
+        rating: 5,
         text: "My service was to tier! As a newer company it was their upmost concern to make sure we were taken care of above and beyond and that's exactly what we got! High quality, high efficiency. Would definitely recommend to family and friends. Life long customer here now!!",
       },
-    ] as { name: string; source: string; text: string; truncated?: boolean }[],
+    ] as { name: string; source: string; text: string; truncated?: boolean; rating?: number | null }[],
   },
 
   crm: {

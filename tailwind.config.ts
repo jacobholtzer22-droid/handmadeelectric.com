@@ -53,6 +53,13 @@ const config: Config = {
         /* --- Energized. The filament glow from the logo's bulb. --- */
         /* Used only for live/active states and the hero's lit segment. */
         filament: "#FFC15E",
+        /**
+         * Star gold for LIGHT grounds. `filament` is tuned for the dark ground
+         * and drops to about 1.3:1 on bone, which is invisible. Stars are a
+         * meaningful graphic, so this pair is held to the 3:1 non-text minimum
+         * and verified in scripts/check-contrast.mjs.
+         */
+        "gold-deep": "#8A6100",
       },
       fontFamily: {
         display: ["var(--font-display)", "system-ui", "sans-serif"],

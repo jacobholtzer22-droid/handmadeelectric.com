@@ -34,6 +34,8 @@ Handmade Electric LLC is an electrical contractor serving Metro Detroit, coverin
 
 #### H2: What customers say
 
+5.0 out of 5 on Google, from 6 reviews
+
 REVIEW: We have used them on several jobs. Pricing is great, they communicate well and show up when they say.
 
   attribution: Jerry W. / Google review

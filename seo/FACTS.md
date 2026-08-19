@@ -194,8 +194,8 @@ does not go on the new site until Trae confirms a founding year.
 | Fact | Value | Status |
 |---|---|---|
 | Reviews supplied | **6, verbatim from Google** | **CONFIRMED** |
-| Star rating | - | TODO, and **not displayed**, see below |
-| Review count | - | TODO, and **not displayed**, see below |
+| Star rating | 5.0 | **CONFIRMED** from the Google Business Profile |
+| Review count | 6 | **CONFIRMED** from the Google Business Profile |
 | Google Business Profile | `https://share.google/PLzVzgUjENf8vHNiw` | **CONFIRMED, it exists** |
 
 **Rules:**
@@ -203,6 +203,12 @@ does not go on the new site until Trae confirms a founding year.
 - Only reviews pasted verbatim by Jacob into the build brief may appear. Typo fixes are the
   maximum edit. Nothing is written, composed, paraphrased into existence, or embellished.
 - Attribution is first name plus last initial plus source, e.g. "Mike R., Google review".
+- **Ratings are CONFIRMED and displayed.** Overall 5.0 from 6 reviews, with all
+  six individually at five stars, read directly off the profile: the
+  distribution bar shows all six in the 5 row and the 4, 3, 2, and 1 rows empty.
+  Stars render from `site.config` data only, so a null rating still draws
+  nothing. They were held back until this evidence existed rather than defaulted
+  to five because five was likely.
 - **No `Review` or `aggregateRating` JSON-LD, ever, even once real reviews exist.** Self-serving
   review markup on a business's own site has been ineligible for Google rich results since 2019
   and carries trust risk. Visible on-page reviews only. The schema validator fails the build if

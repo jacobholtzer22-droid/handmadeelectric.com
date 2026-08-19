@@ -16,12 +16,15 @@ export default function StarRating({
   rating,
   size = "md",
   label,
+  tone = "light",
 }: {
   /** 0 to 5. Null means unconfirmed, so nothing renders. */
   rating: number | null;
   size?: "md" | "lg";
   /** Accessible label, e.g. "Rated 5 out of 5". */
   label?: string;
+  /** Which ground the stars sit on. Filament washes out on bone. */
+  tone?: "light" | "dark";
 }) {
   if (rating === null) return null;
 
@@ -38,7 +41,13 @@ export default function StarRating({
         <Star
           key={i}
           className={`${px} ${
-            i < full ? "fill-filament text-filament" : "text-steel-light"
+            i < full
+              ? tone === "dark"
+                ? "fill-filament text-filament"
+                : "fill-gold-deep text-gold-deep"
+              : tone === "dark"
+                ? "text-steel-light"
+                : "text-bone-dim"
           }`}
           aria-hidden="true"
         />
