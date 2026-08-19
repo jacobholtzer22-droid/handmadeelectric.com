@@ -69,6 +69,30 @@ export const site = {
      */
     enabled: true,
     profileUrl: "https://share.google/PLzVzgUjENf8vHNiw",
+
+    /**
+     * RATINGS: UNCONFIRMED, so nothing renders.
+     *
+     * The six reviews were supplied without per-review star ratings, and the
+     * Google list view they came from did not expose them. Every star on this
+     * site is driven by these three values, and every one of them is null until
+     * the numbers are read off the Google Business Profile.
+     *
+     * To turn stars on: open the profile, confirm the overall rating, the
+     * review count, and each review's own rating, then set `averageRating`,
+     * `reviewCount`, and each quote's `rating`. Stars appear everywhere at once.
+     *
+     * Do NOT set these to 5 because 5 is likely. If one of the six is a 4, the
+     * site would be publishing a false average, which is exactly the class of
+     * claim the rest of this file exists to prevent.
+     *
+     * NOTE: even with confirmed ratings there is still NO Review and NO
+     * aggregateRating JSON-LD. That ban is separate and permanent. Visible
+     * on-page stars only; the schema gate fails the build if either type
+     * appears.
+     */
+    averageRating: null as number | null,
+    reviewCount: null as number | null,
     quotes: [
       {
         name: "Jerry W.",

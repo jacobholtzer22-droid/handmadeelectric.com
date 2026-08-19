@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { site } from "@/site.config";
 import PanelTag from "./PanelTag";
+import StarRating from "./StarRating";
 import ReviewCard from "./ReviewCard";
 
 /**
@@ -82,14 +83,37 @@ export default function ReviewsCarousel() {
   };
 
   return (
-    <section className="border-b border-steel bg-iron py-9 lg:py-16">
+    <section className="relative border-y border-steel bg-graphite py-12 lg:py-20">
+      {/* Copper hairline across the top edge, so the band reads as its own
+          thing rather than as more hero. */}
+      <span
+        className="absolute inset-x-0 top-0 h-px bg-copper/70"
+        aria-hidden="true"
+      />
       <div className="container-page">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <PanelTag>Reviews</PanelTag>
-            <h2 className="h-display mt-3 max-w-xl text-[1.75rem] text-bone sm:text-3xl">
+            <PanelTag lit>Reviews</PanelTag>
+            <h2 className="h-display mt-4 max-w-xl text-[2rem] text-bone sm:text-4xl lg:text-[2.75rem]">
               What customers say
             </h2>
+            {/* Renders nothing until the rating is confirmed from the Google
+                Business Profile. See site.config reviews.averageRating. */}
+            {reviews.averageRating !== null && (
+              <p className="mt-4 flex flex-wrap items-center gap-3">
+                <StarRating
+                  rating={reviews.averageRating}
+                  size="lg"
+                  label={`Rated ${reviews.averageRating} out of 5 on Google`}
+                />
+                <span className="font-panel text-[0.75rem] uppercase tracking-panelwide text-bone">
+                  {reviews.averageRating} out of 5 on Google
+                  {reviews.reviewCount !== null
+                    ? `, ${reviews.reviewCount} reviews`
+                    : ""}
+                </span>
+              </p>
+            )}
           </div>
           <Link
             href="/reviews"
@@ -101,7 +125,7 @@ export default function ReviewsCarousel() {
         </div>
 
         <div
-          className="mt-5"
+          className="mt-8"
           role="group"
           aria-roledescription={reduced ? undefined : "carousel"}
           aria-label="Customer reviews"

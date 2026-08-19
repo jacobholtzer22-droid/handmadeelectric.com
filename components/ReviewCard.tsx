@@ -1,10 +1,13 @@
 import { Quote } from "lucide-react";
+import StarRating from "./StarRating";
 
 export type ReviewQuote = {
   name: string;
   source: string;
   text: string;
   truncated?: boolean;
+  /** Null until confirmed from the Google Business Profile. Null renders no stars. */
+  rating?: number | null;
 };
 
 /**
