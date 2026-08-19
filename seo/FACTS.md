@@ -233,13 +233,18 @@ does not go on the new site until Trae confirms a founding year.
 |---|---|---|
 | CRM endpoint | `https://www.alignandacquire.com/api/contact` | CONFIRMED (www, never the bare apex) |
 | Payload fields | `{ name, phone, email, message, smsConsent, businessSlug }` | CONFIRMED - exact contract, no additions |
-| businessSlug | `handmade-electric` | **PLACEHOLDER, almost certainly wrong, see below** |
+| businessSlug | `handmade-electric-1787143119840` | **CONFIRMED**, copied from the live Business row |
 
-**The slug is not a guessable string.** A sibling client site on this platform carries
-`businessSlug: "j-molina-landscaping-1783524591862"`, that is, the business name followed by a
-numeric timestamp suffix generated at row creation. So `handmade-electric` is a placeholder that
-will not match a real row. It must be copied character-for-character out of the live admin or
-the Neon `Business` table, never typed from memory and never inferred from the business name.
+**Source:** the live `Business` row, id `cmt02vco10000l204i2sy6dhp`, name "Handmade Electric".
+Copied character for character, not inferred from the business name.
+
+**The slug is not a guessable string.** It is the business name followed by a numeric timestamp
+suffix generated at row creation, the same shape as a sibling client site on this platform
+(`j-molina-landscaping-1783524591862`). Anything that drops the suffix is wrong.
+
+**It exists in exactly ONE place in the repo**, `site.config.ts` `crm.businessSlug`. Everything
+that needs it, including the contract-check script, imports it from there. A second hardcoded
+copy is how the two drift apart and how leads start disappearing silently.
 
 **Known failure mode, do not forget it:** this endpoint returns HTTP 200 even when the slug
 matches no Business row and nothing is written to the database. A 200 proves nothing. Combined

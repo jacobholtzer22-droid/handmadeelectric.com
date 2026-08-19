@@ -62,11 +62,18 @@ export const site = {
   crm: {
     url: "https://www.alignandacquire.com/api/contact", // www, never the apex
     /**
-     * FACTS 9. PLACEHOLDER. Real slugs carry a numeric timestamp suffix, e.g.
-     * "j-molina-landscaping-1783524591862". A wrong slug still returns HTTP 200
-     * and silently drops the lead. Copy the real value out of the live admin.
+     * FACTS 9. CONFIRMED, copied from the live Business row
+     * (id cmt02vco10000l204i2sy6dhp, name "Handmade Electric").
+     *
+     * THE ONLY COPY OF THIS VALUE IN THE REPO. Anything that needs the slug
+     * imports it from here. A second hardcoded copy is how the two drift and
+     * how leads start disappearing without anyone noticing.
+     *
+     * The endpoint still returns HTTP 200 whether or not a row is written, so a
+     * correct slug is necessary but NOT sufficient: only a test lead appearing
+     * in the Website Leads dashboard proves delivery.
      */
-    businessSlug: "handmade-electric",
+    businessSlug: "handmade-electric-1787143119840",
   },
 
   nav: [

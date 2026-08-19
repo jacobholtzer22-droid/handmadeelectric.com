@@ -5,6 +5,7 @@
  * Run: node --experimental-strip-types scripts/sample-quote.mjs
  */
 import { composeQuoteMessage } from "../lib/quote-message.ts";
+import { site } from "../site.config.ts";
 
 const sample = {
   name: "Dave Kowalski",
@@ -30,7 +31,8 @@ const payload = {
   email: sample.email,
   message,
   smsConsent: true,
-  businessSlug: "handmade-electric",
+  // Read from the config, never retyped, so this print is proof of what ships.
+  businessSlug: site.crm.businessSlug,
 };
 
 console.log("=== EXACT `message` STRING THAT ARRIVES IN THE CRM ===\n");
@@ -47,10 +49,32 @@ console.log(
   JSON.stringify(keys) === JSON.stringify(expected) ? "YES" : "NO"
 );
 
-// Short variant: no property type, no address.
-const shortMsg = composeQuoteMessage({
+/* ---- SHORT VARIANT, the two generator pages ----
+   Same six keys. No property type and no address, because the short form does
+   not collect them, so composeQuoteMessage simply omits those lines. */
+const shortMessage = composeQuoteMessage({
   service: "Generator repair and service",
   details: "Unit cranks but will not start. Controller shows a fault.",
 });
-console.log("\n=== SHORT VARIANT (generator pages) `message` ===\n");
-console.log(shortMsg);
+
+const shortPayload = {
+  name: "Dana Reyes",
+  phone: "(248) 555-0199",
+  email: "",
+  message: shortMessage,
+  smsConsent: false,
+  businessSlug: site.crm.businessSlug,
+};
+
+console.log("\n=== SHORT FORM (generator pages), FULL PAYLOAD ===\n");
+console.log(JSON.stringify(shortPayload, null, 2));
+
+const shortKeys = Object.keys(shortPayload).sort();
+console.log("\n=== SHORT FORM CONTRACT CHECK ===");
+console.log("keys:", shortKeys.join(", "));
+console.log("count:", shortKeys.length, shortKeys.length === 6 ? "(6, correct)" : "(WRONG)");
+console.log(
+  "matches contract:",
+  JSON.stringify(shortKeys) === JSON.stringify(expected) ? "YES" : "NO"
+);
+console.log("slug identical in both payloads:", payload.businessSlug === shortPayload.businessSlug ? "YES" : "NO");

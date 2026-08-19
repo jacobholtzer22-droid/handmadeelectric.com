@@ -152,7 +152,9 @@ that is not work you want, say so and it comes off cleanly.
 
 ## One thing to know before launch
 
-The form is not connected to the lead system yet. It looks like it works, but
-submissions will not reach anyone until one setting is corrected on launch day.
-That is item zero on the launch checklist and it gets fixed before anyone sees
-the site. I am flagging it here so it is written down and not just in my head.
+The form is now wired to your lead system with the correct account setting, but
+it has not been tested end to end on the live site yet. The reason that matters:
+the system replies "received" to the website whether or not it actually saved
+the lead, so the only way to know it works is to send a real test through the
+live form and watch it appear in the dashboard. That is item zero on the launch
+checklist, and until it passes nobody should assume the form is delivering.
