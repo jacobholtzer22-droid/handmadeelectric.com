@@ -53,7 +53,11 @@ export default function ContactPage() {
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a href={business.phoneHref} className="btn-primary">
+            {/* Outlined, not filled. Call is the outlined control on every
+                surface. There is no quote button beside it here because the
+                quote form itself is on this page, and its submit button is the
+                copper primary. */}
+            <a href={business.phoneHref} className="btn-secondary">
               <Phone className="h-4 w-4" aria-hidden="true" />
               Call {business.phoneDisplay}
             </a>

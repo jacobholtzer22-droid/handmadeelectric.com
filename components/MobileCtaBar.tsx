@@ -9,9 +9,13 @@ import { site } from "@/site.config";
 /**
  * Sticky call, text, and quote bar, mobile only.
  *
- * THREE controls. 44px is a HEIGHT minimum, not a width one: measured at 390px
- * each button is 113x46, no wrap, no overflow. Texting stays in the thumb zone
- * because this business explicitly invites texts.
+ * THREE controls in the LOCKED GLOBAL ORDER: Get a quote, then Call, then
+ * Text. Quote always sits immediately to the LEFT of call, on every surface and
+ * every breakpoint, so the conversion path is in the same place every time.
+ *
+ * 44px is a HEIGHT minimum, not a width one: measured at 390px each button is
+ * 113x46, no wrap, no overflow. Texting stays in the thumb zone because this
+ * business explicitly invites texts.
  *
  * ENTRANCE: it slides up once the hero has scrolled past, rather than sitting
  * over the hero from the first frame. It is `fixed`, so the transform cannot
@@ -45,6 +49,10 @@ export default function MobileCtaBar() {
       style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
     >
       <div className="grid grid-cols-3 gap-2.5 px-4 py-2.5">
+        <Link href="/contact" className="btn-primary w-full !gap-1.5 !px-2">
+          Quote
+          <ArrowRight className="h-4 w-4 shrink-0" aria-hidden="true" />
+        </Link>
         <a
           href={business.phoneHref}
           className="btn-secondary w-full !gap-1.5 !px-2"
@@ -61,10 +69,6 @@ export default function MobileCtaBar() {
           <MessageSquare className="h-4 w-4 shrink-0" aria-hidden="true" />
           Text
         </a>
-        <Link href="/contact" className="btn-primary w-full !gap-1.5 !px-2">
-          Quote
-          <ArrowRight className="h-4 w-4 shrink-0" aria-hidden="true" />
-        </Link>
       </div>
     </div>
   );

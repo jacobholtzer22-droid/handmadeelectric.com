@@ -12,7 +12,8 @@
     "verify:copy": "node scripts/verify-copy.mjs",
     "copy:gen": "node scripts/generate-copy.mjs",
     "verify:images": "node scripts/image-map.mjs",
-    "verify:contract": "node --experimental-strip-types scripts/sample-quote.mjs"
+    "verify:contract": "node --experimental-strip-types scripts/sample-quote.mjs",
+    "verify:cta": "node scripts/cta-order.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.408.0",
