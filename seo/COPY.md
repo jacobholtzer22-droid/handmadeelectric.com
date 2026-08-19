@@ -18,7 +18,7 @@ Rules every string here obeys, from `seo/FACTS.md`:
   blocked while their backing facts are TODO.
 - No em dashes or en dashes.
 
-Pages: 14
+Pages: 15
 
 ---
 
@@ -31,6 +31,36 @@ Pages: 14
 ### H1: Electrical work and Generac generators in Metro Detroit
 
 Handmade Electric LLC is an electrical contractor serving Metro Detroit, covering residential, commercial, and industrial work. We install, service, and repair Generac home standby generators.
+
+#### H2: What customers say
+
+REVIEW: We have used them on several jobs. Pricing is great, they communicate well and show up when they say.
+
+  attribution: Jerry W. / Google review
+
+REVIEW: I had a whole-house surge protector installed by this company, and I couldn't be happier with the service. Trae was professional, arrived on time, and took the time to explain the installation and answer my questions.
+
+  attribution: Carl Q. / Google review
+
+Shown as Google displays it, cut off on their listing.
+
+REVIEW: Phenomenal experience from start to finish extremely professional and quick
+
+  attribution: Kirk L. / Google review
+
+REVIEW: Dependable, great work
+
+  attribution: Carolyn P. / Google review
+
+REVIEW: I can't say enough good things about Handmade Electric and the outstanding service they provided.
+
+  attribution: Ed G. / Google review
+
+Shown as Google displays it, cut off on their listing.
+
+REVIEW: My service was to tier! As a newer company it was their upmost concern to make sure we were taken care of above and beyond and that's exactly what we got! High quality, high efficiency. Would definitely recommend to family and friends. Life long customer here now!!
+
+  attribution: Michael W. / Google review
 
 #### H2: Electrical services across Metro Detroit
 
@@ -571,6 +601,55 @@ The link may be out of date. Handmade Electric LLC is an electrical contractor s
 - Services
 - Generators
 - Contact
+
+---
+
+## `/reviews`
+
+- **Title** (53 chars): Customer Reviews in Metro Detroit | Handmade Electric
+- **Meta description** (142 chars): What customers across Metro Detroit say about Handmade Electric LLC, in their own words, taken word for word from the Google Business Profile.
+- **Canonical**: https://www.handmadeelectric.com/reviews
+
+### H1: What customers say
+
+Reviews left for Handmade Electric LLC on Google, in the customer's own words. Nothing here has been edited or shortened by us. Two of them are cut off because Google truncates longer reviews in its own listing.
+
+REVIEW: We have used them on several jobs. Pricing is great, they communicate well and show up when they say.
+
+  attribution: Jerry W. / Google review
+
+REVIEW: I had a whole-house surge protector installed by this company, and I couldn't be happier with the service. Trae was professional, arrived on time, and took the time to explain the installation and answer my questions.
+
+  attribution: Carl Q. / Google review
+
+Shown as Google displays it, cut off on their listing.
+
+REVIEW: Phenomenal experience from start to finish extremely professional and quick
+
+  attribution: Kirk L. / Google review
+
+REVIEW: Dependable, great work
+
+  attribution: Carolyn P. / Google review
+
+REVIEW: I can't say enough good things about Handmade Electric and the outstanding service they provided.
+
+  attribution: Ed G. / Google review
+
+Shown as Google displays it, cut off on their listing.
+
+REVIEW: My service was to tier! As a newer company it was their upmost concern to make sure we were taken care of above and beyond and that's exactly what we got! High quality, high efficiency. Would definitely recommend to family and friends. Life long customer here now!!
+
+  attribution: Michael W. / Google review
+
+See the reviews on Google
+
+#### H2: Want to be the next one?
+
+Describe the job and Handmade Electric will get back to you. Call, text, or send the details, whichever suits you.
+
+Prefer to text? Send a text to (248) 787-0071
+
 
 ---
 

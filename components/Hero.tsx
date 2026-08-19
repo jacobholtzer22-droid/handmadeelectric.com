@@ -29,7 +29,7 @@ export default function Hero() {
         className="-right-40 top-1/2 hidden -translate-y-1/2 lg:block"
       />
 
-      <div className="container-page relative pb-14 pt-11 sm:pt-14 lg:pb-24 lg:pt-20">
+      <div className="container-page relative pb-10 pt-10 sm:pt-14 lg:pb-24 lg:pt-20">
         <div className="lg:grid lg:grid-cols-12 lg:items-center lg:gap-12">
           {/* --- Copy --- */}
           <div className="lg:col-span-7">

@@ -39,8 +39,11 @@ export function electricianNode(): JsonLdNode {
     logo: `${ORIGIN}/images/logo-emblem-dark.webp`,
     description: `${site.business.legalName} is an electrical contractor serving ${site.business.areaServed}, covering residential, commercial, and industrial work, and installing, servicing, and repairing Generac home standby generators.`,
     areaServed: { "@type": "AdministrativeArea", name: site.business.areaServed },
-    // NO address, geo, openingHoursSpecification, sameAs, aggregateRating.
-    // See seo/FACTS.md sections 2, 6, 7, and 8.
+    /* sameAs carries the Google Business Profile now that one is confirmed to
+       exist. It is a real URL, not a guess. Still NO address, geo, or
+       openingHoursSpecification, because those facts are still unconfirmed, and
+       NO aggregateRating or Review, ever. See seo/FACTS.md sections 2, 6, 7, 8. */
+    ...(site.reviews.profileUrl ? { sameAs: [site.reviews.profileUrl] } : {}),
   };
 }
 

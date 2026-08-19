@@ -40,13 +40,23 @@ const BANNED_PROPS = {
   geo: "FACTS 2, no published street address",
   openingHoursSpecification: "FACTS 2, hours not confirmed",
   openingHours: "FACTS 2, hours not confirmed",
-  sameAs: "FACTS 8, no confirmed profile URLs",
   foundingDate: "FACTS 6, founding year not confirmed",
   priceRange: "FACTS 13, no price claims",
   aggregateRating: "FACTS 7, no self-serving review markup, ever",
   review: "FACTS 7, no self-serving review markup, ever",
   numberOfEmployees: "FACTS 13, no employee count",
 };
+
+/**
+ * sameAs is ALLOWED now that FACTS 8 carries a confirmed Google Business
+ * Profile URL, but it is not a free-for-all: every entry must be a URL this
+ * file knows about. Permitting the property without checking its contents
+ * would let a guessed Facebook or Instagram URL through, which is the exact
+ * failure the original ban existed to prevent.
+ */
+const ALLOWED_SAMEAS = new Set([
+  "https://share.google/PLzVzgUjENf8vHNiw", // FACTS 8, Google Business Profile
+]);
 
 function walk(dir) {
   const out = [];
@@ -64,6 +74,19 @@ function collectTypes(node, acc = []) {
   } else if (node && typeof node === "object") {
     if (typeof node["@type"] === "string") acc.push(node["@type"]);
     Object.values(node).forEach((v) => collectTypes(v, acc));
+  }
+  return acc;
+}
+
+function collectSameAs(node, acc = []) {
+  if (Array.isArray(node)) {
+    node.forEach((n) => collectSameAs(n, acc));
+  } else if (node && typeof node === "object") {
+    if (node.sameAs !== undefined) {
+      const v = node.sameAs;
+      (Array.isArray(v) ? v : [v]).forEach((u) => acc.push(u));
+    }
+    Object.values(node).forEach((v) => collectSameAs(v, acc));
   }
   return acc;
 }
@@ -120,6 +143,11 @@ for (const file of files) {
     }
     for (const p of collectProps(parsed)) {
       if (BANNED_PROPS[p]) issues.push(`banned property "${p}" (${BANNED_PROPS[p]})`);
+    }
+    for (const url of collectSameAs(parsed)) {
+      if (!ALLOWED_SAMEAS.has(url)) {
+        issues.push(`sameAs "${url}" is not a confirmed profile URL (FACTS 8)`);
+      }
     }
   }
 

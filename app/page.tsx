@@ -5,7 +5,7 @@ import Hero from "@/components/Hero";
 import ServicesOverview from "@/components/ServicesOverview";
 import GeneratorFeature from "@/components/GeneratorFeature";
 import PhotoBand from "@/components/PhotoBand";
-import ReviewsStrip from "@/components/ReviewsStrip";
+import ReviewsCarousel from "@/components/ReviewsCarousel";
 import TrustRow from "@/components/TrustRow";
 import ClosingCta from "@/components/ClosingCta";
 
@@ -26,10 +26,11 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      {/* High placement, directly below the hero. Six real Google reviews. */}
+      <ReviewsCarousel />
       <ServicesOverview />
       <GeneratorFeature />
       <PhotoBand />
-      <ReviewsStrip />
       <TrustRow />
       {/* industrial.webp is the darkest and least flattering photo in the set,
           which makes it the right one to sit under a scrim as a background

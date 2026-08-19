@@ -6,9 +6,10 @@ import { subServices } from "@/lib/content/subservices";
 /**
  * Built from the route list in seo/PAGE-PLAN.md section 1.
  *
- * `/reviews` is deliberately absent: while site.reviews.enabled is false that
- * route does not exist, so listing it would be a 404 in the sitemap. Turning
- * reviews on adds it here through the same flag.
+ * `/reviews` is included only while site.reviews.enabled is true, through the
+ * same flag that creates the route. If reviews are ever switched off the route
+ * stops existing and drops out of here in the same change, so the sitemap can
+ * never advertise a 404.
  */
 export default function sitemap(): MetadataRoute.Sitemap {
   const origin = site.business.origin;
@@ -21,6 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/about", priority: 0.6 },
     { path: "/contact", priority: 0.8 },
     { path: "/privacy", priority: 0.2 },
+    ...(site.reviews.enabled ? [{ path: "/reviews", priority: 0.6 }] : []),
   ];
 
   const serviceRoutes = services.map((s) => ({

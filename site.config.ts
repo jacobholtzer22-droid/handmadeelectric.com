@@ -51,12 +51,60 @@ export const site = {
 
   reviews: {
     /**
-     * FACTS 7. While this is false the /reviews route DOES NOT EXIST: not
-     * built, not in nav, not in the sitemap, not in the link graph. Flipping it
-     * to true is what creates all of that plus the homepage strip.
+     * FACTS 7. SIX REAL GOOGLE REVIEWS, VERBATIM.
+     *
+     * Transcribed exactly as they appear on the Google Business Profile. Not
+     * edited, not tidied, not completed. Two of them are truncated by Google
+     * itself and end mid-thought; they run exactly that far and no further.
+     * Michael W.'s "to tier" and "upmost" are his words and stay as written.
+     * Fixing a typo in someone else's review is putting words in their mouth.
+     *
+     * All six were left roughly two months before this build.
+     *
+     * NO RATINGS ANYWHERE. Google's list view did not expose a per-review
+     * rating, and defaulting them to five stars would be inventing a fact. No
+     * star on a card, no average, no review count. There is also NO Review and
+     * NO aggregateRating JSON-LD, and the schema gate fails the build if either
+     * type ever appears.
      */
-    enabled: false,
-    quotes: [] as { text: string; name: string; source: string }[],
+    enabled: true,
+    profileUrl: "https://share.google/PLzVzgUjENf8vHNiw",
+    quotes: [
+      {
+        name: "Jerry W.",
+        source: "Google review",
+        text: "We have used them on several jobs. Pricing is great, they communicate well and show up when they say.",
+      },
+      {
+        name: "Carl Q.",
+        source: "Google review",
+        // Truncated by Google. Ends at the last complete sentence shown.
+        truncated: true,
+        text: "I had a whole-house surge protector installed by this company, and I couldn't be happier with the service. Trae was professional, arrived on time, and took the time to explain the installation and answer my questions.",
+      },
+      {
+        name: "Kirk L.",
+        source: "Google review",
+        text: "Phenomenal experience from start to finish extremely professional and quick",
+      },
+      {
+        name: "Carolyn P.",
+        source: "Google review",
+        text: "Dependable, great work",
+      },
+      {
+        name: "Ed G.",
+        source: "Google review",
+        // Truncated by Google.
+        truncated: true,
+        text: "I can't say enough good things about Handmade Electric and the outstanding service they provided.",
+      },
+      {
+        name: "Michael W.",
+        source: "Google review",
+        text: "My service was to tier! As a newer company it was their upmost concern to make sure we were taken care of above and beyond and that's exactly what we got! High quality, high efficiency. Would definitely recommend to family and friends. Life long customer here now!!",
+      },
+    ] as { name: string; source: string; text: string; truncated?: boolean }[],
   },
 
   crm: {
@@ -78,8 +126,12 @@ export const site = {
 
   nav: [
     { label: "Services", href: "/services" },
-    { label: "Generators", href: "/services/generac-generator-installation" },
+    /* NO top-level Generators entry. The two generator pages are unchanged and
+       are reached from the Services dropdown under "Standby power", from the
+       services hub, and from the footer. Removing the shortcut is a NAV change
+       only: neither page was merged, deleted, or redirected. */
     { label: "Work", href: "/work" },
+    { label: "Reviews", href: "/reviews" },
     { label: "About", href: "/about" },
     /* Contact is deliberately NOT here. It is rendered as the "Get a quote"
        button in the header and the drawer instead, so the conversion path is a

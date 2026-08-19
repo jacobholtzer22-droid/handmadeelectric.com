@@ -42,16 +42,16 @@ function TradeCard({ service, src }: { service: ServiceContent; src: string }) {
          feature, the growth push, down to 4.6 screens. Measured, not guessed. */
       className="card-lift group flex overflow-hidden rounded-panel border border-bone-dim bg-white/50 sm:flex-col"
     >
-      <div className="relative aspect-[3/4] w-28 shrink-0 overflow-hidden sm:w-full">
+      <div className="relative aspect-[3/4] w-24 shrink-0 overflow-hidden sm:w-full">
         <Image
           src={photo.src}
           alt={photo.alt}
           fill
-          sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 112px"
+          sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 96px"
           className="object-cover"
         />
       </div>
-      <div className="flex flex-1 flex-col justify-center p-5 sm:justify-start">
+      <div className="flex flex-1 flex-col justify-center p-4 sm:p-5 sm:justify-start">
         <h3 className="h-display text-xl text-ink">{service.navTitle}</h3>
         <p className="mt-2.5 flex-1 text-[0.9375rem] leading-relaxed text-ink-dim">
           {service.short}
@@ -108,15 +108,15 @@ function StandbyCard({ service, index }: { service: ServiceContent; index: numbe
 
 export default function ServicesOverview() {
   return (
-    <section className="bg-bone py-12 lg:py-24">
+    <section className="bg-bone py-9 lg:py-24">
       <div className="container-page">
         <PanelTag tone="light">Services</PanelTag>
-        <h2 className="h-display mt-5 max-w-2xl text-[1.875rem] text-ink sm:text-4xl lg:text-[2.75rem]">
+        <h2 className="h-display mt-4 max-w-2xl text-[1.875rem] text-ink sm:text-4xl lg:text-[2.75rem]">
           Electrical services across {site.business.areaServed}
         </h2>
 
         {/* The one animated conduit run on this page. */}
-        <Reveal className="mt-9 block">
+        <Reveal className="mt-6 block">
           <div
             className="conduit-rule conduit-rule-light conduit-draw"
             aria-hidden="true"
@@ -134,7 +134,7 @@ export default function ServicesOverview() {
           ))}
         </div>
 
-        <p className="mt-8 font-panel text-[0.6875rem] uppercase tracking-panelwide text-ink-dim">
+        <p className="mt-6 font-panel text-[0.6875rem] uppercase tracking-panelwide text-ink-dim">
           Standby power
         </p>
         <div className="mt-4 grid gap-3 sm:gap-5 lg:grid-cols-2">

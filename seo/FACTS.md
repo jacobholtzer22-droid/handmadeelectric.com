@@ -193,10 +193,10 @@ does not go on the new site until Trae confirms a founding year.
 
 | Fact | Value | Status |
 |---|---|---|
-| Reviews supplied | none | **TODO - REVIEWS block was empty** |
-| Star rating | - | TODO |
-| Review count | - | TODO |
-| Google Business Profile | none found in research | **TODO - flag prominently, see BUILD-REPORT** |
+| Reviews supplied | **6, verbatim from Google** | **CONFIRMED** |
+| Star rating | - | TODO, and **not displayed**, see below |
+| Review count | - | TODO, and **not displayed**, see below |
+| Google Business Profile | `https://share.google/PLzVzgUjENf8vHNiw` | **CONFIRMED, it exists** |
 
 **Rules:**
 
@@ -207,25 +207,41 @@ does not go on the new site until Trae confirms a founding year.
   review markup on a business's own site has been ineligible for Google rich results since 2019
   and carries trust risk. Visible on-page reviews only. The schema validator fails the build if
   either type appears.
-- With zero reviews supplied, **the `/reviews` route does not exist.** It is not built, not in
-  the nav, not in the sitemap, and not linked from anywhere in the internal link graph. An empty
-  reviews page is a thin page, and worse, it publishes the fact that this business has no
-  reviews. The homepage reviews strip is wired but renders nothing while the flag is false.
-- Flipping `site.reviews.enabled` to `true` is what creates the route, adds it to the nav and
-  the sitemap, and turns on the homepage strip. Launch route count is 9; it becomes 10 when
-  reviews go on.
+- **Reviews are ON.** Six real Google reviews are live: a rotating section on the homepage
+  directly below the hero, and the full set on `/reviews`. The flag `site.reviews.enabled`
+  creates the route, adds it to the nav and the sitemap, and renders the homepage section, all
+  from one switch. Turning it off removes all of that cleanly, including the sitemap entry.
+- **NO RATING IS DISPLAYED ANYWHERE.** Not a star on a card, not an average, not a count.
+  Google's list view did not expose a per-review rating, so assigning five by default would be
+  inventing a fact. The star-rating and review-count rows above stay TODO precisely because we
+  are not showing either, and they must not be filled in from an impression.
+- **Two reviews are truncated by Google itself.** Carl Q. and Ed G. end mid-thought because
+  Google cuts longer reviews in its listing. They run exactly that far. They are labelled on the
+  card so a reader knows the cut is Google's, not ours. Do not "complete" them.
+- **Typos stay.** Michael W. wrote "to tier" and "upmost". Those are his words. Correcting
+  someone else's review is putting words in their mouth, and it is the same class of error as
+  writing one from scratch.
 
 ## 8. Profiles and social
 
 | Fact | Value | Status |
 |---|---|---|
-| Google Business Profile URL | - | TODO |
+| Google Business Profile URL | `https://share.google/PLzVzgUjENf8vHNiw` | **CONFIRMED** |
 | Facebook | - | TODO |
 | Instagram | - | TODO |
 | Any other profile | - | TODO |
 
-**Consequence:** `sameAs` is **omitted entirely** from the JSON-LD. An empty or guessed
-`sameAs` array is worse than none. Social icons stay hidden until a real URL exists.
+**Correction to an earlier statement in this file.** Section 7 and the build report both used to
+say no Google Business Profile could be found. That was wrong, and it is now corrected in both:
+the profile exists, and the six reviews on the site came from it.
+
+**Consequence:** `sameAs` now carries the Google Business Profile URL and nothing else. It is a
+real URL, not a guess. Facebook and Instagram stay out until real URLs exist, because a guessed
+`sameAs` entry is worse than an absent one. Social icons stay hidden.
+
+**Still worth asking Trae for:** the canonical profile URL from the Google Business Profile
+dashboard. The value above is a `share.google` short link, which works and resolves, but the
+full `google.com/maps/place/...` URL is the more durable thing to put in `sameAs`.
 
 ## 9. CRM wiring
 

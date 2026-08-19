@@ -77,7 +77,7 @@ something up. That is why the list at the end of this document matters.
 
 ---
 
-### Three ways to reach you, on every page
+## Three ways to reach you, on every page
 
 Someone who wants to talk can call. Someone who would rather not talk to a
 stranger can text, or send a quote request without speaking to anyone. That
@@ -92,8 +92,12 @@ one thumb away.
 
 ## What is deliberately not on the site yet
 
-**No reviews.** You have not sent any, and I will not write fake ones. The review
-section is built and switched off. Send real ones and it turns on in one change.
+**No star ratings or review counts.** Your six reviews are on the site word for
+word, but no stars and no "rated 5 out of 5" anywhere. Google's list did not show
+a rating on each individual review, and putting five stars on a card because it
+reads positive would be making up a number. Two of the reviews stop mid sentence
+because Google cuts long ones off in its own listing, and they are labelled that
+way rather than finished by us.
 
 **No license number.** Your own logo says licensed electrical contractor, so I
 believe you have one, but I do not have the number. Until I do, the site does not
@@ -115,18 +119,29 @@ target them specifically, which is how you show up when someone searches
 The website is the foundation, not the whole job. Two things matter more than
 anything else on the site itself:
 
-**You do not appear to have a Google Business Profile.** I could not find one.
-That is the free Google listing with your map pin, your reviews, and your hours,
-and it is what shows up when somebody searches "electrician near me". For a local
-contractor it is usually worth more than the website. Creating and verifying it
-should happen right after launch, and I will do it with you.
+**Your Google Business Profile is the other half of this.** That is the free
+Google listing with your map pin, your reviews, and your hours, and it is what
+shows up when somebody searches "electrician near me". For a local contractor it
+is usually worth as much as the website. You have one, and the six reviews now on
+your site came from it.
 
-**Reviews on that profile.** Once the profile exists, asking every customer for a
-review is the highest return activity available to you. Competitors who dominate
-this market are not doing it with better websites. They are doing it with more
-reviews.
+Two things to do with it:
 
-The site is built to feed both of those. But they need to exist.
+**Fill it out completely.** Every field Google gives you is a field a competitor
+has already filled in: services, service area, hours, business description, and
+photos. You have twenty one good job photos now, and they belong on the profile
+as well as the website. A profile with photos and complete details outranks a
+thin one, and it costs nothing but an afternoon.
+
+**Keep asking for reviews.** Six is a real start and it is more than some of your
+competitors have. It is not yet enough to win on. The businesses dominating this
+market are not doing it with better websites, they are doing it with more
+reviews, and the gap closes faster than most people expect when you ask every
+customer at the moment the work is finished. Ask in person, then text them the
+link.
+
+Your site is built to feed the profile and the profile feeds your site. New
+reviews go on the website in one small change.
 
 ---
 
