@@ -24,15 +24,28 @@ export type ReviewQuote = {
  *
  * Ratings still render from data only. A null rating draws no stars.
  */
+/**
+ * Extra props are forwarded to the <figure>. The carousel drives the crossfade
+ * with `data-active` and hides inactive slides with `aria-hidden`, and both
+ * have to reach the DOM node the CSS targets.
+ *
+ * They did not, once. The carousel passed them, this component accepted only
+ * `quote` and `className`, and React dropped the rest silently. `.review-slide`
+ * is opacity 0 until `[data-active]` matches, so every card on the homepage was
+ * invisible while the heading, the stars, and the arrows all rendered normally.
+ * That is why the props are spread rather than destructured away.
+ */
 export default function ReviewCard({
   quote,
   className = "",
+  ...rest
 }: {
   quote: ReviewQuote;
   className?: string;
-}) {
+} & React.HTMLAttributes<HTMLElement>) {
   return (
     <figure
+      {...rest}
       className={`flex flex-col rounded-panel border border-bone-dim bg-bone p-6 shadow-[0_1px_0_0_rgba(200,118,60,0.35)] sm:p-7 ${className}`}
     >
       <div className="flex items-center justify-between gap-4">
