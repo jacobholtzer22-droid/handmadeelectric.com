@@ -72,6 +72,11 @@ export default function Footer() {
                   Privacy policy and SMS terms
                 </Link>
               </li>
+              <li>
+                <a href="#" data-aa-cookie-settings hidden className="inline-flex min-h-[44px] items-center text-sm text-ash transition-colors hover:text-copper-bright">
+                  Cookie settings
+                </a>
+              </li>
             </ul>
           </div>
 

@@ -61,6 +61,9 @@ export default function RootLayout({
       lang="en"
       className={`${display.variable} ${body.variable} ${panel.variable}`}
     >
+      <head>
+        <script defer src="https://www.alignandacquire.com/t/s/handmade-electric-1787143119840.js"></script>
+      </head>
       <body>
         {/* Runs synchronously before paint. Scroll reveals hide themselves ONLY
             under `.js`, so with JavaScript off nothing is ever hidden and the

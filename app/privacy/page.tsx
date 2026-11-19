@@ -22,8 +22,7 @@ export const metadata: Metadata = pageMeta({
  *  - Any list of third parties beyond the lead platform that actually receives
  *    the form.
  *  - Any security guarantee.
- *  - Any cookie or analytics disclosure, because this build sets no cookies and
- *    installs no tracking.
+ *  - Any retention or security claim beyond the cookie and analytics section.
  *
  * FLAGGED IN THE BUILD REPORT: a human accountable for it should read this
  * before launch. It is generated from confirmed facts, but a privacy policy is
@@ -49,7 +48,8 @@ export default function PrivacyPage() {
     {
       heading: "Cookies and tracking",
       body: [
-        "This website does not set cookies, and it does not install analytics or advertising tracking.",
+        "We count visits to this site without cookies: we log the page viewed, the site that linked here, ad campaign tags and an approximate location (country, region and city), and we never store your IP address.",
+        "If you click OK on the cookie banner, we also use PostHog to record how you use this site (clicks, scrolling and a replay of your visit, with anything you type hidden); you can change your choice at any time with the Cookie settings link at the bottom of every page, and if your browser sends a Global Privacy Control signal we leave this off.",
       ],
     },
     {
